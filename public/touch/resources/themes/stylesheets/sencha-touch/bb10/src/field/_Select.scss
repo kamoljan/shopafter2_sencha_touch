@@ -1,0 +1,30 @@
+/**
+ * @class Ext.field.Select
+ */
+
+.x-panel.x-select-overlay {
+    > .x-panel-inner {
+        overflow: hidden;
+        border: 1px solid #cfcdcf;
+    }
+
+    .x-list {
+        background: #e3e0e3;
+
+        .x-list-item {
+            border-color: #cfcdcf;
+            color: #5e5d5e;
+        }
+
+        .x-item-pressed {
+            background-color: $base-color;
+            color: #fff;
+        }
+
+        .x-item-selected {
+            @include box-shadow(none);
+            background-color: #efebef;
+            color: #343334;
+        }
+    }
+}

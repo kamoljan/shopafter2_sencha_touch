@@ -1,0 +1,339 @@
+.x-grid {
+    background-color: #fff !important;
+
+    .x-grid-header-container {
+        border-width: 0 1px 1px 0;
+        border-color: #d7d7d7;
+        border-style: solid;
+        height: 65px;
+        font-weight: bold;
+        background-color: #f5f5f5;
+        color: #000000;
+        overflow: hidden;
+
+        .x-grid-column {
+            display: inline-block;
+        }
+
+        .x-grid-column-resizing {
+            background-color: #D2EDFE;
+        }
+
+        .x-grid-header-container-inner {
+            width: 100000px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .x-grid-column {
+        border-left: 1px solid #fff;
+        border-top: 1px solid #fff;
+        border-right: 1px solid #d7d7d7;
+        line-height: 64px;
+        vertical-align: middle;
+        padding: 0 8px;
+
+        .x-innerhtml {
+            display: inline-block;
+            width: auto;
+            position: relative;
+        }
+
+        &.x-column-sorted-asc,
+        &.x-column-sorted-desc {
+            color: #1464AE;
+
+            .x-innerhtml:after {
+                position: absolute;
+                width: 12px;
+                right: -16px;
+                line-height: 64px;
+                top: 0;
+                height: 64px;
+                font-family: 'Pictos';
+                font-size: 12px;
+            }
+        }
+
+        &.x-column-sorted-asc .x-innerhtml:after {
+            content: icon-character-for-name('up');
+        }
+        &.x-column-sorted-desc .x-innerhtml:after {
+            content: icon-character-for-name('down');
+        }
+    }
+
+    .x-grid-headergroup {
+        display: inline-block;
+        position: relative;
+        vertical-align: bottom;
+        height: 64px;
+        padding-top: 32px;
+
+        .x-inner > .x-innerhtml {
+            height: 32px;
+            line-height: 28px;
+            vertical-align: middle;
+            display: block;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            text-align: center;
+            border-color: #fff #d7d7d7 #d7d7d7 #fff;
+            border-style: solid;
+            border-width: 1px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .x-grid-column {
+            height: 32px !important;
+            line-height: 27px !important;
+            font-size: 0.7em;
+
+            &.x-column-sorted-asc,
+            &.x-column-sorted-desc {
+                .x-innerhtml:after {
+                    line-height: 27px;
+                    height: 27px;
+                }
+            }
+        }
+    }
+
+    .x-grid-row {
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-bottom: 1px solid #d7d7d7;
+        color: #000;
+
+        &.x-grid-item-odd {
+            background-color: #fafafa;
+        }
+
+        &.x-item-selected {
+            background-color: #D2EDFE;
+        }
+    }
+
+    .x-grid-cell {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 60px;
+        padding: 0 8px;
+        height: 60px;
+        overflow: hidden;
+        border-right: 1px solid #d7d7d7;
+    }
+
+    .x-grid-cell-align-center,
+    .x-grid-column-align-center {
+        text-align: center;
+    }
+
+    .x-grid-cell-align-right,
+    .x-grid-column-align-right {
+        text-align: right;
+    }
+
+    .x-grid-viewoptions {
+        background-color: white;
+        border-left: 1px solid silver;
+
+        .x-list-item .x-innerhtml {
+            padding: 0px !important;
+        }
+
+        .x-column-options-header {
+            background: #1464AE;
+            height: 32px;
+            line-height: 28px;
+            vertical-align: middle;
+            border-color: #fff #d7d7d7 #d7d7d7 #fff;
+            border-style: solid;
+            border-width: 1px;
+            overflow: hidden;
+            color: #fff;
+            padding-left: 10px;
+        }
+
+        .x-column-options-sortablehandle,
+        .x-column-options-visibleindicator,
+        .x-column-options-folder,
+        .x-column-options-leaf {
+            width: 40px;
+            height: 48px;
+            position: absolute;
+            bottom: 0;
+
+            &:after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                text-align: center;
+                font-size: 24px;
+                font-family: 'Pictos';
+                line-height: 48px;
+                content: icon-character-for-name('list');
+                color: silver;
+                vertical-align: middle;
+            }
+        }
+
+        .x-column-options-sortablehandle {
+            left: 0;
+            &:after {
+                line-height: 54px;
+                color: #aaa;
+            }
+        }
+        .x-column-options-visibleindicator {
+            right: 0;
+            &:after {
+                font-size: 30px;
+                line-height: 54px;
+                content: icon-character-for-name('eye');
+            }
+        }
+
+        .x-column-options-folder,
+        .x-column-options-leaf {
+            width: 30px;
+            left: 40px;
+
+            &:after {
+                line-height: 52px;
+                content: icon-character-for-name('folder');
+            }
+        }
+
+        .x-column-options-leaf:after {
+            content: icon-character-for-name('file');
+        }
+
+        .x-column-options-text {
+            display: block;
+            height: 30px;
+            margin: 10px 50px 5px 80px;
+            position: relative;
+            vertical-align: middle;
+            line-height: 28px;
+            color: silver;
+        }
+
+        .x-list-item.x-item-selected.x-list-item-tpl  {
+            background: transparent;
+            border-top-color: #ccc;
+
+            .x-column-options-text {
+                color: #000;
+            }
+
+            .x-column-options-visibleindicator:after {
+                color: #1464AE;
+            }
+
+            .x-column-options-sortablehandle:after {
+                color: #aaa;
+            }
+
+            .x-column-options-folder:after,
+            .x-column-options-leaf:after {
+                color: #91E698;
+            }
+        }
+    }
+
+    .x-grid-columnoptions {
+        border-bottom: 1px solid #d7d7d7;
+    }
+
+    .x-grid-multiselection-column {
+        position: relative;
+        padding: 0;
+
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 64px;
+            line-height: 64px;
+            font-family: 'Pictos';
+            font-size: 26px;
+            text-align: center;
+            content: icon-character-for-name('check');
+            color: silver;
+        }
+
+        &.x-grid-multiselection-allselected:after {
+            color: #1464AE !important;
+        }
+    }
+
+    .x-grid-multiselection-cell {
+        position: relative;
+        padding: 0;
+
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            font-family: 'Pictos';
+            font-size: 20px;
+            text-align: center;
+            color: silver;
+            content: icon-character-for-name('minus2');
+        }
+    }
+
+    .x-item-selected .x-grid-multiselection-cell:after {
+        content: icon-character-for-name('check2');
+        color: #1464AE;
+    }
+
+    .x-grid-pagingtoolbar {
+        border-top-color: #d7d7d7;
+
+        > .x-body {
+            padding: 0 30px 0 50px;
+        }
+    }
+
+    .x-grid-pagingtoolbar-currentpage {
+        position: relative;
+        height: 22px;
+
+        span {
+            position: absolute;
+            right: 0;
+            top: 0;
+            line-height: 22px;
+            height: 22px;
+        }
+    }
+
+    .x-grid-summaryrow {
+        background-color: #1464AE;
+        color: #fff;
+        height: 32px;
+        font-size: 0.8em;
+        position: relative;
+
+        .x-grid-cell {
+            height: 32px;
+            line-height: 30px;
+            border-right: none;
+            border-bottom: 1px solid silver;
+        }
+    }
+}
