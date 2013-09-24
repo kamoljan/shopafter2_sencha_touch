@@ -78,6 +78,8 @@ Ext.define('WL.view.tablet.movie.Detail', {
 
     initialize: function() {
 
+        console.log('view.tablet.movie.Detail initialize');
+
 		this.element.on({
 			tap: function(e, dom) {
 

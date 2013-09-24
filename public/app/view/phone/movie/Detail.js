@@ -86,6 +86,8 @@ Ext.define('WL.view.phone.movie.Detail', {
 
     initialize: function() {
 
+        console.log('view.phone.movie.Detail initialize');
+
         this.element.on({
             tap: function(e, dom) {
 
@@ -150,6 +152,9 @@ Ext.define('WL.view.phone.movie.Detail', {
     },
 
     calculateHeights: function() {
+
+        console.log('view.phone.movie.Detail calculateHeights');
+
         var element = this.element.down('.movieDetail'),
             innerElement = this.element.down('.movieDetailInner');
 
@@ -161,6 +166,8 @@ Ext.define('WL.view.phone.movie.Detail', {
     },
 
     toggle: function() {
+
+        console.log('view.phone.movie.Detail toggle');
 
     	var me = this,
             element = this.element.down('.movieDetail'),

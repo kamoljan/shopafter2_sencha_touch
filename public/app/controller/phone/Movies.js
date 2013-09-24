@@ -20,6 +20,8 @@ Ext.define('WL.controller.phone.Movies', {
 
     init: function() {
 
+        console.log('controller.phone.Movies init');
+
         this.callParent();
 
         WL.Facebook.on({
@@ -31,17 +33,26 @@ Ext.define('WL.controller.phone.Movies', {
     },
 
     onFacebookLogin: function() {
+
+        console.log('controller.phone.Movies onFacebookLogin');
+
         this.callParent(arguments);
         this.initContainer();
     },
 
     initContainer: function() {
+
+        console.log('controller.phone.Movies initContainer');
+
         if (!this.mainContainer) {
             this.mainContainer = Ext.Viewport.add({ xtype: 'main' });
         }
     },
 
     showMovie: function(record) {
+
+        console.log('controller.phone.Movies showMovie');
+
         WL.currentMovie = record;
 
         if (!this.movieDetailCmp) {
@@ -60,11 +71,17 @@ Ext.define('WL.controller.phone.Movies', {
     },
 
     doMovieBack: function() {
+
+        console.log('controller.phone.Movies doMovieBack');
+
         WL.app.updateUrl('home');
         this.onMovieBack();
     },
 
     onMovieBack: function() {
+
+        console.log('controller.phone.Movies onMovieBack');
+
         Ext.Viewport.animateActiveItem(this.getMain(), {
             type: 'slide',
             direction: 'right'

@@ -35,6 +35,8 @@ Ext.define('WL.Facebook', {
      */
     initialize: function(appId) {
 
+        console.log('Facebook initialize');
+
         this.appId = appId;
 
         window.fbAsyncInit = Ext.bind(this.onFacebookInit, this);
@@ -51,6 +53,8 @@ Ext.define('WL.Facebook', {
      * This fucntion is run when the Facebook JS SDK has been successfully laoded onto the page.
      */
     onFacebookInit: function() {
+
+        console.log('Facebook onFacebookInit');
 
         if (!this.appId) {
             Ext.Logger.error('No Facebook Application ID set.');
@@ -105,6 +109,9 @@ Ext.define('WL.Facebook', {
      * Returns the app location. If we're inside an iFrame, return the top level path
      */
     currentLocation: function() {
+
+        console.log('Facebook currentLocation');
+
         if (window.top.location.host) {
             return window.top.location.protocol + "//" + window.top.location.host + window.top.location.pathname
         } else {
@@ -116,6 +123,8 @@ Ext.define('WL.Facebook', {
      * The Facebook authentication URL.
      */
     redirectUrl: function() {
+
+        console.log('Facebook redirectUrl');
 
         var redirectUrl = Ext.Object.toQueryString({
             redirect_uri: this.currentLocation(),
@@ -131,6 +140,8 @@ Ext.define('WL.Facebook', {
     },
 
     error: function(err) {
+
+        console.log('Facebook error');
 
         var errMsg = "Unknown Facebook error";
 

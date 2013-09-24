@@ -12,7 +12,7 @@ exports.config = {
 
     // MongoDB endpoint
     //mongoDb:       'mongodb://USER:PASS@SERVER:PORT/DATABASE',
-    mongoDb: 'mongodb://admin:12345678@localhost:27017/shopafter/',
+    mongoDb: 'mongodb://admin:12345678@localhost:27017/shopafter',
 
     // Session encyption key
     sessionSecret: 'kenta234?@#$ewfdhgsadjfhbasd!@#naomibasyihd',

@@ -55,6 +55,8 @@ Ext.application({
     // This function will be run once the application is ready to be launched.
     launch: function() {
 
+        console.log('application launch');
+
         // Initialize Facebook with our app ID
         WL.Facebook.initialize('723097297716821');
 
@@ -75,12 +77,17 @@ Ext.application({
      * Convenience function for updating the URL location hash
      */
     updateUrl: function(url) {
+
+        console.log('application updateUrl');
+
         this.getHistory().add(Ext.create('Ext.app.Action', {
             url: url
         }));
     },
 
     onUpdated: function() {
+
+        console.log('application onUpdated');
 
         Ext.create('WL.view.Dialog', {
             msg: "Application update was a success. Reload now?",

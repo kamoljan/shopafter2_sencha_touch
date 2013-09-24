@@ -25,21 +25,26 @@ Ext.define('WL.view.Dialog', {
         buttons: []
     },
 
-    show: function() {
+    show: function () {
+
+        console.log('vview.Dialog show');
+
         if (!this.getParent() && Ext.Viewport) {
             Ext.Viewport.add(this);
         }
         this.callParent();
     },
 
-    initialize: function() {
+    initialize: function () {
+
+        console.log('view.Dialog initialize');
 
         this.callParent();
 
         this.insert(0, {
             xtype: 'button',
             ui: 'close',
-            handler: function() {
+            handler: function () {
                 this.hide()
             },
             scope: this
@@ -52,7 +57,7 @@ Ext.define('WL.view.Dialog', {
         });
 
         if (this.getButtons().length) {
-            Ext.Array.each(this.getButtons(), function(btn) {
+            Ext.Array.each(this.getButtons(), function (btn) {
                 this.add(Ext.applyIf(btn, {
                     xtype: 'button'
                 }));

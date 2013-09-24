@@ -8,7 +8,10 @@ Ext.define('WL.controller.YouTube', {
     config: {
     },
 
-    init: function() {
+    YouTube: function() {
+
+        console.log('controller.YouTube YouTube');
+
     	var tag = document.createElement('script');
 	    tag.src = "http://www.youtube.com/player_api";
 	    var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -18,9 +21,14 @@ Ext.define('WL.controller.YouTube', {
     },
 
     onYouTubeReady: function() {
+
+        console.log('controller.YouTube onYouTubeReady');
+
     },
 
     showTrailer: function(videoId) {
+
+        console.log('controller.YouTube showTrailer');
 
         if (!this.trailerCmp) {
 
@@ -61,10 +69,16 @@ Ext.define('WL.controller.YouTube', {
     },
 
     onPlayerReady: function() {
+
+        console.log('controller.YouTube onPlayerReady');
+
     	// console.log("Player ready")
     },
 
     onStateChange: function() {
+
+        console.log('controller.YouTube onStateChange');
+
     	// console.log("Player state change")
     }
 });

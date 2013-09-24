@@ -16,11 +16,17 @@ Ext.define('WL.profile.Tablet', {
     },
 
     launch: function() {
+
+        console.log('profile.Tablet launch');
+
         WL.view.tablet.movie.List.addXtype('movieList');
         WL.view.tablet.movie.Detail.addXtype('movieDetail');
     },
 
     isActive: function() {
+
+        console.log('profile.Tablet isActive');
+
         return !Ext.os.is.Phone;
     }
 });

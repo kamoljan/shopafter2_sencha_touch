@@ -62,6 +62,9 @@ Ext.define('WL.view.Main', {
 	},
 
     initialize: function() {
+
+        console.log('view.Main initialize');
+
         this.callParent();
 
         // Enable the Tap event on the profile picture in the toolbar, so we can show a logout button

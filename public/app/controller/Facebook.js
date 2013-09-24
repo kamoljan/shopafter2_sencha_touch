@@ -12,6 +12,9 @@ Ext.define('WL.controller.Facebook', {
     },
 
     init: function() {
+
+        console.log('controller.Facebook init');
+
         WL.Facebook.on({
             exception: function() {
                 Ext.create('WL.view.Dialog', { msg: 'The connection to Facebook has timed out' }).show();
@@ -24,6 +27,9 @@ Ext.define('WL.controller.Facebook', {
 
     // Redirect to Facebook when the user taps the Facebook Login button
     onFacebookLogin: function() {
+
+        console.log('controller.Facebook onFacebookLogin');
+
         window.top.location = WL.Facebook.redirectUrl();
     }
 });

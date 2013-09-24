@@ -62,6 +62,9 @@ Ext.define('WL.controller.Movies', {
     },
 
     init: function() {
+
+        console.log('controller.Movies init');
+
         WL.app.on({
             localStorageData: 'onLocalStorageData',
             scope: this
@@ -76,6 +79,9 @@ Ext.define('WL.controller.Movies', {
     },
 
     onLocalStorageData: function(data) {
+
+        console.log('controller.Movies onLocalStorageData');
+
         var store = Ext.getStore('Movies');
 
         this.initContainer();
@@ -86,6 +92,8 @@ Ext.define('WL.controller.Movies', {
     },
 
     onFacebookLogin: function() {
+
+        console.log('controller.Movies onFacebookLogin');
 
         Ext.getBody().removeCls('splashBg');
 
@@ -112,6 +120,9 @@ Ext.define('WL.controller.Movies', {
     },
 
     onFirstLoad: function(profileId) {
+
+        console.log('controller.Movies onFirstLoad');
+
         Ext.getCmp('fbProfilePic').setData({
             profileId: profileId
         });
@@ -129,6 +140,9 @@ Ext.define('WL.controller.Movies', {
      * When a user clicks the search button, scroll to the top
      */
     onSearchButton: function() {
+
+        console.log('controller.Movies onSearchButton');
+
         var bar = this.getMovieList().down('movieSearchBar');
         if(bar.getHidden()){
             bar.show({type: 'fade'});
@@ -138,15 +152,24 @@ Ext.define('WL.controller.Movies', {
     },
 
     onMovieTap: function(record) {
+
+        console.log('controller.Movies onMovieTap');
+
         WL.app.updateUrl('movies/' + record.get('rottenId'));
         this.showMovie(record);
     },
 
     onViewingTap: function(list, idx, el, record) {
+
+        console.log('controller.Movies onViewingTap');
+
         this.onMovieUrl(record.get('movieId'));
     },
 
     onMovieUrl: function(movieId) {
+
+        console.log('controller.Movies onMovieUrl');
+
         var movieStore = Ext.getStore('Movies'),
             movie = movieStore.findRecord('rottenId', movieId);
 
@@ -163,6 +186,8 @@ Ext.define('WL.controller.Movies', {
     },
 
     onSearch: function(searchField) {
+
+        console.log('controller.Movies onSearch');
 
         var searchStore = Ext.getStore('Search'),
             value = searchField.getValue();

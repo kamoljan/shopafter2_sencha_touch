@@ -24,13 +24,13 @@ require('./lib/database');
 
 var app = module.exports = express.createServer();
 
-app.configure('development', function() {
+app.configure('development', function () {
     //app.use(express.logger());
     app.use(connect.static('./public'));
     app.set('appIndex', './public/app.html')
 });
 
-app.configure('production', function() {
+app.configure('production', function () {
     // Redirect from www
 //    app.use(function(req, res, next) {
 //        if (req.headers['host'] == 'watchlistapp.com') {
@@ -44,7 +44,7 @@ app.configure('production', function() {
     app.set('appIndex', './public/build/WL/production/app.html'); //align to your path
 });
 
-app.configure(function() {
+app.configure(function () {
     // Cors headers
     app.use(function (req, res, next) {
         res.setHeader('Access-Control-Allow-Origin', '*');
@@ -70,7 +70,7 @@ app.configure(function() {
 
 var port = process.env.PORT || 8888;
 
-app.listen(port, function() {
+app.listen(port, function () {
     console.log("Listening on " + port);
 });
 
@@ -78,7 +78,7 @@ app.listen(port, function() {
 /**
  * Handle requests to the root URL.
  */
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
 
     var ua = req.headers['user-agent'];
 
@@ -94,7 +94,7 @@ app.get('/', function(req, res) {
     }
 });
 
-app.all('/app.html', function(req, res) {
+app.all('/app.html', function (req, res) {
     res.sendfile(app.set('appIndex'));
 });
 
@@ -102,7 +102,7 @@ app.all('/app.html', function(req, res) {
 /**
  * Handle requests from the Facebook app.
  */
-app.post('/', function(req, res) {
+app.post('/', function (req, res) {
 
     var ua = req.headers['user-agent'];
 
@@ -118,7 +118,7 @@ app.post('/', function(req, res) {
     }
 });
 
-app.get('/movies', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function(req, res, next) {
+app.get('/movies', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function (req, res, next) {
 
     var cache = {}, idx = [],
         sort = movieIdx;
@@ -132,29 +132,29 @@ app.get('/movies', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function
     util.addViewingData(req, res, next, movieCache, sort);
 });
 
-app.get('/movie', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function(req, res, next) {
+app.get('/movie', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function (req, res, next) {
 
     var url = "http://api.rottentomatoes.com/api/public/v1.0/movies/" + req.query.rottenId + ".json?apikey=" + config.rottenTomatoesApiKey;
 
     rest.get(
         url, { parser: rest.parsers.json }
-    ).on('complete', function(data) {
+    ).on('complete',function (data) {
 
-        if (data.error) {
-            res.json({success: false, error: data.error});
-            return;
-        }
+            if (data.error) {
+                res.json({success: false, error: data.error});
+                return;
+            }
 
-        var response = util.parseMovieResults(data);
-        util.addViewingData(req, res, next, response.cache, response.idx)
+            var response = util.parseMovieResults(data);
+            util.addViewingData(req, res, next, response.cache, response.idx)
 
-    }).on('error', function(err) {
-        console.log('Error getting movies', err);
-    });
+        }).on('error', function (err) {
+            console.log('Error getting movies', err);
+        });
 
 });
 
-app.post('/movie/:id/share', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function(req, res, next) {
+app.post('/movie/:id/share', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function (req, res, next) {
 
     var cache = movieCache[Number(req.params.id)];
 
@@ -168,7 +168,7 @@ app.post('/movie/:id/share', fb.checkSession, fb.getFriendIds, fb.getUserDetails
             post.message = req.body.message;
         }
 
-        graph.post(req.session.fb.user_id + '/links', post, function(err, fbRes) {
+        graph.post(req.session.fb.user_id + '/links', post, function (err, fbRes) {
             if (fbRes.error && fbRes.error.message.match(/#282/)) {
                 res.json({ success: false, error: 'permission', scope: 'share_item'})
             } else {
@@ -181,7 +181,7 @@ app.post('/movie/:id/share', fb.checkSession, fb.getFriendIds, fb.getUserDetails
 });
 
 
-app.all('/movie/:id', function(req, res, next) {
+app.all('/movie/:id', function (req, res, next) {
 
     var cache = movieCache[Number(req.params.id)],
         showDemo = req.headers['user-agent'] && Boolean(req.headers['user-agent'].match(/(AppleWebKit)/));
@@ -197,7 +197,7 @@ app.all('/movie/:id', function(req, res, next) {
             layout: 'layout.html.ejs'
         })
     } else {
-        Movie.findOne({ rottenId: req.params.id }, function (err, doc){
+        Movie.findOne({ rottenId: req.params.id }, function (err, doc) {
             if (doc) {
                 res.render('movie_meta.html.ejs', {
                     locals: {
@@ -215,28 +215,28 @@ app.all('/movie/:id', function(req, res, next) {
     }
 });
 
-app.get('/search', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function(req, res, next) {
+app.get('/search', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function (req, res, next) {
 
     rest.get(
-        "http://api.rottentomatoes.com/api/public/v1.0/movies/" + req.query.rottenId + "?apikey=" + config.rottenTomatoesApiKey + "&page_limit=10&q=" + req.query.q
-    ).on('complete', function(data) {
+            "http://api.rottentomatoes.com/api/public/v1.0/movies/" + req.query.rottenId + "?apikey=" + config.rottenTomatoesApiKey + "&page_limit=10&q=" + req.query.q
+        ).on('complete',function (data) {
 
-        var response = util.parseMovieResults(data);
-        util.addViewingData(req, res, next, response.cache, response.idx)
+            var response = util.parseMovieResults(data);
+            util.addViewingData(req, res, next, response.cache, response.idx)
 
-    }).on('error', function(err) {
-        console.log('Error getting movies', err);
-    });
+        }).on('error', function (err) {
+            console.log('Error getting movies', err);
+        });
 });
 
 
 /**
  * Return a list of viewings for the user and all the user's friends
  */
-app.get('/viewings', fb.checkSession, fb.getFriendIds, function(req, res) {
+app.get('/viewings', fb.checkSession, fb.getFriendIds, function (req, res) {
 
     // Search for all viewings in the database with a profile ID in the friendIds array
-    Viewing.where('profileId').in(req.session.fb.friendIds).run(function(err, viewings) {
+    Viewing.where('profileId').in(req.session.fb.friendIds).run(function (err, viewings) {
 
         if (err) {
             handleError('Could not retrieve list of viewings', viewings, req, res);
@@ -248,9 +248,9 @@ app.get('/viewings', fb.checkSession, fb.getFriendIds, function(req, res) {
     });
 });
 
-app.get('/activity', fb.checkSession, fb.getFriendIds, function(req, res) {
+app.get('/activity', fb.checkSession, fb.getFriendIds, function (req, res) {
 
-    Viewing.where('profileId').in(req.session.fb.friendIds).sort('date', -1).limit(20).run(function(err, viewings) {
+    Viewing.where('profileId').in(req.session.fb.friendIds).sort('date', -1).limit(20).run(function (err, viewings) {
 
         if (err) {
             handleError('Could not retrieve list of movies', runs, req, res);
@@ -259,7 +259,7 @@ app.get('/activity', fb.checkSession, fb.getFriendIds, function(req, res) {
 
         var response = [], action;
 
-        _.each(viewings, function(viewing) {
+        _.each(viewings, function (viewing) {
 
             action = util.viewingAction(viewing);
 
@@ -280,11 +280,10 @@ app.get('/activity', fb.checkSession, fb.getFriendIds, function(req, res) {
 });
 
 
-
 /**
  * Add a new Viewing to the database
  */
-app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewing, function(req, res, next) {
+app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewing, function (req, res, next) {
 
     var fbActions = [],
         fbResponses = [];
@@ -356,31 +355,31 @@ app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewi
                 access_token: req.session.fb.access_token,
                 batch: JSON.stringify(fbActions)
             }
-        }).on('complete', function(str) {
+        }).on('complete',function (str) {
 
-            var data = JSON.parse(str);
+                var data = JSON.parse(str);
 
-            _.each(data, function(batchResponse) {
+                _.each(data, function (batchResponse) {
 
-                var body = JSON.parse(batchResponse.body),
-                    takeAction = fbResponses.shift();
+                    var body = JSON.parse(batchResponse.body),
+                        takeAction = fbResponses.shift();
 
-                if (body.error) {
-                    req.fbError = body.error;
-                }
+                    if (body.error) {
+                        req.fbError = body.error;
+                    }
 
-                if (takeAction) {
-                    req.viewing[takeAction.key] = body[takeAction.value] || null;
-                }
+                    if (takeAction) {
+                        req.viewing[takeAction.key] = body[takeAction.value] || null;
+                    }
 
-                console.log("Facebook batch complete", body)
-            })
+                    console.log("Facebook batch complete", body)
+                })
 
-            util.saveViewing(req, res, next);
-        }).on('error', function(err) {
-            console.log('Error with batch request to FB', err);
-            util.saveViewing(req, res, next);
-        });
+                util.saveViewing(req, res, next);
+            }).on('error', function (err) {
+                console.log('Error with batch request to FB', err);
+                util.saveViewing(req, res, next);
+            });
 
     } else {
         util.saveViewing(req, res, next);
@@ -391,24 +390,59 @@ app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewi
 /**
  * When the app first starts, we cache a list of movies locally as this will cater for the vast majority of requests.
  */
-Movie.where('releaseDate').$lt(Date.now()).sort('rank', 1).limit(200).run(function(err, movies) {
+Movie.where('releaseDate').$lt(Date.now()).sort('rank', 1).limit(200).run(function (err, movies) {
 
-    _.each(movies, function(movie) {
+    _.each(movies, function (movie) {
         movieCache[movie.rottenId] = movie._doc;
         movieIdx.push(movie.rottenId);
     });
 
-    _.each(_.sortBy(movies, function(movie) {
+    _.each(_.sortBy(movies, function (movie) {
         return -Number(new Date(movie.releaseDate));
-    }), function(movie) {
+    }), function (movie) {
         movieDateIdx.push(movie.rottenId);
     });
 
-    _.each(_.sortBy(movies, function(movie) {
+    _.each(_.sortBy(movies, function (movie) {
         return -movie.criticRating;
-    }), function(movie) {
+    }), function (movie) {
         movieRatingIdx.push(movie.rottenId);
     });
 
     console.log("Cached " + movies.length + " movies.");
+});
+
+
+app.get('/ads', function (req, res) {
+    var q = new RegExp(req.query.q, 'i');  // 'i' makes it case insensitive
+    var count = req.query.count || 20;
+    var category = req.query.category || 0;
+
+    console.log('server q is = ' + q);
+    console.log('server count is = ' + count);
+    console.log('server category is = ' + category);
+
+    var limit = {};
+    var filter = {};
+
+    if (count) {
+        limit['count'] = count;
+    }
+    if (q) {
+        filter['description'] = q;
+    }
+    if (category) {
+        filter['category'] = category;
+    }
+
+    console.log('server limit is = %j', limit);
+    console.log('server filter is = %j', filter);
+
+    return Ad.find(filter, {}, limit, function (err, ads) {
+        if (!err) {
+            return res.send({ "ads": ads });
+        } else {
+            return console.log(err);
+        }
+    });
 });

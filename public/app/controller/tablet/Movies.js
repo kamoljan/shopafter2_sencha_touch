@@ -13,6 +13,8 @@ Ext.define('WL.controller.tablet.Movies', {
 
     init: function() {
 
+        console.log('controller.tablet.Movies init');
+
         this.callParent();
 
         WL.Facebook.on({
@@ -24,17 +26,26 @@ Ext.define('WL.controller.tablet.Movies', {
     },
 
     onFacebookLogin: function() {
+
+        console.log('controller.tablet.Movies onFacebookLogin');
+
         this.callParent(arguments);
         this.initContainer();
     },
 
     initContainer: function() {
+
+        console.log('controller.tablet.Movies initContainer');
+
         if (!this.mainContainer) {
             this.mainContainer = Ext.Viewport.add({ xtype: 'tabletContainer' });
         }
     },
 
     showMovie: function(record) {
+
+        console.log('controller.tablet.Movies showMovie');
+
         WL.currentMovie = record;
 
         if (!this.movieDetailCmp) {

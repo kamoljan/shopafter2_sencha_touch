@@ -47,6 +47,8 @@ Ext.define('WL.view.movie.List', {
      */
 	friendActivityFormatter: function(activity) {
 
+        console.log('view.movie.List friendActivityFormatter');
+
 		var pics = [], friendIds = [], additionalFriends, numAdditionalFriends, i;
 
 		if (activity && activity.length) {
@@ -73,8 +75,14 @@ Ext.define('WL.view.movie.List', {
 	 * we don't have to duplicate this function to each of the Movie Detail templates for both phone and tablet.
 	 */
     applyItemTpl: function(){
-    	var itemTpl = this.callParent(arguments);
+
+        console.log('view.movie.List applyItemTpl');
+
+        var itemTpl = this.callParent(arguments);
     	itemTpl.friendActivity = this.friendActivityFormatter;
+
+        console.log('WL.view.movie.List applyItemTpl itemTpl = ' + itemTpl);
+
     	return itemTpl;
     }
 });
