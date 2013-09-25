@@ -68,7 +68,7 @@ app.configure(function () {
     app.set('view engine', 'ejs');
 });
 
-var port = process.env.PORT || 8888;
+var port = process.env.PORT || 9999;
 
 app.listen(port, function () {
     console.log("Listening on " + port);
@@ -161,7 +161,7 @@ app.post('/movie/:id/share', fb.checkSession, fb.getFriendIds, fb.getUserDetails
     if (cache) {
 
         var post = {
-            link: 'http://www.watchlistapp.com/movie/' + req.params.id
+            link: 'http://m.shopafter.com:9999/movie/' + req.params.id
         };
 
         if (req.body.message) {
@@ -295,7 +295,7 @@ app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewi
             fbActions.push({
                 method: 'POST',
                 relative_url: req.session.fb.user_id + '/' + config.fbNamespace + ':want_to_watch',
-                body: 'movie=http://www.watchlistapp.com/movie/' + req.body.movieId
+                body: 'movie=http://m.shopafter.com:9999/movie/' + req.body.movieId
             });
             fbResponses.push({ key: 'wantToSeeId', value: 'id' });
         } else if (req.viewing.wantToSeeId) {
@@ -311,7 +311,7 @@ app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewi
             fbActions.push({
                 method: 'POST',
                 relative_url: req.session.fb.user_id + '/' + config.fbNamespace + ':watch',
-                body: 'movie=http://www.watchlistapp.com/movie/' + req.body.movieId
+                body: 'movie=http://m.shopafter.com:9999/movie/' + req.body.movieId
             });
             fbResponses.push({ key: 'seenId', value: 'id' });
         } else if (req.viewing.seenId) {
@@ -356,6 +356,8 @@ app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewi
                 batch: JSON.stringify(fbActions)
             }
         }).on('complete',function (str) {
+
+                console.log("Posting to Facebook Open Graph... str = ", str);
 
                 var data = JSON.parse(str);
 

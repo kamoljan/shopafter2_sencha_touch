@@ -18,7 +18,7 @@ exports.config = {
     sessionSecret: 'kenta234?@#$ewfdhgsadjfhbasd!@#naomibasyihd',
 
     //What is this?
-    appUrl: 'http://m.shopafter.com:8888',
+    appUrl: 'http://m.shopafter.com:9999',
 
     //What is this?
     fbNamespace: 'shopafter',

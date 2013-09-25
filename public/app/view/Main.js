@@ -4,7 +4,7 @@ Ext.define('WL.view.Main', {
 
 	requires: [
 		'Ext.SegmentedButton',
-		'WL.view.movie.List'
+		'WL.view.ad.List'
 	],
 
 	xtype: 'main',
@@ -30,8 +30,8 @@ Ext.define('WL.view.Main', {
 		                allowDepress: false,
 		                items: [
 		                    {
-		                        cls: 'movies',
-		                        iconCls: 'movies',
+		                        cls: 'ads',
+		                        iconCls: 'ads',
 		                        pressed: true
 		                    },
 		                    {
@@ -56,7 +56,7 @@ Ext.define('WL.view.Main', {
 		        ]
 		    },
 		    {
-		    	xtype: 'movieList'
+		    	xtype: 'adList'
 		    }
 		]
 	},

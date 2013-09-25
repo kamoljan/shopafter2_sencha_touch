@@ -13,7 +13,7 @@ Ext.define('WL.store.Ads', {
 
             reader: {
                 type: 'json',
-                rootProperty: 'movies'
+                rootProperty: 'ads'
             }
         }
     }

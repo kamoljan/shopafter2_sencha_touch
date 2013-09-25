@@ -10,7 +10,7 @@ It allows you to search for movies and order the listing by popularity, rating o
 
 The app is available with both Phone and Tablet views depending on your device type.
 
-You can see a demo of the app in action at http://www.watchlistapp.com
+You can see a demo of the app in action at http://m.shopafter.com:9999
 
 ## Facebook integration
 

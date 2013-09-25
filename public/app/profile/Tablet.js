@@ -5,13 +5,13 @@ Ext.define('WL.profile.Tablet', {
         name: 'Tablet',
 
         controllers: [
-        	'Movies'
+        	'Ads'
         ],
 
         views: [
         	'Container',
-            'WL.view.tablet.movie.List',
-        	'WL.view.tablet.movie.Detail'
+            'WL.view.tablet.ad.List',
+        	'WL.view.tablet.ad.Detail'
         ]
     },
 
@@ -19,8 +19,8 @@ Ext.define('WL.profile.Tablet', {
 
         console.log('profile.Tablet launch');
 
-        WL.view.tablet.movie.List.addXtype('movieList');
-        WL.view.tablet.movie.Detail.addXtype('movieDetail');
+        WL.view.tablet.ad.List.addXtype('adList');
+        WL.view.tablet.ad.Detail.addXtype('adDetail');
     },
 
     isActive: function() {

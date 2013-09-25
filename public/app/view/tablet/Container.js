@@ -1,5 +1,5 @@
 /**
- * The tablet container. Displays the movie list on the left and the movie detail pane on the right.
+ * The tablet container. Displays the ad list on the left and the ad detail pane on the right.
  */
 Ext.define('WL.view.tablet.Container', {
 

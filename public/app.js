@@ -25,11 +25,13 @@ Ext.application({
     ],
 
     models: [
-        'Movie'
+        'Ad'
+        //'Movie'
     ],
 
     stores: [
-        'Movies',
+        'Ads',
+        //'Movies',
         'Search',
         'Activity'
     ],
@@ -38,13 +40,13 @@ Ext.application({
         'LoggedOut',
         'Main',
         'Activity',
-        'movie.List',
+        'ad.List',
         'Dialog'
     ],
 
     controllers: [
         'Facebook',
-        'Viewings',
+        'AdsViewings',
         'YouTube'
     ],
 

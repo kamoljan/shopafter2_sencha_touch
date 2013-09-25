@@ -1,6 +1,6 @@
 Ext.define('WL.view.phone.movie.List', {
 
-	extend: 'WL.view.movie.List',
+	extend: 'WL.view.ad.List',
 
 	config: {
 
