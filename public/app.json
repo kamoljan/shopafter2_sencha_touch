@@ -12,7 +12,7 @@
     ],
     "css": [
         {
-            "path": "resources/css/movies.css",
+            "path": "resources/css/ads.css",
             "update": "delta"
         }
     ],

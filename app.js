@@ -442,7 +442,7 @@ app.get('/ads', function (req, res) {
 
     return Ad.find(filter, {}, limit, function (err, ads) {
         if (!err) {
-            return res.send({ "ads": ads });
+            return res.send({ "ads": ads, "total": 10 });  // FIXME: remove hardcoded 10
         } else {
             return console.log(err);
         }

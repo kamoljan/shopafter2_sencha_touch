@@ -8,15 +8,16 @@ $font-root:         "../fonts";
 $page-bg-color: #232323;
 $include-default-icons: false;
 
+@import 'sencha-touch/default'; //kamol
 @import 'sencha-touch/default/all';
 
-@include sencha-panel;
-@include sencha-list;
-@include sencha-layout;
+//@include sencha-panel;
+//@include sencha-list;
+//@include sencha-layout;
 
-@include sencha-loading-spinner;
+//@include sencha-loading-spinner;
 
-@include sencha-list-paging;
+//@include sencha-list-paging;
 
 .x-panel-inner{
   background: #000 !important; // ST2.1 makes panel inner part black
