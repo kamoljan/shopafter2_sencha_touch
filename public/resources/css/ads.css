@@ -7524,33 +7524,33 @@ body.x-desktop {
   font-size: .8em;
 }
 
-/* line 77, ../sass/ads.scss */
+/* line 76, ../sass/ads.scss */
 .x-panel-inner {
   background: #000 !important;
 }
 
-/* line 96, ../sass/ads.scss */
+/* line 95, ../sass/ads.scss */
 .x-scroll-indicator {
   background: #ccc;
 }
 
-/* line 101, ../sass/ads.scss */
+/* line 100, ../sass/ads.scss */
 .x-scroll-indicator-csstransform > * {
   background-color: #aaa;
 }
-/* line 105, ../sass/ads.scss */
+/* line 104, ../sass/ads.scss */
 .x-scroll-indicator-csstransform > :nth-child(2) {
   content: url(data:image/bmp;base64,Qk0gAAAAAAAAABoAAAAMAAAAAQABAAEAGACqqqoAAAA%3D);
 }
 
-/* line 112, ../sass/ads.scss */
+/* line 111, ../sass/ads.scss */
 body {
   color: #fff;
   background-color: #232323;
   font-family: 'PT Sans', sans-serif;
 }
 
-/* line 118, ../sass/ads.scss */
+/* line 117, ../sass/ads.scss */
 body.splashBg {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3a005a), color-stop(100%, #5f0092));
   background-image: -webkit-linear-gradient(#3a005a, #5f0092);
@@ -7561,7 +7561,7 @@ body.splashBg {
   background-attachment: fixed;
 }
 
-/* line 124, ../sass/ads.scss */
+/* line 123, ../sass/ads.scss */
 #loading {
   color: #7a5453;
   font-size: 120%;
@@ -7570,13 +7570,13 @@ body.splashBg {
   left: 50%;
   margin: 75% 0 0 -30px;
 }
-/* line 131, ../sass/ads.scss */
+/* line 130, ../sass/ads.scss */
 #loading .x-loading-spinner {
   font-size: 160%;
   margin: -27px 0 0 -45px;
 }
 
-/* line 137, ../sass/ads.scss */
+/* line 136, ../sass/ads.scss */
 #splashLoader {
   background: url("../images/splashimg.png") no-repeat center 25%;
   background-size: contain;
@@ -7587,24 +7587,24 @@ body.splashBg {
   bottom: 0;
 }
 
-/* line 149, ../sass/ads.scss */
+/* line 148, ../sass/ads.scss */
 .tabletSplash {
   background: url("../images/splashimg.png") no-repeat center 25%;
   background-size: contain;
 }
 
-/* line 154, ../sass/ads.scss */
+/* line 153, ../sass/ads.scss */
 .loggedOut {
   background: transparent;
 }
 
-/* line 158, ../sass/ads.scss */
+/* line 157, ../sass/ads.scss */
 .loginScreen {
   top: 70% !important;
   background: transparent;
 }
 
-/* line 163, ../sass/ads.scss */
+/* line 162, ../sass/ads.scss */
 .fbLogin {
   background: url("../images/bg-sprites.png") repeat-x;
   background-size: 1px 558px;
@@ -7616,28 +7616,28 @@ body.splashBg {
   text-align: center;
   border-radius: 3px;
 }
-/* line 172, ../sass/ads.scss */
+/* line 171, ../sass/ads.scss */
 .fbLogin.x-button-pressing, .fbLogin.x-button-pressed {
   background-position-y: -183px;
 }
 
-/* line 177, ../sass/ads.scss */
+/* line 176, ../sass/ads.scss */
 .float-panel {
   position: absolute;
 }
 
-/* line 183, ../sass/ads.scss */
+/* line 182, ../sass/ads.scss */
 .x-list {
   background: #563698;
 }
 
-/* line 206, ../sass/ads.scss */
+/* line 205, ../sass/ads.scss */
 .x-list-item {
   border-bottom: 2px solid #000;
   cursor: pointer;
 }
 
-/* line 211, ../sass/ads.scss */
+/* line 210, ../sass/ads.scss */
 .x-list-item.x-item-selected .x-list-item-body {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5b5b5b), color-stop(100%, #3f3f3f));
   background-image: -webkit-linear-gradient(#5b5b5b, #3f3f3f);
@@ -7646,37 +7646,37 @@ body.splashBg {
   background-image: linear-gradient(#5b5b5b, #3f3f3f);
 }
 
-/* line 214, ../sass/ads.scss */
+/* line 213, ../sass/ads.scss */
 .x-list-emptytext {
   text-align: center;
   font-size: 140%;
 }
 
-/* line 221, ../sass/ads.scss */
+/* line 220, ../sass/ads.scss */
 .x-list-normal .x-list-item .x-dock-horizontal {
   border-top: 0px none !important;
 }
 
 /* line 206, ../../sdk/resources/themes/stylesheets/sencha-touch/default/widgets/_list.scss */
-/* line 225, ../sass/ads.scss */
+/* line 224, ../sass/ads.scss */
 .x-list-normal .x-list-item.x-list-footer-wrap .x-dock-horizontal {
   border-bottom: 0px none !important;
 }
 
-/* line 230, ../sass/ads.scss */
+/* line 229, ../sass/ads.scss */
 .x-list-normal .x-list-item.x-item-pressed .x-dock-horizontal {
   border-top-color: #3f3f3f;
   background-color: #3f3f3f;
 }
 
 /* line 219, ../../sdk/resources/themes/stylesheets/sencha-touch/default/widgets/_list.scss */
-/* line 235, ../sass/ads.scss */
+/* line 234, ../sass/ads.scss */
 .x-list-normal .x-list-item.x-item-selected .x-dock-horizontal {
   border-top-color: #3f3f3f;
   border-bottom: 1px solid #3f3f3f;
 }
 
-/* line 241, ../sass/ads.scss */
+/* line 240, ../sass/ads.scss */
 .sort {
   background: url("../images/bg-sprites.png") repeat-x;
   background-size: 1px 558px;
@@ -7685,7 +7685,7 @@ body.splashBg {
   height: 48px;
 }
 
-/* line 246, ../sass/ads.scss */
+/* line 245, ../sass/ads.scss */
 .search {
   background: url("../images/bg-sprites.png") repeat-x;
   background-size: 1px 558px;
@@ -7693,16 +7693,16 @@ body.splashBg {
   background-position-y: -381px;
   height: 50px;
 }
-/* line 252, ../sass/ads.scss */
+/* line 251, ../sass/ads.scss */
 .search .x-form-label {
   display: none;
 }
-/* line 255, ../sass/ads.scss */
+/* line 254, ../sass/ads.scss */
 .search .x-component-outer {
   width: 100%;
   padding: 8px;
 }
-/* line 259, ../sass/ads.scss */
+/* line 258, ../sass/ads.scss */
 .search .x-clear-icon {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -7715,16 +7715,16 @@ body.splashBg {
   right: 3px;
   position: absolute;
 }
-/* line 268, ../sass/ads.scss */
+/* line 267, ../sass/ads.scss */
 .search .x-field-clearable .x-clear-icon {
   display: block !important;
 }
-/* line 271, ../sass/ads.scss */
+/* line 270, ../sass/ads.scss */
 .search .x-field-input {
   position: relative;
 }
 
-/* line 276, ../sass/ads.scss */
+/* line 275, ../sass/ads.scss */
 input.searchField {
   width: 100%;
   background: url("../images/bg-sprites.png") repeat-x;
@@ -7740,7 +7740,7 @@ input.searchField {
   border-bottom-right-radius: 4px;
 }
 
-/* line 288, ../sass/ads.scss */
+/* line 287, ../sass/ads.scss */
 .x-button {
   font-family: 'PT Sans Narrow', sans-serif;
   cursor: pointer;
@@ -7751,7 +7751,7 @@ input.searchField {
   -webkit-box-align: center;
   -webkit-background-clip: padding;
 }
-/* line 300, ../sass/ads.scss */
+/* line 299, ../sass/ads.scss */
 .x-button.x-button-decline {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c04800), color-stop(100%, #83210a));
   background-image: -webkit-linear-gradient(#c04800, #83210a);
@@ -7762,27 +7762,27 @@ input.searchField {
   padding: 5px;
 }
 
-/* line 307, ../sass/ads.scss */
+/* line 306, ../sass/ads.scss */
 .x-toolbar {
   position: relative;
 }
-/* line 309, ../sass/ads.scss */
+/* line 308, ../sass/ads.scss */
 .x-toolbar .x-button {
   background: url("../images/bg-sprites.png") repeat-x;
   background-size: 1px 558px;
   background-position-x: 0;
   background-position-y: 0;
 }
-/* line 312, ../sass/ads.scss */
+/* line 311, ../sass/ads.scss */
 .x-toolbar .x-button .x-button-icon {
   display: block;
 }
-/* line 316, ../sass/ads.scss */
+/* line 315, ../sass/ads.scss */
 .x-toolbar .x-button.x-button-pressing, .x-toolbar .x-button.x-button-pressed {
   background-position-y: -32px;
 }
 
-/* line 322, ../sass/ads.scss */
+/* line 321, ../sass/ads.scss */
 .x-toolbar.small {
   z-index: 3;
   background: url("../images/bg-sprites.png") repeat-x;
@@ -7792,11 +7792,11 @@ input.searchField {
   height: 51px;
   margin-bottom: -4px;
 }
-/* line 330, ../sass/ads.scss */
+/* line 329, ../sass/ads.scss */
 .x-toolbar.small .x-toolbar-inner {
   margin-top: -3px;
 }
-/* line 334, ../sass/ads.scss */
+/* line 333, ../sass/ads.scss */
 .x-toolbar.small .headerTitle {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -7807,14 +7807,14 @@ input.searchField {
   height: 30px;
 }
 
-/* line 342, ../sass/ads.scss */
+/* line 341, ../sass/ads.scss */
 .x-button.ads {
   width: 38px;
   height: 30px;
   border-radius: 3px 0 0 3px;
   margin-left: 8px;
 }
-/* line 350, ../sass/ads.scss */
+/* line 349, ../sass/ads.scss */
 .x-button.ads .x-button-icon {
   width: 20px;
   height: 12px;
@@ -7823,18 +7823,18 @@ input.searchField {
   background-position-x: -85px;
   background-position-y: 0;
 }
-/* line 357, ../sass/ads.scss */
+/* line 356, ../sass/ads.scss */
 .x-button.ads.x-button-pressing .x-button-icon, .x-button.ads.x-button-pressed .x-button-icon {
   background-position-y: -23px;
 }
 
-/* line 362, ../sass/ads.scss */
+/* line 361, ../sass/ads.scss */
 .x-button.friends {
   width: 38px;
   height: 30px;
   border-radius: 0 3px 3px 0;
 }
-/* line 369, ../sass/ads.scss */
+/* line 368, ../sass/ads.scss */
 .x-button.friends .x-button-icon {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -7843,19 +7843,19 @@ input.searchField {
   width: 26px;
   height: 18px;
 }
-/* line 375, ../sass/ads.scss */
+/* line 374, ../sass/ads.scss */
 .x-button.friends.x-button-pressing .x-button-icon, .x-button.friends.x-button-pressed .x-button-icon {
   background-position-y: -23px;
 }
 
-/* line 380, ../sass/ads.scss */
+/* line 379, ../sass/ads.scss */
 .x-button.searchBtn {
   width: 33px;
   height: 30px;
   border-radius: 3px;
   margin-right: 5px;
 }
-/* line 388, ../sass/ads.scss */
+/* line 387, ../sass/ads.scss */
 .x-button.searchBtn .x-button-icon {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -7864,12 +7864,12 @@ input.searchField {
   width: 20px;
   height: 20px;
 }
-/* line 394, ../sass/ads.scss */
+/* line 393, ../sass/ads.scss */
 .x-button.searchBtn.x-button-pressing .x-button-icon, .x-button.searchBtn.x-button-pressed .x-button-icon {
   background-position-y: -23px;
 }
 
-/* line 399, ../sass/ads.scss */
+/* line 398, ../sass/ads.scss */
 .fbProfilePic {
   margin-right: 8px;
   position: relative;
@@ -7877,14 +7877,14 @@ input.searchField {
   height: 30px;
   cursor: pointer;
 }
-/* line 406, ../sass/ads.scss */
+/* line 405, ../sass/ads.scss */
 .fbProfilePic img {
   width: 30px;
   height: 30px;
   border-radius: 3px;
 }
 
-/* line 413, ../sass/ads.scss */
+/* line 412, ../sass/ads.scss */
 .x-button.shareBtn {
   width: 33px;
   height: 30px;
@@ -7894,7 +7894,7 @@ input.searchField {
   border-bottom-right-radius: 5px 3px;
   margin-right: 8px;
 }
-/* line 425, ../sass/ads.scss */
+/* line 424, ../sass/ads.scss */
 .x-button.shareBtn .x-button-icon {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -7903,16 +7903,16 @@ input.searchField {
   width: 16px;
   height: 19px;
 }
-/* line 431, ../sass/ads.scss */
+/* line 430, ../sass/ads.scss */
 .x-button.shareBtn.x-button-pressing .x-button-icon, .x-button.shareBtn.x-button-pressed .x-button-icon {
   background-position-y: -23px;
 }
 
-/* line 437, ../sass/ads.scss */
+/* line 436, ../sass/ads.scss */
 .thumb {
   padding: 0 12px;
 }
-/* line 439, ../sass/ads.scss */
+/* line 438, ../sass/ads.scss */
 .thumb b {
   display: block;
   background: url("../images/icon-sprites.png") no-repeat;
@@ -7922,26 +7922,26 @@ input.searchField {
   width: 19px;
   height: 21px;
 }
-/* line 446, ../sass/ads.scss */
+/* line 445, ../sass/ads.scss */
 .thumb .up:active b, .thumb.selected.up b {
   background-position: 0 -23px;
 }
-/* line 449, ../sass/ads.scss */
+/* line 448, ../sass/ads.scss */
 .thumb.down b {
   background-position: -19px 0;
 }
-/* line 453, ../sass/ads.scss */
+/* line 452, ../sass/ads.scss */
 .thumb .down:active b, .thumb.selected.down b {
   background-position: -19px -23px;
 }
 
-/* line 459, ../sass/ads.scss */
+/* line 458, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body {
   height: 114px;
   position: absolute;
   width: 100%;
 }
-/* line 467, ../sass/ads.scss */
+/* line 466, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body .moreArrow {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -7953,7 +7953,7 @@ input.searchField {
   right: 10px;
   top: 51px;
 }
-/* line 477, ../sass/ads.scss */
+/* line 476, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body div.img {
   border: 1px solid #fff;
   border-radius: 3px;
@@ -7961,16 +7961,16 @@ input.searchField {
   height: 89px;
   overflow: hidden;
 }
-/* line 483, ../sass/ads.scss */
+/* line 482, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body div.img img {
   border-radius: 2px;
   width: 58px;
 }
-/* line 488, ../sass/ads.scss */
+/* line 487, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body .meta {
   margin-left: 70px;
 }
-/* line 490, ../sass/ads.scss */
+/* line 489, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body .meta h3 {
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 95%;
@@ -7982,22 +7982,22 @@ input.searchField {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/* line 504, ../sass/ads.scss */
+/* line 503, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body .meta .actions {
   min-height: 36px;
 }
-/* line 506, ../sass/ads.scss */
+/* line 505, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body .meta .actions p {
   color: #848484;
   line-height: 16px;
   font-size: 70%;
 }
-/* line 512, ../sass/ads.scss */
+/* line 511, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body .meta .friends {
   color: #a1a1a1;
   font-size: 70%;
 }
-/* line 515, ../sass/ads.scss */
+/* line 514, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body .meta .friends img {
   width: 20px;
   border: 0;
@@ -8006,13 +8006,13 @@ input.searchField {
   vertical-align: -4px;
 }
 
-/* line 527, ../sass/ads.scss */
+/* line 526, ../sass/ads.scss */
 .rating {
   font-family: 'PT Sans Narrow', sans-serif;
   line-height: 30px;
   font-size: 80%;
 }
-/* line 531, ../sass/ads.scss */
+/* line 530, ../sass/ads.scss */
 .rating span {
   display: block;
   float: left;
@@ -8024,7 +8024,7 @@ input.searchField {
   margin-right: 4px;
 }
 
-/* line 543, ../sass/ads.scss */
+/* line 542, ../sass/ads.scss */
 button {
   font-family: 'PT Sans Narrow', sans-serif;
   font-weight: bold;
@@ -8047,16 +8047,16 @@ button {
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
-/* line 565, ../sass/ads.scss */
+/* line 564, ../sass/ads.scss */
 button:active {
   background-position-y: -304px;
 }
-/* line 569, ../sass/ads.scss */
+/* line 568, ../sass/ads.scss */
 button.selected {
   color: #80a925;
 }
 
-/* line 577, ../sass/ads.scss */
+/* line 576, ../sass/ads.scss */
 .x-button.backBtn {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -8067,7 +8067,7 @@ button.selected {
   padding: 0 23px;
   height: 31px;
 }
-/* line 585, ../sass/ads.scss */
+/* line 584, ../sass/ads.scss */
 .x-button.backBtn.x-button-pressing, .x-button.backBtn.x-button-pressed {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -8075,7 +8075,7 @@ button.selected {
   background-position-y: -33px;
 }
 
-/* line 590, ../sass/ads.scss */
+/* line 589, ../sass/ads.scss */
 .adDetail {
   margin: 14px 13px;
   color: #a1a1a1;
@@ -8083,7 +8083,7 @@ button.selected {
   position: relative;
   overflow: hidden;
 }
-/* line 598, ../sass/ads.scss */
+/* line 597, ../sass/ads.scss */
 .adDetail div.img {
   border: 1px solid #fff;
   border-radius: 2px;
@@ -8091,16 +8091,16 @@ button.selected {
   height: 187px;
   overflow: hidden;
 }
-/* line 605, ../sass/ads.scss */
+/* line 604, ../sass/ads.scss */
 .adDetail div.img img {
   border-radius: 2px;
   width: 125px;
 }
-/* line 611, ../sass/ads.scss */
+/* line 610, ../sass/ads.scss */
 .adDetail .left {
   float: left;
 }
-/* line 615, ../sass/ads.scss */
+/* line 614, ../sass/ads.scss */
 .adDetail h3 {
   font-family: 'PT Sans Narrow', sans-serif;
   font-weight: bold;
@@ -8108,46 +8108,46 @@ button.selected {
   padding: 5px 0;
   color: #fff;
 }
-/* line 623, ../sass/ads.scss */
+/* line 622, ../sass/ads.scss */
 .adDetail .rating {
   margin-bottom: 10px;
   color: #a1a1a1;
 }
-/* line 628, ../sass/ads.scss */
+/* line 627, ../sass/ads.scss */
 .adDetail .actions {
   min-height: 70px;
 }
-/* line 632, ../sass/ads.scss */
+/* line 631, ../sass/ads.scss */
 .adDetail .consensus {
   padding: 5px;
   font-style: italic;
 }
-/* line 637, ../sass/ads.scss */
+/* line 636, ../sass/ads.scss */
 .adDetail .synopsis, .adDetail .consensus {
   font-size: 65%;
 }
-/* line 641, ../sass/ads.scss */
+/* line 640, ../sass/ads.scss */
 .adDetail .extraInfo {
   font-size: 65%;
   clear: both;
   display: -webkit-box;
   -webkit-box-orient: horizontal;
 }
-/* line 647, ../sass/ads.scss */
+/* line 646, ../sass/ads.scss */
 .adDetail .extraInfo > div:nth-child(1) {
   width: auto;
   max-width: 50%;
   padding-right: 10px;
 }
-/* line 652, ../sass/ads.scss */
+/* line 651, ../sass/ads.scss */
 .adDetail .extraInfo > div:nth-child(2) {
   -webkit-box-flex: 1;
 }
-/* line 656, ../sass/ads.scss */
+/* line 655, ../sass/ads.scss */
 .adDetail .extraInfo p {
   padding-top: 6px;
 }
-/* line 663, ../sass/ads.scss */
+/* line 662, ../sass/ads.scss */
 .adDetail.ellipsis .synopsis {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -8155,15 +8155,15 @@ button.selected {
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
 }
-/* line 670, ../sass/ads.scss */
+/* line 669, ../sass/ads.scss */
 .adDetail.ellipsis .consensus {
   visibility: hidden;
 }
-/* line 673, ../sass/ads.scss */
+/* line 672, ../sass/ads.scss */
 .adDetail.ellipsis .extraInfo {
   visibility: hidden;
 }
-/* line 677, ../sass/ads.scss */
+/* line 676, ../sass/ads.scss */
 .adDetail.ellipsis .moreArrow {
   position: absolute;
   background: url("../images/icon-sprites.png") no-repeat;
@@ -8175,7 +8175,7 @@ button.selected {
   bottom: 0;
   left: 70%;
 }
-/* line 689, ../sass/ads.scss */
+/* line 688, ../sass/ads.scss */
 .adDetail .trailer {
   font-size: 70%;
   text-align: center;
@@ -8187,27 +8187,27 @@ button.selected {
   text-decoration: none;
   width: 125px;
 }
-/* line 704, ../sass/ads.scss */
+/* line 703, ../sass/ads.scss */
 .adDetail.tablet {
   height: auto;
 }
-/* line 708, ../sass/ads.scss */
+/* line 707, ../sass/ads.scss */
 .adDetail.tablet .actions {
   padding-top: 15px;
   padding-bottom: 5px;
   min-height: 40px;
 }
-/* line 713, ../sass/ads.scss */
+/* line 712, ../sass/ads.scss */
 .adDetail.tablet .rating {
   line-height: 40px;
 }
-/* line 716, ../sass/ads.scss */
+/* line 715, ../sass/ads.scss */
 .adDetail.tablet .rating span {
   margin-right: 8px;
   font-size: 130%;
   width: 66px;
 }
-/* line 722, ../sass/ads.scss */
+/* line 721, ../sass/ads.scss */
 .adDetail.tablet button {
   margin-right: 8px;
   padding: 0 9px;
@@ -8218,20 +8218,20 @@ button.selected {
   background-size: 1px 743px;
   background-position-y: -364px;
 }
-/* line 732, ../sass/ads.scss */
+/* line 731, ../sass/ads.scss */
 .adDetail.tablet button.trailer {
   font-size: 70%;
   line-height: 30px;
   height: 30px;
 }
-/* line 741, ../sass/ads.scss */
+/* line 740, ../sass/ads.scss */
 .adDetail.tablet .actions,
 .adDetail.tablet .synopsis,
 .adDetail.tablet .consensus,
 .adDetail.tablet .extraInfo {
   margin-left: 150px;
 }
-/* line 747, ../sass/ads.scss */
+/* line 746, ../sass/ads.scss */
 .adDetail.tablet .synopsis,
 .adDetail.tablet .consensus,
 .adDetail.tablet .extraInfo {
@@ -8239,27 +8239,27 @@ button.selected {
   line-height: 115%;
 }
 
-/* line 754, ../sass/ads.scss */
+/* line 753, ../sass/ads.scss */
 .fbActivity {
   border-top: 2px solid #000;
   font-size: 65%;
 }
-/* line 758, ../sass/ads.scss */
+/* line 757, ../sass/ads.scss */
 .fbActivity img {
   width: 28px;
   height: 28px;
   vertical-align: -9px;
   margin-right: 7px;
 }
-/* line 764, ../sass/ads.scss */
+/* line 763, ../sass/ads.scss */
 .fbActivity .x-list-item > .x-dock-horizontal > .x-dock-body {
   color: #a1a1a1;
 }
-/* line 767, ../sass/ads.scss */
+/* line 766, ../sass/ads.scss */
 .fbActivity .x-list-item > .x-dock-horizontal > .x-dock-body b {
   color: #fff;
 }
-/* line 772, ../sass/ads.scss */
+/* line 771, ../sass/ads.scss */
 .fbActivity .x-list-item > .x-dock-horizontal > .x-dock-body .x-innerhtml {
   width: 300px;
   overflow: hidden;
@@ -8267,32 +8267,32 @@ button.selected {
   white-space: nowrap;
 }
 
-/* line 782, ../sass/ads.scss */
+/* line 781, ../sass/ads.scss */
 .x-list-paging {
   padding-top: 114px;
 }
-/* line 785, ../sass/ads.scss */
+/* line 784, ../sass/ads.scss */
 .x-list-paging .x-list-paging-msg {
   height: 42px;
   padding: 8px;
   color: papayaWhip;
 }
 
-/* line 793, ../sass/ads.scss */
+/* line 792, ../sass/ads.scss */
 .x-title {
   font-family: 'PT Sans Narrow', sans-serif;
   font-weight: bold;
   font-size: 120%;
   max-width: 100%;
 }
-/* line 798, ../sass/ads.scss */
+/* line 797, ../sass/ads.scss */
 .x-title .x-innerhtml {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-/* line 806, ../sass/ads.scss */
+/* line 805, ../sass/ads.scss */
 .x-msgbox, .dialog {
   min-width: 15em;
   max-width: 20em;
@@ -8305,16 +8305,16 @@ button.selected {
   color: #000;
   font-family: "Helvetica Neue", Helvetica;
 }
-/* line 820, ../sass/ads.scss */
+/* line 819, ../sass/ads.scss */
 .x-msgbox .msg, .dialog .msg {
   margin-bottom: 0.6em;
   text-align: center;
 }
-/* line 823, ../sass/ads.scss */
+/* line 822, ../sass/ads.scss */
 .x-msgbox .msg p, .dialog .msg p {
   margin-bottom: 0.6em;
 }
-/* line 830, ../sass/ads.scss */
+/* line 829, ../sass/ads.scss */
 .x-msgbox .x-button-red,
 .x-msgbox .x-button-green, .dialog .x-button-red,
 .dialog .x-button-green {
@@ -8327,21 +8327,21 @@ button.selected {
   color: #fff;
   cursor: pointer;
 }
-/* line 841, ../sass/ads.scss */
+/* line 840, ../sass/ads.scss */
 .x-msgbox .x-button-green, .dialog .x-button-green {
   background: url("../images/bg-sprites.png") repeat-x;
   background-size: 1px 558px;
   background-position-x: 0;
   background-position-y: -495px;
 }
-/* line 844, ../sass/ads.scss */
+/* line 843, ../sass/ads.scss */
 .x-msgbox .x-button-red, .dialog .x-button-red {
   background: url("../images/bg-sprites.png") repeat-x;
   background-size: 1px 558px;
   background-position-x: 0;
   background-position-y: -526px;
 }
-/* line 848, ../sass/ads.scss */
+/* line 847, ../sass/ads.scss */
 .x-msgbox .x-button-close, .dialog .x-button-close {
   position: absolute;
   width: 25px;
@@ -8353,35 +8353,35 @@ button.selected {
   top: -17px;
   right: -15px;
 }
-/* line 857, ../sass/ads.scss */
+/* line 856, ../sass/ads.scss */
 .x-msgbox .x-component-outer, .dialog .x-component-outer {
   width: 100%;
 }
-/* line 861, ../sass/ads.scss */
+/* line 860, ../sass/ads.scss */
 .x-msgbox .wallMessage, .dialog .wallMessage {
   margin-top: 5px;
   margin-bottom: 10px;
 }
-/* line 866, ../sass/ads.scss */
+/* line 865, ../sass/ads.scss */
 .x-msgbox input, .dialog input {
   width: 100%;
 }
 
-/* line 873, ../sass/ads.scss */
+/* line 872, ../sass/ads.scss */
 .x-toolbar.sort .x-button:first-child {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 6px 4px;
 }
-/* line 878, ../sass/ads.scss */
+/* line 877, ../sass/ads.scss */
 .x-toolbar.sort .x-button:last-child {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 6px 4px;
 }
-/* line 883, ../sass/ads.scss */
+/* line 882, ../sass/ads.scss */
 .x-toolbar.sort .x-segmentedbutton {
   margin: 0 8px;
 }
-/* line 887, ../sass/ads.scss */
+/* line 886, ../sass/ads.scss */
 .x-toolbar.sort .x-button {
   font-size: 80%;
   border-right: 1px solid #3d3d3d;
@@ -8395,13 +8395,13 @@ button.selected {
   background-position-x: 0;
   background-position-y: -432px;
 }
-/* line 899, ../sass/ads.scss */
+/* line 898, ../sass/ads.scss */
 .x-toolbar.sort .x-button.x-button-pressing, .x-toolbar.sort .x-button.x-button-pressed {
   color: #c5c5c5;
   background-position-y: -463px;
 }
 
-/* line 906, ../sass/ads.scss */
+/* line 905, ../sass/ads.scss */
 .promo {
   background: #000;
   font-family: 'PT Sans Narrow', sans-serif;
@@ -8409,7 +8409,7 @@ button.selected {
   padding: 10px;
   font-size: 80%;
 }
-/* line 913, ../sass/ads.scss */
+/* line 912, ../sass/ads.scss */
 .promo .logo {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -8421,7 +8421,7 @@ button.selected {
   margin-right: 8px;
   vertical-align: middle;
 }
-/* line 921, ../sass/ads.scss */
+/* line 920, ../sass/ads.scss */
 .promo button {
   float: none;
   display: inline;
