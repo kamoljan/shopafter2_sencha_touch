@@ -1,58 +1,84 @@
 /*
-Syntax error: File to import not found or unreadable: sencha-touch/default/all.
-              Load paths:
-                /var/www/touch-2.3.0/MyApps/shopafter2/public/resources/sass
-                /usr/local/share/gems1.9/gems/compass-0.12.2/frameworks/blueprint/stylesheets
-                /usr/local/share/gems1.9/gems/compass-0.12.2/frameworks/compass/stylesheets
-                Compass::SpriteImporter
-        on line 11 of /var/www/touch-2.3.0/MyApps/shopafter2/public/resources/sass/movies.scss
+Syntax error: Undefined variable: "$font-family".
+        on line 2 of d:/xampp/htdocs/touch-2.3.0/examples/shopafter2/shopafter2/public/touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss
+        from line 1 of d:/xampp/htdocs/touch-2.3.0/examples/shopafter2/shopafter2/public/touch/resources/themes/stylesheets/sencha-touch/default/src/_all.scss
+        from line 1 of d:/xampp/htdocs/touch-2.3.0/examples/shopafter2/shopafter2/public/touch/resources/themes/stylesheets/sencha-touch/default/_all.scss
+        from line 11 of d:/xampp/htdocs/touch-2.3.0/examples/shopafter2/shopafter2/public/resources/sass/movies.scss
+
+1: d:/xampp/htdocs/touch-2.3.0/examples/shopafter2/shopafter2/public/resources/sass/movies.scss
 
 Backtrace:
-/var/www/touch-2.3.0/MyApps/shopafter2/public/resources/sass/movies.scss:11
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/import_node.rb:45:in `import'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/import_node.rb:28:in `imported_file'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/import_node.rb:37:in `css_import?'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:217:in `visit_import'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `map'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/tree/root_node.rb:20:in `render'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/engine.rb:315:in `_render'
-/usr/local/share/gems1.9/gems/sass-3.2.10/lib/sass/engine.rb:262:in `render'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `block in compile'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `block (2 levels) in run'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `block in run'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/commands/update_project.rb:45:in `perform'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-/usr/local/share/gems1.9/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/usr/local/share/gems1.9/gems/compass-0.12.2/bin/compass:30:in `block in <top (required)>'
-/usr/local/share/gems1.9/gems/compass-0.12.2/bin/compass:44:in `call'
-/usr/local/share/gems1.9/gems/compass-0.12.2/bin/compass:44:in `<top (required)>'
-/usr/local/bin/compass:23:in `load'
-/usr/local/bin/compass:23:in `<main>'
+d:/xampp/htdocs/touch-2.3.0/examples/shopafter2/shopafter2/public/touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss:2
+d:/xampp/htdocs/touch-2.3.0/examples/shopafter2/shopafter2/public/touch/resources/themes/stylesheets/sencha-touch/default/src/_all.scss:1
+d:/xampp/htdocs/touch-2.3.0/examples/shopafter2/shopafter2/public/touch/resources/themes/stylesheets/sencha-touch/default/_all.scss:1
+d:/xampp/htdocs/touch-2.3.0/examples/shopafter2/shopafter2/public/resources/sass/movies.scss:11
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/script/variable.rb:49:in `_perform'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/script/node.rb:40:in `perform'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:298:in `visit_prop'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `map'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:227:in `block in visit_import'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:227:in `map'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:227:in `visit_import'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:227:in `block in visit_import'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:227:in `map'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:227:in `visit_import'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:227:in `block in visit_import'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:227:in `map'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:227:in `visit_import'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `map'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:7:in `visit'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/tree/root_node.rb:20:in `render'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/engine.rb:315:in `_render'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.10/lib/sass/engine.rb:262:in `render'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `block in compile'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `block (2 levels) in run'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `block in run'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/commands/update_project.rb:45:in `perform'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/bin/compass:30:in `block in <top (required)>'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/bin/compass:44:in `call'
+c:/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/bin/compass:44:in `<top (required)>'
+c:/Ruby193/bin/compass:23:in `load'
+c:/Ruby193/bin/compass:23:in `<main>'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: sencha-touch/default/all.\A               Load paths:\A                 /var/www/touch-2.3.0/MyApps/shopafter2/public/resources/sass\A                 /usr/local/share/gems1.9/gems/compass-0.12.2/frameworks/blueprint/stylesheets\A                 /usr/local/share/gems1.9/gems/compass-0.12.2/frameworks/compass/stylesheets\A                 Compass::SpriteImporter\A         on line 11 of /var/www/touch-2.3.0/MyApps/shopafter2/public/resources/sass/movies.scss"; }
+  content: "Syntax error: Undefined variable: \"$font-family\".\A         on line 2 of d:/xampp/htdocs/touch-2.3.0/examples/shopafter2/shopafter2/public/touch/resources/themes/stylesheets/sencha-touch/default/src/_Class.scss\A         from line 1 of d:/xampp/htdocs/touch-2.3.0/examples/shopafter2/shopafter2/public/touch/resources/themes/stylesheets/sencha-touch/default/src/_all.scss\A         from line 1 of d:/xampp/htdocs/touch-2.3.0/examples/shopafter2/shopafter2/public/touch/resources/themes/stylesheets/sencha-touch/default/_all.scss\A         from line 11 of d:/xampp/htdocs/touch-2.3.0/examples/shopafter2/shopafter2/public/resources/sass/movies.scss\A \A 1: d:/xampp/htdocs/touch-2.3.0/examples/shopafter2/shopafter2/public/resources/sass/movies.scss"; }

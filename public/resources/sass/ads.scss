@@ -116,7 +116,7 @@ body {
 }
 
 body.splashBg {                                         // ANDROID PERFORMANCE
-  @include background-image(linear-gradient(#610100, #2f0000));
+  @include background-image(linear-gradient(#3a005a, #5f0092));
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
