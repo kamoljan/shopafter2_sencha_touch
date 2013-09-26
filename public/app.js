@@ -25,12 +25,14 @@ Ext.application({
     ],
 
     models: [
-        'Ad'
+        'Ad',
+//        'InsertAdForm'
         //'Movie'
     ],
 
     stores: [
         'Ads',
+//        'InsertAdForms',
         //'Movies',
         'Search',
         'Activity'
@@ -40,11 +42,13 @@ Ext.application({
         'LoggedOut',
         'Main',
         'Activity',
+//        'ad.InsertAdForm',
         'ad.List',
         'Dialog'
     ],
 
     controllers: [
+//        'InsertAdForm',
         'Facebook',
         'AdsViewings',
         'YouTube'

@@ -49,6 +49,9 @@ Ext.define('WL.controller.Ads', {
             'toolbar button[iconCls=friends]': {
                 tap: 'onActivityIconTap'
             },
+            'toolbar button[iconCls=insertAdBtn]': {
+                tap: 'onInsertAdTap'
+            },
             '#fbProfilePic': {
                 tap: 'onProfileTap'
             },
@@ -234,6 +237,17 @@ Ext.define('WL.controller.Ads', {
         }
         this.getMain().setActiveItem(this.activityCard);
         this.activityCard.deselectAll();
+    },
+
+    onInsertAdTap: function () {
+
+        console.log('controller.Ads onInsertAdTap');
+
+        this.getSearchButton().hide();
+        if (!this.insertAdCard) {
+            this.insertAdCard = Ext.widget('insertadform');
+        }
+        this.getMain().setActiveIndex(this.insertAdCard);
     },
 
     onSortToggle: function (segBtn, btn) {

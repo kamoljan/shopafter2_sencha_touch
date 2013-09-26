@@ -1,12 +1,11 @@
-$bg-sprite-image:   "../images/bg-sprites.png";
+$bg-sprite-image: "../images/bg-sprites.png";
 $icon-sprite-image: "../images/icon-sprites.png";
-$splash-image:      "../images/splashimg.png";
-$font-root:         "../fonts";
+$splash-image: "../images/splashimg.png";
+$font-root: "../fonts";
 // Watchlist Sass file
 
 $page-bg-color: #563698;
 $include-default-icons: false;
-
 
 //$ sudo find ./resources/themes/stylesheets/sencha-touch/default/ -name *.scss
 //./resources/themes/stylesheets/sencha-touch/default/var/form/_FieldSet.scss
@@ -74,23 +73,32 @@ $include-default-icons: false;
 //@include sencha-loading-spinner;
 //@include sencha-list-paging;
 
-.x-panel-inner{
-  background: #000 !important; // ST2.1 makes panel inner part black
+.x-panel-inner {
+  background: #000 !important;
+  // ST2.1 makes panel inner part black
 }
 
 @mixin background-sprite($x, $y) {
   background: url($bg-sprite-image) repeat-x;
   background-size: 1px 558px;
 
-  @if $x != null { background-position-x: $x; }
-  @if $y != null { background-position-y: $y; }
+  @if $x != null {
+    background-position-x: $x;
+  }
+  @if $y != null {
+    background-position-y: $y;
+  }
 }
 
 @mixin icon-sprite($x, $y) {
   background: url($icon-sprite-image) no-repeat;
   background-size: 219px 76px;
-  @if $x != null { background-position-x: $x; }
-  @if $y != null { background-position-y: $y; }
+  @if $x != null {
+    background-position-x: $x;
+  }
+  @if $y != null {
+    background-position-y: $y;
+  }
 }
 
 .x-scroll-indicator {
@@ -115,7 +123,8 @@ body {
   font-family: 'PT Sans', sans-serif;
 }
 
-body.splashBg {                                         // ANDROID PERFORMANCE
+body.splashBg {
+  // ANDROID PERFORMANCE
   @include background-image(linear-gradient(#3a005a, #5f0092));
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -136,8 +145,10 @@ body.splashBg {                                         // ANDROID PERFORMANCE
 
 #splashLoader {
 
-  background: url($splash-image) no-repeat center 25%; // ANDROID PERFORMANCE
-  background-size: contain;                            // ANDROID PERFORMANCE
+  background: url($splash-image) no-repeat center 25%;
+  // ANDROID PERFORMANCE
+  background-size: contain;
+  // ANDROID PERFORMANCE
 
   position: absolute;
   top: 0;
@@ -147,8 +158,10 @@ body.splashBg {                                         // ANDROID PERFORMANCE
 }
 
 .tabletSplash {
-  background: url($splash-image) no-repeat center 25%; // ANDROID PERFORMANCE
-  background-size: contain;                            // ANDROID PERFORMANCE
+  background: url($splash-image) no-repeat center 25%;
+  // ANDROID PERFORMANCE
+  background-size: contain;
+  // ANDROID PERFORMANCE
 }
 
 .loggedOut {
@@ -156,7 +169,8 @@ body.splashBg {                                         // ANDROID PERFORMANCE
 }
 
 .loginScreen {
-  top: 70% !important; // fix for 2.1
+  top: 70% !important;
+  // fix for 2.1
   background: transparent;
 }
 
@@ -174,14 +188,14 @@ body.splashBg {                                         // ANDROID PERFORMANCE
   }
 }
 
-.float-panel{
-  position:absolute;
+.float-panel {
+  position: absolute;
 }
 
 // Logged Out List
 
 .x-list {
-  background:#563698;
+  background: #563698;
 }
 
 //.x-list-header {
@@ -208,34 +222,37 @@ body.splashBg {                                         // ANDROID PERFORMANCE
   cursor: pointer;
 
 }
+
 .x-list-item.x-item-selected .x-list-item-body {
   @include background-image(linear-gradient(#5b5b5b, #3f3f3f));
 }
+
 .x-list-emptytext {
   text-align: center;
   font-size: 140%;
   //padding: 15px;
 }
 
-
 .x-list-normal .x-list-item .x-dock-horizontal {
   border-top: 0px none !important;
 }
+
 /* line 206, ../../sdk/resources/themes/stylesheets/sencha-touch/default/widgets/_list.scss */
 .x-list-normal .x-list-item.x-list-footer-wrap .x-dock-horizontal {
   border-bottom: 0px none !important;
 }
 
-
 .x-list-normal .x-list-item.x-item-pressed .x-dock-horizontal {
   border-top-color: #3f3f3f;
   background-color: #3f3f3f;
 }
+
 /* line 219, ../../sdk/resources/themes/stylesheets/sencha-touch/default/widgets/_list.scss */
 .x-list-normal .x-list-item.x-item-selected .x-dock-horizontal {
   border-top-color: #3f3f3f;
   border-bottom: 1px solid #3f3f3f;
 }
+
 // Logged In List
 
 .sort {
@@ -359,6 +376,27 @@ input.searchField {
   }
 }
 
+.x-button.insertAdBtn {
+
+  width: 38px;
+  height: 30px;
+
+  border-radius: 3px 0 0 3px;
+  margin-left: 8px;
+
+  .x-button-icon {
+    width: 20px;
+    height: 12px;
+
+    @include icon-sprite(0px, 0);
+  }
+  &.x-button-pressing .x-button-icon,
+  &.x-button-pressed .x-button-icon {
+    background-position-y: -23px;
+
+  }
+}
+
 .x-button.friends {
 
   width: 38px;
@@ -433,7 +471,6 @@ input.searchField {
   }
 }
 
-
 .thumb {
   padding: 0 12px;
   b {
@@ -460,8 +497,9 @@ input.searchField {
 
   height: 114px;
   //padding: 12px 14px;
-  position:absolute;
-  width: 100%;                                                // ANDROID PERFORMANCE
+  position: absolute;
+  width: 100%;
+  // ANDROID PERFORMANCE
   // position: relative;                                         // ANDROID PERFORMANCE
 
   .moreArrow {
@@ -491,13 +529,13 @@ input.searchField {
       font-family: 'PT Sans Narrow', sans-serif;
       font-size: 95%;
 
-      color:#fff;
+      color: #fff;
 
       line-height: 25px;
       font-weight: bold;
       margin-bottom: 7px;
 
-      overflow : hidden;
+      overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
@@ -522,7 +560,6 @@ input.searchField {
     }
   }
 }
-
 
 .rating {
   font-family: 'PT Sans Narrow', sans-serif;
@@ -559,7 +596,8 @@ button {
   @include background-sprite(0, -273px);
 
   color: #b3b3b3;
-  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);                           // ANDROID PERFORMANCE
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
+  // ANDROID PERFORMANCE
   cursor: pointer;
 
   &:active {
@@ -572,7 +610,6 @@ button {
 }
 
 // Ad Detail
-
 
 .x-button.backBtn {
   @include icon-sprite(-124px, 0);
@@ -661,7 +698,7 @@ button {
   &.ellipsis {
 
     .synopsis {
-      overflow : hidden;
+      overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: 6;
@@ -761,7 +798,7 @@ button {
     vertical-align: -9px;
     margin-right: 7px;
   }
-  .x-list-item > .x-dock-horizontal > .x-dock-body{
+  .x-list-item > .x-dock-horizontal > .x-dock-body {
 
     color: #a1a1a1;
     b {
@@ -769,10 +806,11 @@ button {
     }
 
     //.x-list-item-label {
-    .x-innerhtml  { // ST2.1
-      width:300px;
+    .x-innerhtml {
+      // ST2.1
+      width: 300px;
 
-      overflow : hidden;
+      overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
@@ -782,13 +820,12 @@ button {
 .x-list-paging {
   padding-top: 114px;
 
-  .x-list-paging-msg{
-    height:42px;
-    padding:8px;
-    color:papayaWhip;
+  .x-list-paging-msg {
+    height: 42px;
+    padding: 8px;
+    color: papayaWhip;
   }
 }
-
 
 .x-title {
   font-family: 'PT Sans Narrow', sans-serif;
@@ -797,7 +834,7 @@ button {
   max-width: 100%;
   .x-innerhtml {
     //padding: 0 0.3em; //remove for 2.1
-    overflow : hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
@@ -850,8 +887,10 @@ button {
     width: 25px;
     height: 26px;
     @include icon-sprite(-193px, 0);
-    top: -17px; // ST2.1 tweak
-    right: -15px; // ST2.1 tweak
+    top: -17px;
+    // ST2.1 tweak
+    right: -15px;
+    // ST2.1 tweak
   }
 
   .x-component-outer {
