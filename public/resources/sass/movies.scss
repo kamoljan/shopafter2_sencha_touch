@@ -36,7 +36,6 @@ $include-default-icons: false;
   @if $x != null { background-position-x: $x; }
   @if $y != null { background-position-y: $y; }
 }
-
 .x-scroll-indicator {
   background: #ccc;
 }
