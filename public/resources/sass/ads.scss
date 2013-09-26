@@ -8,15 +8,70 @@ $font-root:         "../fonts";
 $page-bg-color: #232323;
 $include-default-icons: false;
 
-@import 'sencha-touch/default'; //kamol
+//$ sudo find ./resources/themes/stylesheets/sencha-touch/default/ -name *.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/form/_FieldSet.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/form/_Panel.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/_Class.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/_Button.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/carousel/_Carousel.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/_Toolbar.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/dataview/_List.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/dataview/_IndexBar.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/_Panel.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/field/_Toggle.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/field/_Field.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/field/_Slider.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/field/_Spinner.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/field/_TextArea.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/picker/_Picker.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/_Sheet.scss
+//./resources/themes/stylesheets/sencha-touch/default/var/tab/_Panel.scss
+//./resources/themes/stylesheets/sencha-touch/default/mixins/_Class.scss
+//./resources/themes/stylesheets/sencha-touch/default/_all.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/form/_FieldSet.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/form/_Panel.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/_all.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/plugin/_ListPaging.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/plugin/_PullRefresh.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/_Class.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/_Button.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/carousel/_Carousel.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/_Toolbar.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/_MessageBox.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/dataview/_List.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/dataview/_IndexBar.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/_Panel.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/field/_Search.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/field/_Select.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/field/_Field.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/field/_Slider.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/field/_Spinner.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/field/_TextArea.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/field/_Checkbox.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/field/_Radio.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/slider/_Toggle.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/slider/_Slider.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/picker/_Picker.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/_Sheet.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/_Menu.scss
+//./resources/themes/stylesheets/sencha-touch/default/src/tab/_Panel.scss
+
+// The following two lines import the default Sencha Touch theme. If you are building
+// a new theme, remove them and the add your own CSS on top of the base CSS (which
+// is already included in your app.json file).
+@import 'sencha-touch/default';
 @import 'sencha-touch/default/all';
+
+@import 'sencha-touch/default/src/Panel';
+@import 'sencha-touch/default/src/dataview/List';
+@import 'sencha-touch/default/src/field/Spinner';
+@import 'sencha-touch/default/src/plugin/ListPaging';
+@import 'sencha-touch/default/src/form/Panel';
 
 //@include sencha-panel;
 //@include sencha-list;
 //@include sencha-layout;
-
 //@include sencha-loading-spinner;
-
 //@include sencha-list-paging;
 
 .x-panel-inner{
