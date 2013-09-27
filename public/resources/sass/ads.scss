@@ -67,8 +67,6 @@ $include-default-icons: false;
 @import 'sencha-touch/default/src/plugin/ListPaging';
 @import 'sencha-touch/default/src/form/Panel';
 
-@import 'includes/capturepicture';
-
 //@include sencha-panel;
 //@include sencha-list;
 //@include sencha-layout;
@@ -327,7 +325,8 @@ input.searchField {
   position: relative;
   .x-button {
     @include background-sprite(0, 0);
-
+    padding:0px !important;
+   
     .x-button-icon {
       display: block;
     }
@@ -387,8 +386,8 @@ input.searchField {
   margin-left: 8px;
 
   .x-button-icon {
-    width: 20px;
-    height: 12px;
+    width: 19px;
+    height: 21px;
 
     @include icon-sprite(0px, 0);
   }
@@ -423,7 +422,7 @@ input.searchField {
   height: 30px;
 
   border-radius: 3px;
-  margin-right: 5px;
+  margin-right: -30px;
 
   .x-button-icon {
     @include icon-sprite(-39px, 0);
