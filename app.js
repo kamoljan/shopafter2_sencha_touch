@@ -10,7 +10,7 @@ var _ = require('underscore'),
     movieCache = {};
 
 var AWS = require('aws-sdk'),
-    util = require('util'),
+    nodeUtil = require('util'),
     async = require('async'),
     crypto = require('crypto');
 
@@ -21,7 +21,7 @@ graph = require('fbgraph');
 util = require('./lib/util');
 require('./lib/database');
 
-console.log(config);
+//console.log(config);
 
 AWS.config.update({
     accessKeyId: config.aws.accessKeyId,  //accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -406,7 +406,7 @@ app.get('/ads', function (req, res) {
 
 var s3 = new AWS.S3();
 /**
- * Add a new Ad to the database
+ * Put image into s3 & an Ad into db
  */
 app.post('/ad', fb.checkSession, function (req, res, next) {
 
@@ -427,84 +427,14 @@ app.post('/ad', fb.checkSession, function (req, res, next) {
             return;
         }
 
-        var imgUrl = '';
-
-
-        var data = req.body.image;
-        var key = crypto.createHash('md5').update(data).digest("hex");
-
-        console.log("(ad.post): waterfall key = " + key);
-
-        var base64Data = data.replace(/^data:image\/jpeg;base64,/, "");
-        base64Data += base64Data.replace('+', ' ');
-        var binaryData = new Buffer(base64Data, 'base64');
-
-        var obj = {
-            Bucket: config.aws.s3_bucket,
-            ACL: 'public-read',
-            Key: key,
-            Body: binaryData,
-            ContentType: 'image/jpeg'
-        };
-
-        s3.client.putObject(obj, function (err, data, next) {
-
-            console.log("(ad.post): s3.client.putObject start err = ", err);
-
-//            if (err) {
-//                console.log("Got error:", err.message);
-//                console.log("Request:");
-//                console.log(this.request.httpRequest);
-//                console.log("Response:");
-//                console.log(this.httpResponse);
-//                return;  // exit if err
-//            } else {
-                var imgUrl = util.format('https://s3-%s.amazonaws.com/%s/%s', config.aws.region, config.aws.s3_bucket, key);
-
-                console.log("imgUrl = " + imgUrl);
-                console.log("req.body.category = " + req.body.category);
-
-                // Construct a new Ad using the post data
-                var ad = new Ad({
-                    profileId: user.id,
-                    image: imgUrl,
-                    thumb: imgUrl,
-                    category: req.body.category,
-                    description: req.body.description,
-                    price: req.body.price,
-                    latitude: req.body.latitude,
-                    longitude: req.body.longitude,
-                    date: new Date
-                });
-
-                // Save the ad to the database
-                ad.save(function (err) {
-                    if (err) {
-                        handleError('Could not save ad', err, req, res);
-                        return;
-                    }
-                    console.log("Successfully saved new ad");
-                    res.json({ success: true });
-                })
-//            }
-            console.log("(ad.post): s3 end");
-        });
-
-/*
         async.waterfall([
 
             function (callback) {
-                console.log("(ad.post): waterfall 1");
-
                 var data = req.body.image;
                 var key = crypto.createHash('md5').update(data).digest("hex");
-
-                console.log("(ad.post): waterfall key = " + key);
-
                 var base64Data = data.replace(/^data:image\/jpeg;base64,/, "");
                 base64Data += base64Data.replace('+', ' ');
                 var binaryData = new Buffer(base64Data, 'base64');
-
                 var obj = {
                     Bucket: config.aws.s3_bucket,
                     ACL: 'public-read',
@@ -512,20 +442,13 @@ app.post('/ad', fb.checkSession, function (req, res, next) {
                     Body: binaryData,
                     ContentType: 'image/jpeg'
                 };
-
-                console.log("(ad.post): waterfall 2");
-
-                callback(null, obj, data);
+                var imgUrl = nodeUtil.format('https://s3-%s.amazonaws.com/%s/%s',
+                    config.aws.region, config.aws.s3_bucket, key);
+                callback(null, obj, data, imgUrl);
             },
 
-            function (obj, data, callback) {
-
-                console.log("(ad.post): waterfall obj = %j", obj);
-
+            function (obj, data, imgUrl, callback) {
                 s3.client.putObject(obj, function (err, data, next) {
-
-                    console.log("(ad.post): waterfall next = " + next);
-
                     if (err) {
                         console.log("Got error:", err.message);
                         console.log("Request:");
@@ -534,12 +457,6 @@ app.post('/ad', fb.checkSession, function (req, res, next) {
                         console.log(this.httpResponse);
                         return;  // exit if err
                     } else {
-                        //https://s3-ap-southeast-1.amazonaws.com/img.shopafter.com/f5b289d9e4888dee5aa866ac63a64dd2.jpg
-                        var imgUrl = util.format('https://s3-%s.amazonaws.com/%s/%s', config.aws.region, config.aws.s3_bucket, key);
-                        console.log("imgUrl = " + imgUrl);
-
-                        console.log("req.body.category = " + req.body.category);
-
                         // Construct a new Ad using the post data
                         var ad = new Ad({
                             profileId: user.id,
@@ -571,7 +488,6 @@ app.post('/ad', fb.checkSession, function (req, res, next) {
                 console.log("(ad.post): async.waterfall function (err, result)-> err " + err);
             }
         );  //end async
-        */
 
     });  //end graph
 });
