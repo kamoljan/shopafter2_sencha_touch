@@ -247,7 +247,7 @@ Ext.define('WL.controller.Ads', {
         if (!this.insertAdCard) {
             this.insertAdCard = Ext.widget('insertadform');
         }
-        this.getMain().setActiveIndex(this.insertAdCard);
+        this.getMain().setActiveItem(this.insertAdCard);
     },
 
     onSortToggle: function (segBtn, btn) {

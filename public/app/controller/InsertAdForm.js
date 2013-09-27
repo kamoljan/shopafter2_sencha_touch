@@ -11,7 +11,7 @@ Ext.define('WL.controller.InsertAdForm', {
 
     validateAdForm: function (button, e, options) {
 
-        console.log('controller.AdForm validateAdForm');
+        console.log('controller.InsertAdForm validateAdForm');
 
         var errorString = '',
             form = Ext.getCmp('insertadform'),
@@ -21,7 +21,7 @@ Ext.define('WL.controller.InsertAdForm', {
             fields[i].removeCls('invalidField');
         }
 
-        var model = Ext.create('Yoglam.model.Ad', form.getValues());
+        var model = Ext.create('WL.model.InsertAdForm', form.getValues());
         var errors = model.validate();
 
         if (!errors.isValid()) {
@@ -45,12 +45,12 @@ Ext.define('WL.controller.InsertAdForm', {
     },
 
     init: function (application) {
-        console.log('controller.AdForm init');
+        console.log('controller.InsertAdForm init');
     },
 
     updateLocation: function () {
 
-        console.log('controller.AdForm updateLocation');
+        console.log('controller.InsertAdForm updateLocation');
 
         var geo = Ext.create('Ext.util.Geolocation', {
             autoUpdate: false,

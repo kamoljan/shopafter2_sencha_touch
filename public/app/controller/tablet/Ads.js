@@ -2,7 +2,6 @@
  * The tablet specific controller for Ads
  */
 Ext.define('WL.controller.tablet.Ads', {
-
     extend: 'WL.controller.Ads',
 
     config: {
@@ -11,7 +10,7 @@ Ext.define('WL.controller.tablet.Ads', {
         }
     },
 
-    init: function() {
+    init: function () {
 
         console.log('controller.tablet.Ads init');
 
@@ -25,7 +24,7 @@ Ext.define('WL.controller.tablet.Ads', {
         });
     },
 
-    onFacebookLogin: function() {
+    onFacebookLogin: function () {
 
         console.log('controller.tablet.Ads onFacebookLogin');
 
@@ -33,7 +32,7 @@ Ext.define('WL.controller.tablet.Ads', {
         this.initContainer();
     },
 
-    initContainer: function() {
+    initContainer: function () {
 
         console.log('controller.tablet.Ads initContainer');
 
@@ -42,7 +41,7 @@ Ext.define('WL.controller.tablet.Ads', {
         }
     },
 
-    showAd: function(record) {
+    showAd: function (record) {
 
         console.log('controller.tablet.Ads showAd');
 

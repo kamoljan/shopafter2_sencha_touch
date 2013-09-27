@@ -9,20 +9,29 @@ var _ = require('underscore'),
     movieDateIdx = [],
     movieCache = {};
 
+var AWS = require('aws-sdk'),
+    util = require('util'),
+    async = require('async'),
+    crypto = require('crypto');
 
 // Global includes
-
 config = require('./config').config;
 handleError = require('./lib/error').handleError;
 graph = require('fbgraph');
 util = require('./lib/util');
 require('./lib/database');
 
-//console.log(config);
+console.log(config);
+
+AWS.config.update({
+    accessKeyId: config.aws.accessKeyId,  //accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: config.aws.secretAccessKey,  //secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: config.aws.region,  //region: process.env.AWS_REGION
+    sslEnabled: config.aws.sslEnabled
+});
 
 // App server setup
-
-var app = module.exports = express.createServer();
+var app = express();
 
 app.configure('development', function () {
     //app.use(express.logger());
@@ -32,16 +41,16 @@ app.configure('development', function () {
 
 app.configure('production', function () {
     // Redirect from www
-//    app.use(function(req, res, next) {
-//        if (req.headers['host'] == 'watchlistapp.com') {
-//            res.redirect('http://www.watchlistapp.com' + req.url)
-//        } else {
-//            next();
-//        }
-//    });
+    app.use(function (req, res, next) {
+        if (req.headers['host'] == 'shopafter.com') {
+            res.redirect('http://m.showpafter.com' + req.url)
+        } else {
+            next();
+        }
+    });
 
-    app.use(connect.static('./public/build/WL/production')); // align to your path
-    app.set('appIndex', './public/build/WL/production/app.html'); //align to your path
+    app.use(connect.static('./public/build/WL/production'));  //align to your path
+    app.set('appIndex', './public/build/WL/production/app.html');  //align to your path
 });
 
 app.configure(function () {
@@ -74,7 +83,6 @@ app.listen(port, function () {
     console.log("Listening on " + port);
 });
 
-
 /**
  * Handle requests to the root URL.
  */
@@ -98,14 +106,11 @@ app.all('/app.html', function (req, res) {
     res.sendfile(app.set('appIndex'));
 });
 
-
 /**
  * Handle requests from the Facebook app.
  */
 app.post('/', function (req, res) {
-
     var ua = req.headers['user-agent'];
-
     if (ua.match(/(AppleWebKit)/)) {
         res.sendfile(app.set('appIndex'));
     } else {
@@ -119,7 +124,6 @@ app.post('/', function (req, res) {
 });
 
 app.get('/movies', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function (req, res, next) {
-
     var cache = {}, idx = [],
         sort = movieIdx;
 
@@ -133,41 +137,31 @@ app.get('/movies', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function
 });
 
 app.get('/movie', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function (req, res, next) {
-
     var url = "http://api.rottentomatoes.com/api/public/v1.0/movies/" + req.query.rottenId + ".json?apikey=" + config.rottenTomatoesApiKey;
 
-    rest.get(
-        url, { parser: rest.parsers.json }
-    ).on('complete',function (data) {
-
+    rest.get(url, {
+        parser: rest.parsers.json
+    }).on('complete',function (data) {
             if (data.error) {
                 res.json({success: false, error: data.error});
                 return;
             }
-
             var response = util.parseMovieResults(data);
             util.addViewingData(req, res, next, response.cache, response.idx)
-
         }).on('error', function (err) {
             console.log('Error getting movies', err);
         });
-
 });
 
 app.post('/movie/:id/share', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function (req, res, next) {
-
     var cache = movieCache[Number(req.params.id)];
-
     if (cache) {
-
         var post = {
             link: 'http://m.shopafter.com:9999/movie/' + req.params.id
         };
-
         if (req.body.message) {
             post.message = req.body.message;
         }
-
         graph.post(req.session.fb.user_id + '/links', post, function (err, fbRes) {
             if (fbRes.error && fbRes.error.message.match(/#282/)) {
                 res.json({ success: false, error: 'permission', scope: 'share_item'})
@@ -180,12 +174,9 @@ app.post('/movie/:id/share', fb.checkSession, fb.getFriendIds, fb.getUserDetails
     }
 });
 
-
 app.all('/movie/:id', function (req, res, next) {
-
     var cache = movieCache[Number(req.params.id)],
         showDemo = req.headers['user-agent'] && Boolean(req.headers['user-agent'].match(/(AppleWebKit)/));
-
     if (cache) {
         res.render('movie_meta.html.ejs', {
             locals: {
@@ -216,53 +207,40 @@ app.all('/movie/:id', function (req, res, next) {
 });
 
 app.get('/search', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function (req, res, next) {
-
     rest.get(
             "http://api.rottentomatoes.com/api/public/v1.0/movies/" + req.query.rottenId + "?apikey=" + config.rottenTomatoesApiKey + "&page_limit=10&q=" + req.query.q
         ).on('complete',function (data) {
-
             var response = util.parseMovieResults(data);
             util.addViewingData(req, res, next, response.cache, response.idx)
-
         }).on('error', function (err) {
             console.log('Error getting movies', err);
         });
 });
 
-
 /**
  * Return a list of viewings for the user and all the user's friends
  */
 app.get('/viewings', fb.checkSession, fb.getFriendIds, function (req, res) {
-
     // Search for all viewings in the database with a profile ID in the friendIds array
     Viewing.where('profileId').in(req.session.fb.friendIds).run(function (err, viewings) {
-
         if (err) {
             handleError('Could not retrieve list of viewings', viewings, req, res);
             return;
         }
-
         // Send the list of viewings back to the client
         res.json(viewings);
     });
 });
 
 app.get('/activity', fb.checkSession, fb.getFriendIds, function (req, res) {
-
     Viewing.where('profileId').in(req.session.fb.friendIds).sort('date', -1).limit(20).run(function (err, viewings) {
-
         if (err) {
             handleError('Could not retrieve list of movies', runs, req, res);
             return;
         }
-
         var response = [], action;
-
         _.each(viewings, function (viewing) {
-
             action = util.viewingAction(viewing);
-
             if (action) {
                 response.push({
                     profileId: viewing.profileId,
@@ -274,23 +252,18 @@ app.get('/activity', fb.checkSession, fb.getFriendIds, function (req, res) {
                 });
             }
         });
-
         res.json({ activity: response });
     });
 });
-
 
 /**
  * Add a new Viewing to the database
  */
 app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewing, function (req, res, next) {
-
     var fbActions = [],
         fbResponses = [];
-
     if (req.body.wantToSee) {
         req.viewing.wantToSee = req.body.wantToSee == 'true';
-
         if (req.viewing.wantToSee) {
             fbActions.push({
                 method: 'POST',
@@ -303,10 +276,8 @@ app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewi
             fbResponses.push({ key: 'wantToSeeId', value: null });
         }
     }
-
     if (req.body.seen) {
         req.viewing.seen = req.body.seen == 'true';
-
         if (req.viewing.seen) {
             fbActions.push({
                 method: 'POST',
@@ -319,10 +290,8 @@ app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewi
             fbResponses.push({ key: 'seenId', value: 'null'});
         }
     }
-
     if (req.body.like && req.viewing.seenId) {
         req.viewing.like = req.body.like == 'true';
-
         if (req.viewing.like) {
             fbActions.push({
                 method: 'POST',
@@ -332,10 +301,8 @@ app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewi
             fbResponses.push();
         }
     }
-
     if (req.body.dislike && req.viewing.seenId) {
         req.viewing.dislike = req.body.dislike == 'true';
-
         if (req.viewing.dislike) {
             fbActions.push({
                 method: 'POST',
@@ -345,44 +312,32 @@ app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewi
             fbResponses.push();
         }
     }
-
     if (fbActions.length) {
-
-        console.log("Posting to Facebook Open Graph...", req.session.fb.access_token, fbActions)
-
+        console.log("Posting to Facebook Open Graph...", req.session.fb.access_token, fbActions);
         rest.post("https://graph.facebook.com", {
             data: {
                 access_token: req.session.fb.access_token,
                 batch: JSON.stringify(fbActions)
             }
         }).on('complete',function (str) {
-
                 console.log("Posting to Facebook Open Graph... str = ", str);
-
                 var data = JSON.parse(str);
-
                 _.each(data, function (batchResponse) {
-
                     var body = JSON.parse(batchResponse.body),
                         takeAction = fbResponses.shift();
-
                     if (body.error) {
                         req.fbError = body.error;
                     }
-
                     if (takeAction) {
                         req.viewing[takeAction.key] = body[takeAction.value] || null;
                     }
-
                     console.log("Facebook batch complete", body)
-                })
-
+                });
                 util.saveViewing(req, res, next);
             }).on('error', function (err) {
                 console.log('Error with batch request to FB', err);
                 util.saveViewing(req, res, next);
             });
-
     } else {
         util.saveViewing(req, res, next);
     }
@@ -392,28 +347,28 @@ app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewi
  * When the app first starts, we cache a list of movies locally as this will cater for the vast majority of requests.
  */
 /*
-Movie.where('releaseDate').$lt(Date.now()).sort('rank', 1).limit(200).run(function (err, movies) {
+ Movie.where('releaseDate').$lt(Date.now()).sort('rank', 1).limit(200).run(function (err, movies) {
 
-    _.each(movies, function (movie) {
-        movieCache[movie.rottenId] = movie._doc;
-        movieIdx.push(movie.rottenId);
-    });
+ _.each(movies, function (movie) {
+ movieCache[movie.rottenId] = movie._doc;
+ movieIdx.push(movie.rottenId);
+ });
 
-    _.each(_.sortBy(movies, function (movie) {
-        return -Number(new Date(movie.releaseDate));
-    }), function (movie) {
-        movieDateIdx.push(movie.rottenId);
-    });
+ _.each(_.sortBy(movies, function (movie) {
+ return -Number(new Date(movie.releaseDate));
+ }), function (movie) {
+ movieDateIdx.push(movie.rottenId);
+ });
 
-    _.each(_.sortBy(movies, function (movie) {
-        return -movie.criticRating;
-    }), function (movie) {
-        movieRatingIdx.push(movie.rottenId);
-    });
+ _.each(_.sortBy(movies, function (movie) {
+ return -movie.criticRating;
+ }), function (movie) {
+ movieRatingIdx.push(movie.rottenId);
+ });
 
-    console.log("Cached " + movies.length + " movies.");
-});
-*/
+ console.log("Cached " + movies.length + " movies.");
+ });
+ */
 
 app.get('/ads', function (req, res) {
     var q = new RegExp(req.query.q, 'i');  // 'i' makes it case insensitive
@@ -448,3 +403,176 @@ app.get('/ads', function (req, res) {
         }
     });
 });
+
+var s3 = new AWS.S3();
+/**
+ * Add a new Ad to the database
+ */
+app.post('/ad', fb.checkSession, function (req, res, next) {
+
+    console.log("(ad.post): Start user_id = " + req.session.fb.user_id + "...");
+
+    // Retrieve the currently logged in user details from Facebook
+    graph.get("/me", function (err, user) {
+
+        console.log("(ad.post): user_id = " + req.session.fb.user_id + "...");
+
+        if (err) {
+            handleError('Could not retrieve user info', user, req, res);
+            return;
+        }
+
+        if (!req.body.image) {
+            console.log('No file is uploaded!');
+            return;
+        }
+
+        var imgUrl = '';
+
+
+        var data = req.body.image;
+        var key = crypto.createHash('md5').update(data).digest("hex");
+
+        console.log("(ad.post): waterfall key = " + key);
+
+        var base64Data = data.replace(/^data:image\/jpeg;base64,/, "");
+        base64Data += base64Data.replace('+', ' ');
+        var binaryData = new Buffer(base64Data, 'base64');
+
+        var obj = {
+            Bucket: config.aws.s3_bucket,
+            ACL: 'public-read',
+            Key: key,
+            Body: binaryData,
+            ContentType: 'image/jpeg'
+        };
+
+        s3.client.putObject(obj, function (err, data, next) {
+
+            console.log("(ad.post): s3.client.putObject start err = ", err);
+
+//            if (err) {
+//                console.log("Got error:", err.message);
+//                console.log("Request:");
+//                console.log(this.request.httpRequest);
+//                console.log("Response:");
+//                console.log(this.httpResponse);
+//                return;  // exit if err
+//            } else {
+                var imgUrl = util.format('https://s3-%s.amazonaws.com/%s/%s', config.aws.region, config.aws.s3_bucket, key);
+
+                console.log("imgUrl = " + imgUrl);
+                console.log("req.body.category = " + req.body.category);
+
+                // Construct a new Ad using the post data
+                var ad = new Ad({
+                    profileId: user.id,
+                    image: imgUrl,
+                    thumb: imgUrl,
+                    category: req.body.category,
+                    description: req.body.description,
+                    price: req.body.price,
+                    latitude: req.body.latitude,
+                    longitude: req.body.longitude,
+                    date: new Date
+                });
+
+                // Save the ad to the database
+                ad.save(function (err) {
+                    if (err) {
+                        handleError('Could not save ad', err, req, res);
+                        return;
+                    }
+                    console.log("Successfully saved new ad");
+                    res.json({ success: true });
+                })
+//            }
+            console.log("(ad.post): s3 end");
+        });
+
+/*
+        async.waterfall([
+
+            function (callback) {
+                console.log("(ad.post): waterfall 1");
+
+                var data = req.body.image;
+                var key = crypto.createHash('md5').update(data).digest("hex");
+
+                console.log("(ad.post): waterfall key = " + key);
+
+                var base64Data = data.replace(/^data:image\/jpeg;base64,/, "");
+                base64Data += base64Data.replace('+', ' ');
+                var binaryData = new Buffer(base64Data, 'base64');
+
+                var obj = {
+                    Bucket: config.aws.s3_bucket,
+                    ACL: 'public-read',
+                    Key: key,
+                    Body: binaryData,
+                    ContentType: 'image/jpeg'
+                };
+
+                console.log("(ad.post): waterfall 2");
+
+                callback(null, obj, data);
+            },
+
+            function (obj, data, callback) {
+
+                console.log("(ad.post): waterfall obj = %j", obj);
+
+                s3.client.putObject(obj, function (err, data, next) {
+
+                    console.log("(ad.post): waterfall next = " + next);
+
+                    if (err) {
+                        console.log("Got error:", err.message);
+                        console.log("Request:");
+                        console.log(this.request.httpRequest);
+                        console.log("Response:");
+                        console.log(this.httpResponse);
+                        return;  // exit if err
+                    } else {
+                        //https://s3-ap-southeast-1.amazonaws.com/img.shopafter.com/f5b289d9e4888dee5aa866ac63a64dd2.jpg
+                        var imgUrl = util.format('https://s3-%s.amazonaws.com/%s/%s', config.aws.region, config.aws.s3_bucket, key);
+                        console.log("imgUrl = " + imgUrl);
+
+                        console.log("req.body.category = " + req.body.category);
+
+                        // Construct a new Ad using the post data
+                        var ad = new Ad({
+                            profileId: user.id,
+                            image: imgUrl,
+                            thumb: imgUrl,
+                            category: req.body.category,
+                            description: req.body.description,
+                            price: req.body.price,
+                            latitude: req.body.latitude,
+                            longitude: req.body.longitude,
+                            date: new Date
+                        });
+
+                        // Save the ad to the database
+                        ad.save(function (err) {
+                            if (err) {
+                                handleError('Could not save ad', err, req, res);
+                                return;
+                            }
+                            console.log("Successfully saved new ad");
+                            res.json({ success: true });
+                        })
+                    }
+                    console.log("(ad.post): waterfall end of s3 ");
+                });
+            }
+        ], function (err, result) {
+                console.log("(ad.post): async.waterfall function (err, result)-> result " + result);
+                console.log("(ad.post): async.waterfall function (err, result)-> err " + err);
+            }
+        );  //end async
+        */
+
+    });  //end graph
+});
+

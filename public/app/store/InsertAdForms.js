@@ -2,11 +2,11 @@ Ext.define('WL.store.InsertAdForms', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'WL.model.Ad'
+        'WL.model.InsertAdForm'
     ],
 
     config: {
-        model: 'WL.model.Ad',
+        model: 'WL.model.InsertAdForm',
         storeId: 'Ads',
         proxy: {
             type: 'ajax',

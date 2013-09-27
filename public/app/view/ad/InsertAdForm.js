@@ -1,7 +1,5 @@
-Ext.define('WL.view.InsertAdForm', {
-//    extend: 'Ext.form.Panel',
-    // FIXME: should I convert to Panel?
-    extend: 'Ext.Container',
+Ext.define('WL.view.ad.InsertAdForm', {
+    extend: 'Ext.form.Panel',
 
     xtype: 'insertadform',
     id: 'insertadform',

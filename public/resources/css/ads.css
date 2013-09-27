@@ -7524,33 +7524,100 @@ body.x-desktop {
   font-size: .8em;
 }
 
-/* line 76, ../sass/ads.scss */
+/* line 1, ../sass/includes/_capturepicture.scss */
+.picture-capture {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1676b9), color-stop(100%, #10598d));
+  background-image: -webkit-linear-gradient(#1676b9, #10598d);
+  background-image: -moz-linear-gradient(#1676b9, #10598d);
+  background-image: -o-linear-gradient(#1676b9, #10598d);
+  background-image: linear-gradient(#1676b9, #10598d);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0px 1px 1px #1a86d2;
+  -moz-box-shadow: inset 0px 1px 1px #1a86d2;
+  box-shadow: inset 0px 1px 1px #1a86d2;
+  border: 1px solid #000000;
+  border-width: 1px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+/* line 10, ../sass/includes/_capturepicture.scss */
+.picture-capture input {
+  border: 0;
+  position: absolute;
+  cursor: pointer;
+  top: -2px;
+  right: -2px;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  font-size: 1000px;
+}
+/* line 21, ../sass/includes/_capturepicture.scss */
+.picture-capture img {
+  position: absolute;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+/* line 29, ../sass/includes/_capturepicture.scss */
+.picture-capture .icon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 0.8em;
+}
+/* line 36, ../sass/includes/_capturepicture.scss */
+.picture-capture .icon i {
+  display: block;
+  font-size: 3.5em;
+  color: #fff;
+}
+
+/* line 48, ../sass/includes/_capturepicture.scss */
+.icon-camera:before {
+  font-style: normal;
+  text-align: center;
+  font-family: 'Pictos';
+  content: "v";
+}
+
+/* line 78, ../sass/ads.scss */
 .x-panel-inner {
   background: #000 !important;
 }
 
-/* line 104, ../sass/ads.scss */
+/* line 106, ../sass/ads.scss */
 .x-scroll-indicator {
   background: #ccc;
 }
 
-/* line 109, ../sass/ads.scss */
+/* line 111, ../sass/ads.scss */
 .x-scroll-indicator-csstransform > * {
   background-color: #aaa;
 }
-/* line 113, ../sass/ads.scss */
+/* line 115, ../sass/ads.scss */
 .x-scroll-indicator-csstransform > :nth-child(2) {
   content: url(data:image/bmp;base64,Qk0gAAAAAAAAABoAAAAMAAAAAQABAAEAGACqqqoAAAA%3D);
 }
 
-/* line 120, ../sass/ads.scss */
+/* line 122, ../sass/ads.scss */
 body {
   color: #fff;
   background-color: #232323;
   font-family: 'PT Sans', sans-serif;
 }
 
-/* line 126, ../sass/ads.scss */
+/* line 128, ../sass/ads.scss */
 body.splashBg {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3a005a), color-stop(100%, #5f0092));
   background-image: -webkit-linear-gradient(#3a005a, #5f0092);
@@ -7561,7 +7628,7 @@ body.splashBg {
   background-attachment: fixed;
 }
 
-/* line 133, ../sass/ads.scss */
+/* line 135, ../sass/ads.scss */
 #loading {
   color: #7a5453;
   font-size: 120%;
@@ -7570,13 +7637,13 @@ body.splashBg {
   left: 50%;
   margin: 75% 0 0 -30px;
 }
-/* line 140, ../sass/ads.scss */
+/* line 142, ../sass/ads.scss */
 #loading .x-loading-spinner {
   font-size: 160%;
   margin: -27px 0 0 -45px;
 }
 
-/* line 146, ../sass/ads.scss */
+/* line 148, ../sass/ads.scss */
 #splashLoader {
   background: url("../images/splashimg.png") no-repeat center 25%;
   background-size: contain;
@@ -7587,24 +7654,24 @@ body.splashBg {
   bottom: 0;
 }
 
-/* line 160, ../sass/ads.scss */
+/* line 162, ../sass/ads.scss */
 .tabletSplash {
   background: url("../images/splashimg.png") no-repeat center 25%;
   background-size: contain;
 }
 
-/* line 167, ../sass/ads.scss */
+/* line 169, ../sass/ads.scss */
 .loggedOut {
   background: transparent;
 }
 
-/* line 171, ../sass/ads.scss */
+/* line 173, ../sass/ads.scss */
 .loginScreen {
   top: 70% !important;
   background: transparent;
 }
 
-/* line 177, ../sass/ads.scss */
+/* line 179, ../sass/ads.scss */
 .fbLogin {
   background: url("../images/bg-sprites.png") repeat-x;
   background-size: 1px 558px;
@@ -7616,28 +7683,28 @@ body.splashBg {
   text-align: center;
   border-radius: 3px;
 }
-/* line 186, ../sass/ads.scss */
+/* line 188, ../sass/ads.scss */
 .fbLogin.x-button-pressing, .fbLogin.x-button-pressed {
   background-position-y: -183px;
 }
 
-/* line 191, ../sass/ads.scss */
+/* line 193, ../sass/ads.scss */
 .float-panel {
   position: absolute;
 }
 
-/* line 197, ../sass/ads.scss */
+/* line 199, ../sass/ads.scss */
 .x-list {
   background: #563698;
 }
 
-/* line 220, ../sass/ads.scss */
+/* line 222, ../sass/ads.scss */
 .x-list-item {
   border-bottom: 2px solid #000;
   cursor: pointer;
 }
 
-/* line 226, ../sass/ads.scss */
+/* line 228, ../sass/ads.scss */
 .x-list-item.x-item-selected .x-list-item-body {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5b5b5b), color-stop(100%, #3f3f3f));
   background-image: -webkit-linear-gradient(#5b5b5b, #3f3f3f);
@@ -7646,37 +7713,37 @@ body.splashBg {
   background-image: linear-gradient(#5b5b5b, #3f3f3f);
 }
 
-/* line 230, ../sass/ads.scss */
+/* line 232, ../sass/ads.scss */
 .x-list-emptytext {
   text-align: center;
   font-size: 140%;
 }
 
-/* line 236, ../sass/ads.scss */
+/* line 238, ../sass/ads.scss */
 .x-list-normal .x-list-item .x-dock-horizontal {
   border-top: 0px none !important;
 }
 
 /* line 206, ../../sdk/resources/themes/stylesheets/sencha-touch/default/widgets/_list.scss */
-/* line 241, ../sass/ads.scss */
+/* line 243, ../sass/ads.scss */
 .x-list-normal .x-list-item.x-list-footer-wrap .x-dock-horizontal {
   border-bottom: 0px none !important;
 }
 
-/* line 245, ../sass/ads.scss */
+/* line 247, ../sass/ads.scss */
 .x-list-normal .x-list-item.x-item-pressed .x-dock-horizontal {
   border-top-color: #3f3f3f;
   background-color: #3f3f3f;
 }
 
 /* line 219, ../../sdk/resources/themes/stylesheets/sencha-touch/default/widgets/_list.scss */
-/* line 251, ../sass/ads.scss */
+/* line 253, ../sass/ads.scss */
 .x-list-normal .x-list-item.x-item-selected .x-dock-horizontal {
   border-top-color: #3f3f3f;
   border-bottom: 1px solid #3f3f3f;
 }
 
-/* line 258, ../sass/ads.scss */
+/* line 260, ../sass/ads.scss */
 .sort {
   background: url("../images/bg-sprites.png") repeat-x;
   background-size: 1px 558px;
@@ -7685,7 +7752,7 @@ body.splashBg {
   height: 48px;
 }
 
-/* line 263, ../sass/ads.scss */
+/* line 265, ../sass/ads.scss */
 .search {
   background: url("../images/bg-sprites.png") repeat-x;
   background-size: 1px 558px;
@@ -7693,16 +7760,16 @@ body.splashBg {
   background-position-y: -381px;
   height: 50px;
 }
-/* line 269, ../sass/ads.scss */
+/* line 271, ../sass/ads.scss */
 .search .x-form-label {
   display: none;
 }
-/* line 272, ../sass/ads.scss */
+/* line 274, ../sass/ads.scss */
 .search .x-component-outer {
   width: 100%;
   padding: 8px;
 }
-/* line 276, ../sass/ads.scss */
+/* line 278, ../sass/ads.scss */
 .search .x-clear-icon {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -7715,16 +7782,16 @@ body.splashBg {
   right: 3px;
   position: absolute;
 }
-/* line 285, ../sass/ads.scss */
+/* line 287, ../sass/ads.scss */
 .search .x-field-clearable .x-clear-icon {
   display: block !important;
 }
-/* line 288, ../sass/ads.scss */
+/* line 290, ../sass/ads.scss */
 .search .x-field-input {
   position: relative;
 }
 
-/* line 293, ../sass/ads.scss */
+/* line 295, ../sass/ads.scss */
 input.searchField {
   width: 100%;
   background: url("../images/bg-sprites.png") repeat-x;
@@ -7740,7 +7807,7 @@ input.searchField {
   border-bottom-right-radius: 4px;
 }
 
-/* line 305, ../sass/ads.scss */
+/* line 307, ../sass/ads.scss */
 .x-button {
   font-family: 'PT Sans Narrow', sans-serif;
   cursor: pointer;
@@ -7751,7 +7818,7 @@ input.searchField {
   -webkit-box-align: center;
   -webkit-background-clip: padding;
 }
-/* line 317, ../sass/ads.scss */
+/* line 319, ../sass/ads.scss */
 .x-button.x-button-decline {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c04800), color-stop(100%, #83210a));
   background-image: -webkit-linear-gradient(#c04800, #83210a);
@@ -7762,27 +7829,27 @@ input.searchField {
   padding: 5px;
 }
 
-/* line 324, ../sass/ads.scss */
+/* line 326, ../sass/ads.scss */
 .x-toolbar {
   position: relative;
 }
-/* line 326, ../sass/ads.scss */
+/* line 328, ../sass/ads.scss */
 .x-toolbar .x-button {
   background: url("../images/bg-sprites.png") repeat-x;
   background-size: 1px 558px;
   background-position-x: 0;
   background-position-y: 0;
 }
-/* line 329, ../sass/ads.scss */
+/* line 331, ../sass/ads.scss */
 .x-toolbar .x-button .x-button-icon {
   display: block;
 }
-/* line 333, ../sass/ads.scss */
+/* line 335, ../sass/ads.scss */
 .x-toolbar .x-button.x-button-pressing, .x-toolbar .x-button.x-button-pressed {
   background-position-y: -32px;
 }
 
-/* line 339, ../sass/ads.scss */
+/* line 341, ../sass/ads.scss */
 .x-toolbar.small {
   z-index: 3;
   background: url("../images/bg-sprites.png") repeat-x;
@@ -7792,11 +7859,11 @@ input.searchField {
   height: 51px;
   margin-bottom: -4px;
 }
-/* line 347, ../sass/ads.scss */
+/* line 349, ../sass/ads.scss */
 .x-toolbar.small .x-toolbar-inner {
   margin-top: -3px;
 }
-/* line 351, ../sass/ads.scss */
+/* line 353, ../sass/ads.scss */
 .x-toolbar.small .headerTitle {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -7807,14 +7874,14 @@ input.searchField {
   height: 30px;
 }
 
-/* line 359, ../sass/ads.scss */
+/* line 361, ../sass/ads.scss */
 .x-button.ads {
   width: 38px;
   height: 30px;
   border-radius: 3px 0 0 3px;
   margin-left: 8px;
 }
-/* line 367, ../sass/ads.scss */
+/* line 369, ../sass/ads.scss */
 .x-button.ads .x-button-icon {
   width: 20px;
   height: 12px;
@@ -7823,19 +7890,19 @@ input.searchField {
   background-position-x: -85px;
   background-position-y: 0;
 }
-/* line 374, ../sass/ads.scss */
+/* line 376, ../sass/ads.scss */
 .x-button.ads.x-button-pressing .x-button-icon, .x-button.ads.x-button-pressed .x-button-icon {
   background-position-y: -23px;
 }
 
-/* line 379, ../sass/ads.scss */
+/* line 381, ../sass/ads.scss */
 .x-button.insertAdBtn {
   width: 38px;
   height: 30px;
   border-radius: 3px 0 0 3px;
   margin-left: 8px;
 }
-/* line 387, ../sass/ads.scss */
+/* line 389, ../sass/ads.scss */
 .x-button.insertAdBtn .x-button-icon {
   width: 20px;
   height: 12px;
@@ -7844,18 +7911,18 @@ input.searchField {
   background-position-x: 0px;
   background-position-y: 0;
 }
-/* line 394, ../sass/ads.scss */
+/* line 396, ../sass/ads.scss */
 .x-button.insertAdBtn.x-button-pressing .x-button-icon, .x-button.insertAdBtn.x-button-pressed .x-button-icon {
   background-position-y: -23px;
 }
 
-/* line 400, ../sass/ads.scss */
+/* line 402, ../sass/ads.scss */
 .x-button.friends {
   width: 38px;
   height: 30px;
   border-radius: 0 3px 3px 0;
 }
-/* line 407, ../sass/ads.scss */
+/* line 409, ../sass/ads.scss */
 .x-button.friends .x-button-icon {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -7864,19 +7931,19 @@ input.searchField {
   width: 26px;
   height: 18px;
 }
-/* line 413, ../sass/ads.scss */
+/* line 415, ../sass/ads.scss */
 .x-button.friends.x-button-pressing .x-button-icon, .x-button.friends.x-button-pressed .x-button-icon {
   background-position-y: -23px;
 }
 
-/* line 418, ../sass/ads.scss */
+/* line 420, ../sass/ads.scss */
 .x-button.searchBtn {
   width: 33px;
   height: 30px;
   border-radius: 3px;
   margin-right: 5px;
 }
-/* line 426, ../sass/ads.scss */
+/* line 428, ../sass/ads.scss */
 .x-button.searchBtn .x-button-icon {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -7885,12 +7952,12 @@ input.searchField {
   width: 20px;
   height: 20px;
 }
-/* line 432, ../sass/ads.scss */
+/* line 434, ../sass/ads.scss */
 .x-button.searchBtn.x-button-pressing .x-button-icon, .x-button.searchBtn.x-button-pressed .x-button-icon {
   background-position-y: -23px;
 }
 
-/* line 437, ../sass/ads.scss */
+/* line 439, ../sass/ads.scss */
 .fbProfilePic {
   margin-right: 8px;
   position: relative;
@@ -7898,14 +7965,14 @@ input.searchField {
   height: 30px;
   cursor: pointer;
 }
-/* line 444, ../sass/ads.scss */
+/* line 446, ../sass/ads.scss */
 .fbProfilePic img {
   width: 30px;
   height: 30px;
   border-radius: 3px;
 }
 
-/* line 451, ../sass/ads.scss */
+/* line 453, ../sass/ads.scss */
 .x-button.shareBtn {
   width: 33px;
   height: 30px;
@@ -7915,7 +7982,7 @@ input.searchField {
   border-bottom-right-radius: 5px 3px;
   margin-right: 8px;
 }
-/* line 463, ../sass/ads.scss */
+/* line 465, ../sass/ads.scss */
 .x-button.shareBtn .x-button-icon {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -7924,16 +7991,16 @@ input.searchField {
   width: 16px;
   height: 19px;
 }
-/* line 469, ../sass/ads.scss */
+/* line 471, ../sass/ads.scss */
 .x-button.shareBtn.x-button-pressing .x-button-icon, .x-button.shareBtn.x-button-pressed .x-button-icon {
   background-position-y: -23px;
 }
 
-/* line 474, ../sass/ads.scss */
+/* line 476, ../sass/ads.scss */
 .thumb {
   padding: 0 12px;
 }
-/* line 476, ../sass/ads.scss */
+/* line 478, ../sass/ads.scss */
 .thumb b {
   display: block;
   background: url("../images/icon-sprites.png") no-repeat;
@@ -7943,26 +8010,26 @@ input.searchField {
   width: 19px;
   height: 21px;
 }
-/* line 483, ../sass/ads.scss */
+/* line 485, ../sass/ads.scss */
 .thumb .up:active b, .thumb.selected.up b {
   background-position: 0 -23px;
 }
-/* line 486, ../sass/ads.scss */
+/* line 488, ../sass/ads.scss */
 .thumb.down b {
   background-position: -19px 0;
 }
-/* line 490, ../sass/ads.scss */
+/* line 492, ../sass/ads.scss */
 .thumb .down:active b, .thumb.selected.down b {
   background-position: -19px -23px;
 }
 
-/* line 496, ../sass/ads.scss */
+/* line 498, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body {
   height: 114px;
   position: absolute;
   width: 100%;
 }
-/* line 505, ../sass/ads.scss */
+/* line 507, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body .moreArrow {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -7974,7 +8041,7 @@ input.searchField {
   right: 10px;
   top: 51px;
 }
-/* line 515, ../sass/ads.scss */
+/* line 517, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body div.img {
   border: 1px solid #fff;
   border-radius: 3px;
@@ -7982,16 +8049,16 @@ input.searchField {
   height: 89px;
   overflow: hidden;
 }
-/* line 521, ../sass/ads.scss */
+/* line 523, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body div.img img {
   border-radius: 2px;
   width: 58px;
 }
-/* line 526, ../sass/ads.scss */
+/* line 528, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body .meta {
   margin-left: 70px;
 }
-/* line 528, ../sass/ads.scss */
+/* line 530, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body .meta h3 {
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 95%;
@@ -8003,22 +8070,22 @@ input.searchField {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/* line 542, ../sass/ads.scss */
+/* line 544, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body .meta .actions {
   min-height: 36px;
 }
-/* line 544, ../sass/ads.scss */
+/* line 546, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body .meta .actions p {
   color: #848484;
   line-height: 16px;
   font-size: 70%;
 }
-/* line 550, ../sass/ads.scss */
+/* line 552, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body .meta .friends {
   color: #a1a1a1;
   font-size: 70%;
 }
-/* line 553, ../sass/ads.scss */
+/* line 555, ../sass/ads.scss */
 .x-list-item.expandedAd .x-list-item-body .meta .friends img {
   width: 20px;
   border: 0;
@@ -8027,13 +8094,13 @@ input.searchField {
   vertical-align: -4px;
 }
 
-/* line 564, ../sass/ads.scss */
+/* line 566, ../sass/ads.scss */
 .rating {
   font-family: 'PT Sans Narrow', sans-serif;
   line-height: 30px;
   font-size: 80%;
 }
-/* line 568, ../sass/ads.scss */
+/* line 570, ../sass/ads.scss */
 .rating span {
   display: block;
   float: left;
@@ -8045,7 +8112,7 @@ input.searchField {
   margin-right: 4px;
 }
 
-/* line 580, ../sass/ads.scss */
+/* line 582, ../sass/ads.scss */
 button {
   font-family: 'PT Sans Narrow', sans-serif;
   font-weight: bold;
@@ -8068,16 +8135,16 @@ button {
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
-/* line 603, ../sass/ads.scss */
+/* line 605, ../sass/ads.scss */
 button:active {
   background-position-y: -304px;
 }
-/* line 607, ../sass/ads.scss */
+/* line 609, ../sass/ads.scss */
 button.selected {
   color: #80a925;
 }
 
-/* line 614, ../sass/ads.scss */
+/* line 616, ../sass/ads.scss */
 .x-button.backBtn {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -8088,7 +8155,7 @@ button.selected {
   padding: 0 23px;
   height: 31px;
 }
-/* line 622, ../sass/ads.scss */
+/* line 624, ../sass/ads.scss */
 .x-button.backBtn.x-button-pressing, .x-button.backBtn.x-button-pressed {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -8096,7 +8163,7 @@ button.selected {
   background-position-y: -33px;
 }
 
-/* line 627, ../sass/ads.scss */
+/* line 629, ../sass/ads.scss */
 .adDetail {
   margin: 14px 13px;
   color: #a1a1a1;
@@ -8104,7 +8171,7 @@ button.selected {
   position: relative;
   overflow: hidden;
 }
-/* line 635, ../sass/ads.scss */
+/* line 637, ../sass/ads.scss */
 .adDetail div.img {
   border: 1px solid #fff;
   border-radius: 2px;
@@ -8112,16 +8179,16 @@ button.selected {
   height: 187px;
   overflow: hidden;
 }
-/* line 642, ../sass/ads.scss */
+/* line 644, ../sass/ads.scss */
 .adDetail div.img img {
   border-radius: 2px;
   width: 125px;
 }
-/* line 648, ../sass/ads.scss */
+/* line 650, ../sass/ads.scss */
 .adDetail .left {
   float: left;
 }
-/* line 652, ../sass/ads.scss */
+/* line 654, ../sass/ads.scss */
 .adDetail h3 {
   font-family: 'PT Sans Narrow', sans-serif;
   font-weight: bold;
@@ -8129,46 +8196,46 @@ button.selected {
   padding: 5px 0;
   color: #fff;
 }
-/* line 660, ../sass/ads.scss */
+/* line 662, ../sass/ads.scss */
 .adDetail .rating {
   margin-bottom: 10px;
   color: #a1a1a1;
 }
-/* line 665, ../sass/ads.scss */
+/* line 667, ../sass/ads.scss */
 .adDetail .actions {
   min-height: 70px;
 }
-/* line 669, ../sass/ads.scss */
+/* line 671, ../sass/ads.scss */
 .adDetail .consensus {
   padding: 5px;
   font-style: italic;
 }
-/* line 674, ../sass/ads.scss */
+/* line 676, ../sass/ads.scss */
 .adDetail .synopsis, .adDetail .consensus {
   font-size: 65%;
 }
-/* line 678, ../sass/ads.scss */
+/* line 680, ../sass/ads.scss */
 .adDetail .extraInfo {
   font-size: 65%;
   clear: both;
   display: -webkit-box;
   -webkit-box-orient: horizontal;
 }
-/* line 684, ../sass/ads.scss */
+/* line 686, ../sass/ads.scss */
 .adDetail .extraInfo > div:nth-child(1) {
   width: auto;
   max-width: 50%;
   padding-right: 10px;
 }
-/* line 689, ../sass/ads.scss */
+/* line 691, ../sass/ads.scss */
 .adDetail .extraInfo > div:nth-child(2) {
   -webkit-box-flex: 1;
 }
-/* line 693, ../sass/ads.scss */
+/* line 695, ../sass/ads.scss */
 .adDetail .extraInfo p {
   padding-top: 6px;
 }
-/* line 700, ../sass/ads.scss */
+/* line 702, ../sass/ads.scss */
 .adDetail.ellipsis .synopsis {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -8176,15 +8243,15 @@ button.selected {
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
 }
-/* line 707, ../sass/ads.scss */
+/* line 709, ../sass/ads.scss */
 .adDetail.ellipsis .consensus {
   visibility: hidden;
 }
-/* line 710, ../sass/ads.scss */
+/* line 712, ../sass/ads.scss */
 .adDetail.ellipsis .extraInfo {
   visibility: hidden;
 }
-/* line 714, ../sass/ads.scss */
+/* line 716, ../sass/ads.scss */
 .adDetail.ellipsis .moreArrow {
   position: absolute;
   background: url("../images/icon-sprites.png") no-repeat;
@@ -8196,7 +8263,7 @@ button.selected {
   bottom: 0;
   left: 70%;
 }
-/* line 726, ../sass/ads.scss */
+/* line 728, ../sass/ads.scss */
 .adDetail .trailer {
   font-size: 70%;
   text-align: center;
@@ -8208,27 +8275,27 @@ button.selected {
   text-decoration: none;
   width: 125px;
 }
-/* line 741, ../sass/ads.scss */
+/* line 743, ../sass/ads.scss */
 .adDetail.tablet {
   height: auto;
 }
-/* line 745, ../sass/ads.scss */
+/* line 747, ../sass/ads.scss */
 .adDetail.tablet .actions {
   padding-top: 15px;
   padding-bottom: 5px;
   min-height: 40px;
 }
-/* line 750, ../sass/ads.scss */
+/* line 752, ../sass/ads.scss */
 .adDetail.tablet .rating {
   line-height: 40px;
 }
-/* line 753, ../sass/ads.scss */
+/* line 755, ../sass/ads.scss */
 .adDetail.tablet .rating span {
   margin-right: 8px;
   font-size: 130%;
   width: 66px;
 }
-/* line 759, ../sass/ads.scss */
+/* line 761, ../sass/ads.scss */
 .adDetail.tablet button {
   margin-right: 8px;
   padding: 0 9px;
@@ -8239,20 +8306,20 @@ button.selected {
   background-size: 1px 743px;
   background-position-y: -364px;
 }
-/* line 769, ../sass/ads.scss */
+/* line 771, ../sass/ads.scss */
 .adDetail.tablet button.trailer {
   font-size: 70%;
   line-height: 30px;
   height: 30px;
 }
-/* line 778, ../sass/ads.scss */
+/* line 780, ../sass/ads.scss */
 .adDetail.tablet .actions,
 .adDetail.tablet .synopsis,
 .adDetail.tablet .consensus,
 .adDetail.tablet .extraInfo {
   margin-left: 150px;
 }
-/* line 784, ../sass/ads.scss */
+/* line 786, ../sass/ads.scss */
 .adDetail.tablet .synopsis,
 .adDetail.tablet .consensus,
 .adDetail.tablet .extraInfo {
@@ -8260,27 +8327,27 @@ button.selected {
   line-height: 115%;
 }
 
-/* line 791, ../sass/ads.scss */
+/* line 793, ../sass/ads.scss */
 .fbActivity {
   border-top: 2px solid #000;
   font-size: 65%;
 }
-/* line 795, ../sass/ads.scss */
+/* line 797, ../sass/ads.scss */
 .fbActivity img {
   width: 28px;
   height: 28px;
   vertical-align: -9px;
   margin-right: 7px;
 }
-/* line 801, ../sass/ads.scss */
+/* line 803, ../sass/ads.scss */
 .fbActivity .x-list-item > .x-dock-horizontal > .x-dock-body {
   color: #a1a1a1;
 }
-/* line 804, ../sass/ads.scss */
+/* line 806, ../sass/ads.scss */
 .fbActivity .x-list-item > .x-dock-horizontal > .x-dock-body b {
   color: #fff;
 }
-/* line 809, ../sass/ads.scss */
+/* line 811, ../sass/ads.scss */
 .fbActivity .x-list-item > .x-dock-horizontal > .x-dock-body .x-innerhtml {
   width: 300px;
   overflow: hidden;
@@ -8288,32 +8355,32 @@ button.selected {
   white-space: nowrap;
 }
 
-/* line 820, ../sass/ads.scss */
+/* line 822, ../sass/ads.scss */
 .x-list-paging {
   padding-top: 114px;
 }
-/* line 823, ../sass/ads.scss */
+/* line 825, ../sass/ads.scss */
 .x-list-paging .x-list-paging-msg {
   height: 42px;
   padding: 8px;
   color: papayaWhip;
 }
 
-/* line 830, ../sass/ads.scss */
+/* line 832, ../sass/ads.scss */
 .x-title {
   font-family: 'PT Sans Narrow', sans-serif;
   font-weight: bold;
   font-size: 120%;
   max-width: 100%;
 }
-/* line 835, ../sass/ads.scss */
+/* line 837, ../sass/ads.scss */
 .x-title .x-innerhtml {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-/* line 843, ../sass/ads.scss */
+/* line 845, ../sass/ads.scss */
 .x-msgbox, .dialog {
   min-width: 15em;
   max-width: 20em;
@@ -8326,16 +8393,16 @@ button.selected {
   color: #000;
   font-family: "Helvetica Neue", Helvetica;
 }
-/* line 857, ../sass/ads.scss */
+/* line 859, ../sass/ads.scss */
 .x-msgbox .msg, .dialog .msg {
   margin-bottom: 0.6em;
   text-align: center;
 }
-/* line 860, ../sass/ads.scss */
+/* line 862, ../sass/ads.scss */
 .x-msgbox .msg p, .dialog .msg p {
   margin-bottom: 0.6em;
 }
-/* line 867, ../sass/ads.scss */
+/* line 869, ../sass/ads.scss */
 .x-msgbox .x-button-red,
 .x-msgbox .x-button-green, .dialog .x-button-red,
 .dialog .x-button-green {
@@ -8348,21 +8415,21 @@ button.selected {
   color: #fff;
   cursor: pointer;
 }
-/* line 878, ../sass/ads.scss */
+/* line 880, ../sass/ads.scss */
 .x-msgbox .x-button-green, .dialog .x-button-green {
   background: url("../images/bg-sprites.png") repeat-x;
   background-size: 1px 558px;
   background-position-x: 0;
   background-position-y: -495px;
 }
-/* line 881, ../sass/ads.scss */
+/* line 883, ../sass/ads.scss */
 .x-msgbox .x-button-red, .dialog .x-button-red {
   background: url("../images/bg-sprites.png") repeat-x;
   background-size: 1px 558px;
   background-position-x: 0;
   background-position-y: -526px;
 }
-/* line 885, ../sass/ads.scss */
+/* line 887, ../sass/ads.scss */
 .x-msgbox .x-button-close, .dialog .x-button-close {
   position: absolute;
   width: 25px;
@@ -8374,35 +8441,35 @@ button.selected {
   top: -17px;
   right: -15px;
 }
-/* line 896, ../sass/ads.scss */
+/* line 898, ../sass/ads.scss */
 .x-msgbox .x-component-outer, .dialog .x-component-outer {
   width: 100%;
 }
-/* line 900, ../sass/ads.scss */
+/* line 902, ../sass/ads.scss */
 .x-msgbox .wallMessage, .dialog .wallMessage {
   margin-top: 5px;
   margin-bottom: 10px;
 }
-/* line 905, ../sass/ads.scss */
+/* line 907, ../sass/ads.scss */
 .x-msgbox input, .dialog input {
   width: 100%;
 }
 
-/* line 912, ../sass/ads.scss */
+/* line 914, ../sass/ads.scss */
 .x-toolbar.sort .x-button:first-child {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 6px 4px;
 }
-/* line 917, ../sass/ads.scss */
+/* line 919, ../sass/ads.scss */
 .x-toolbar.sort .x-button:last-child {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 6px 4px;
 }
-/* line 922, ../sass/ads.scss */
+/* line 924, ../sass/ads.scss */
 .x-toolbar.sort .x-segmentedbutton {
   margin: 0 8px;
 }
-/* line 926, ../sass/ads.scss */
+/* line 928, ../sass/ads.scss */
 .x-toolbar.sort .x-button {
   font-size: 80%;
   border-right: 1px solid #3d3d3d;
@@ -8416,13 +8483,13 @@ button.selected {
   background-position-x: 0;
   background-position-y: -432px;
 }
-/* line 938, ../sass/ads.scss */
+/* line 940, ../sass/ads.scss */
 .x-toolbar.sort .x-button.x-button-pressing, .x-toolbar.sort .x-button.x-button-pressed {
   color: #c5c5c5;
   background-position-y: -463px;
 }
 
-/* line 945, ../sass/ads.scss */
+/* line 947, ../sass/ads.scss */
 .promo {
   background: #000;
   font-family: 'PT Sans Narrow', sans-serif;
@@ -8430,7 +8497,7 @@ button.selected {
   padding: 10px;
   font-size: 80%;
 }
-/* line 952, ../sass/ads.scss */
+/* line 954, ../sass/ads.scss */
 .promo .logo {
   background: url("../images/icon-sprites.png") no-repeat;
   background-size: 219px 76px;
@@ -8442,7 +8509,7 @@ button.selected {
   margin-right: 8px;
   vertical-align: middle;
 }
-/* line 960, ../sass/ads.scss */
+/* line 962, ../sass/ads.scss */
 .promo button {
   float: none;
   display: inline;

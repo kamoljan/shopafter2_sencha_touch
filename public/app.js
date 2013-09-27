@@ -6,13 +6,16 @@ Ext.Loader.setPath({
 //</debug>
 
 /**
- * This is the application definition file for The Watch List.
- *
- * Here we define the names of all our Profiles, Models, Stores, Views and Controllers to include in the application.
+ * This is the application definition file for ShopAfter.
+ * Here we define the names of all our Profiles, Models, Stores,
+ * Views & Controllers to include in the application.
  */
 
 Ext.require([
-    'Ext.field.Text'
+    'Ext.field.Text',
+    'Ext.MessageBox',
+    'Ext.data.JsonP',
+    'Ext.data.Errors'
 ]);
 
 Ext.application({
@@ -25,15 +28,13 @@ Ext.application({
     ],
 
     models: [
-        'Ad'
-//        'InsertAdForm'
-        //'Movie'
+        'Ad',
+        'InsertAdForm'
     ],
 
     stores: [
         'Ads',
-//        'InsertAdForms',
-        //'Movies',
+        'InsertAdForms',
         'Search',
         'Activity'
     ],
@@ -42,13 +43,14 @@ Ext.application({
         'LoggedOut',
         'Main',
         'Activity',
-//        'ad.InsertAdForm',
+        'ad.CapturePicture',
+        'ad.InsertAdForm',
         'ad.List',
         'Dialog'
     ],
 
     controllers: [
-//        'InsertAdForm',
+        'InsertAdForm',
         'Facebook',
         'AdsViewings',
         'YouTube'
