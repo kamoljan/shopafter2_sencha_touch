@@ -25,7 +25,7 @@ Ext.application({
     ],
 
     models: [
-        'Ad',
+        'Ad'
 //        'InsertAdForm'
         //'Movie'
     ],

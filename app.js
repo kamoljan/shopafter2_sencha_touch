@@ -2,7 +2,7 @@ var _ = require('underscore'),
     express = require('express'),
     connect = require('connect'),
     rest = require('restler'),
-    MongoStore = require('connect-mongo'),
+    MongoStore = require('connect-mongo')(express),
     fb = require('./lib/facebook'),
     movieIdx = [],
     movieRatingIdx = [],
@@ -388,10 +388,10 @@ app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewi
     }
 });
 
-
 /**
  * When the app first starts, we cache a list of movies locally as this will cater for the vast majority of requests.
  */
+/*
 Movie.where('releaseDate').$lt(Date.now()).sort('rank', 1).limit(200).run(function (err, movies) {
 
     _.each(movies, function (movie) {
@@ -413,7 +413,7 @@ Movie.where('releaseDate').$lt(Date.now()).sort('rank', 1).limit(200).run(functi
 
     console.log("Cached " + movies.length + " movies.");
 });
-
+*/
 
 app.get('/ads', function (req, res) {
     var q = new RegExp(req.query.q, 'i');  // 'i' makes it case insensitive
