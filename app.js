@@ -370,36 +370,35 @@ app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewi
  });
  */
 
-app.get('/ads', function (req, res) {
+app.get('/ad', function (req, res) {
+    // pagination
+    var page = req.query.page || 1;
+    var limit = req.query.limit || 20;
+    // filter
     var q = new RegExp(req.query.q, 'i');  // 'i' makes it case insensitive
-    var count = req.query.count || 20;
     var category = req.query.category || 0;
 
+    console.log('server page is = ' + page);
+    console.log('server limit is = ' + limit);
+
     console.log('server q is = ' + q);
-    console.log('server count is = ' + count);
     console.log('server category is = ' + category);
 
-    var limit = {};
-    var filter = {};
-
-    if (count) {
-        limit['count'] = count;
-    }
+    var query = {};
     if (q) {
-        filter['description'] = q;
+        query['description'] = q;
     }
     if (category) {
-        filter['category'] = category;
+        query['category'] = category;
     }
+    console.log('server query is = %j', query);
 
-    console.log('server limit is = %j', limit);
-    console.log('server filter is = %j', filter);
-
-    return Ad.find(filter, {}, limit, function (err, ads) {
-        if (!err) {
-            return res.send({ "ads": ads, "total": 10 });  // FIXME: remove hardcoded 10
+    Ad.paginate(query, page, limit, function(error, pageCount, paginatedResults) {
+        if (error) {
+            console.error(error);
         } else {
-            return console.log(err);
+            console.log('server pageCount ' + pageCount);
+            res.send({ "ads": paginatedResults, "pageCount": pageCount });
         }
     });
 });
@@ -421,7 +420,6 @@ app.post('/ad', fb.checkSession, function (req, res, next) {
             handleError('Could not retrieve user info', user, req, res);
             return;
         }
-
         if (!req.body.image) {
             console.log('No file is uploaded!');
             return;
@@ -488,7 +486,19 @@ app.post('/ad', fb.checkSession, function (req, res, next) {
                 console.log("(ad.post): async.waterfall function (err, result)-> err " + err);
             }
         );  //end async
-
     });  //end graph
+});
+
+/**
+ * Ad view
+ */
+app.get('/ad/:id', function (req, res, next) {
+    return Ad.find({ "_id": req.params.id }, function (err, ads) {
+        if (!err) {
+            res.send({ "ads": ads, "total": 1 });
+        } else {
+            res.send("Ad not found", 404);
+        }
+    });
 });
 
