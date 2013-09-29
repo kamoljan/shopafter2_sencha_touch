@@ -1,18 +1,55 @@
-# The Watch List
+# ShopAfter 2 - realtime mobile classified project
+(Powered by Nodejs(Expressjs) & Sencha Touch 2.3.0)
 
-The Watch List lets you share which movies you have seen and want to see with your friends on Facebook.
+## Deployment details
 
-It displays a list of the latest movies with its corresponding poster image, synopsis, trailer, critics rating
-(from Rotten Tomatoes) and a list of friend activity: whether your friend wants to see it, have seen it and
-if so whether they liked it or not.
+URL: http://m.shopafter.com:9999
 
-It allows you to search for movies and order the listing by popularity, rating or release date.
+### Prerequisites
+  * Install Sencha CMD to build your application.
 
-The app is available with both Phone and Tablet views depending on your device type.
+  * Download touch-2.3.0 from http://sc13-live.sencha.com/touch/touch-2.3.0-beta.zip
 
-You can see a demo of the app in action at http://m.shopafter.com:9999
+    curl -O http://sc13-live.sencha.com/touch/touch-2.3.0-beta.zip
 
-## Facebook integration
+  * Place the project source code into the SDK (touch-2.3.0)
+
+    mkdir -p touch-2.3.0/MyApps/shopafter2
+    cd touch-2.3.0/MyApps/shopafter2
+    git clone git@github.com:tokyoscale/shopafter2.git .
+
+  * Install
+
+    ruby 1.9.3
+    nodejs
+    compass
+    mongodb (http://docs.mongodb.org/manual/tutorial/install-mongodb-on-red-hat-centos-or-fedora-linux/)
+
+  * In `mongo` console create fb database and user `admin`:
+
+    mongo
+    use fb
+    db.addUser( { user: "admin", pwd: "12345678", roles: ["readWrite", "dbAdmin"] } )
+
+  * To generate CSS files from SASS, run:
+
+    cd resources/sass
+    compass compile
+
+  * Install all the required node modules by running:
+
+     npm install
+
+  * To run server for backend & frontend:
+
+     node app.js
+
+  * Visit your app by going to `http://localhost:9999`. You can also setup your `/etc/hosts` to point to m.shopafter.com
+
+
+## Related, but already done tasks in the source code
+
+### Facebook integration
 
 The Facebook integration works by checking the user's authentication on the client side using the Facebook JS SDK. If
 the user is not logged in, they are presented with a button which forwards them to Facebook to authenticate. Since some
@@ -23,7 +60,7 @@ client-side authentication process. When the user returns to our app after loggi
 app, the cookie will be set and can be exchanged for an access token and stored in the session.  See the `checkSession`
 method inside  server-side/facebook.js to see how this works in detail.
 
-## Building
+### Building
 
 This Source code does not include Sencha touch library, but assumes that You will be using version 2.1 of framework.
 
@@ -40,68 +77,7 @@ After download, unzip the framework file and copy the following directories and 
  /sencha-touch* files
  /version.txt
 
-## Config
-
-You will need to create a file `config.js` with this content:
-
-	exports.config = {
-	    // Base URL of the App (must be a publically accessible URL)
-	    redirect_uri:  'APP URL',
-
-	    // Facebook Application ID, obtain from Facebook
-	    client_id:     'APPID',
-
-	    // Facebook Application Secret, obtain from Facebook
-	    client_secret: 'SECRET',
-
-	    // MongoDB connection string
-	    mongoDb:       'mongodb://USER:PASS@SERVER:PORT/DATABASE',
-
-	    // Session encyption key
-	    sessionSecret: 'RANDOM STRING', // any string, like : vwertgwq45ygwrtb
-
-	    appUrl: 'PUBLIC APP URL', // where your application is hosted, e.g. http://mygreatapp.com
-
-	    fbNamespace: 'FACEBOOK NAMESPACE', //obtain from Facebook
-
-	    rottenTomatoesApiKey: 'ROTTEN TOMATOES API KEY' // sign up and obtain your own key
-	}
-
-Change Your Facebook app ID inside app.js launch method:
-
- WL.Facebook.initialize('12345678901234');
-
-## Deploying
-
-Follow the instructions in the Jog With Friends example from the Sencha Touch 2 SDKs to learn how to set up your
-Facebook application, Node.js, MongoDB and Heroku hosting service.
-
-The commands you need to set up Git for use with Heroku are:
-
-	git init
-	git add .gitignore config.js Procfile app.js lib package.json views public/build/production
-	git remote add heroku git@heroku.com:YOUR-HEROKU-APP.git
-	git commit -m "Init"
-	git push heroku master
-
-
-## Scraping
-
-Use the same config information for lib/scrape.js
-
-Then run node lib/scrape.js to import database.
-You must observe console messages like this:
-
-Scraping Opening movies...
-Parsed 16 movies.
-Updated 771320794
-Updated 771320299
-Updated 771319353
-Updated 771318628
-
-....
-
-## Going production
+### Going production
 
 The Express framework uses the NODE_ENV environment variable to determine some behaviors related to caching.
 If you’re using Express, set a config var with this value:

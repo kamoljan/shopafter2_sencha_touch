@@ -455,6 +455,15 @@ app.post('/ad', fb.checkSession, function (req, res, next) {
                         console.log(this.httpResponse);
                         return;  // exit if err
                     } else {
+                        console.log("(ad.post): waterfall no err ");
+                        console.log("(ad.post): user.id = " + user.id);
+                        console.log("(ad.post): imgUrl = " + imgUrl);
+                        console.log("(ad.post): req.body.category = " + req.body.category);
+                        console.log("(ad.post): req.body.description = " + req.body.description);
+                        console.log("(ad.post): req.body.price = " + req.body.price);
+                        console.log("(ad.post): req.body.latitude = " + req.body.latitude);
+                        console.log("(ad.post): req.body.longitude = " + req.body.longitude);
+
                         // Construct a new Ad using the post data
                         var ad = new Ad({
                             profileId: user.id,
@@ -479,7 +488,7 @@ app.post('/ad', fb.checkSession, function (req, res, next) {
                         })
                     }
                     console.log("(ad.post): waterfall end of s3 ");
-                });
+                })
             }
         ], function (err, result) {
                 console.log("(ad.post): async.waterfall function (err, result)-> result " + result);
