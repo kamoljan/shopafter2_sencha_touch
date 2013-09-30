@@ -498,11 +498,12 @@ input.searchField {
   height: 114px;
   //padding: 12px 14px;
   position: absolute;
-  width: 100%;  // ANDROID PERFORMANCE
-  // position: relative;  // ANDROID PERFORMANCE
+  width: 100%;
+  // ANDROID PERFORMANCE
+  // position: relative;                                         // ANDROID PERFORMANCE
 
   .moreArrow {
-    // display: none;  // ANDROID PERFORMANCE
+    // display: none;                                       // ANDROID PERFORMANCE
     @include icon-sprite(-106px, 0);
     width: 8px;
     height: 12px;
@@ -962,4 +963,14 @@ button {
   }
 }
 .x-form .x-scroll-container{background:none !important;}
-#searchContainer{margin-top:10px;}
+.x-form.x-paint-monitored.search{margin-top:10px;}
+.x-inner.x-form-fieldset-inner .x-input-el {width: 90% !important;
+margin: 0px 5% 10px;
+border: 1px solid #ccc;
+float: left;}
+.x-form-fieldset .x-field {
+border-bottom:none !important;
+}
+.x-select-overlay .x-list-label{color:#ffffff;}
+.x-field-input .x-clear-icon{margin-top: 0.2em !important;
+right: .5em !important;}
