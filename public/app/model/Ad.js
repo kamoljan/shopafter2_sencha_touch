@@ -2,6 +2,9 @@ Ext.define('WL.model.Ad', {
     extend: 'Ext.data.Model',
 
     config: {
+
+        idProperty: '_id',
+
         fields: [
             'profileId',
             'image',
@@ -12,16 +15,14 @@ Ext.define('WL.model.Ad', {
             'latitude',
             'longitude',
             'date',
+
             '_id'
         ],
+
         proxy: {
             type: 'jsonp',
-            url: '/ads',
-            limitParam: 'count',
-            startParam: 'min',
-            pageParam: false,
-            extraParams: {
-            },
+            url: '/ad',
+
             reader: {
                 type: 'json',
                 rootProperty: 'ads'

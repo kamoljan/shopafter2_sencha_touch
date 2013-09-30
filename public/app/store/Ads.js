@@ -1,6 +1,10 @@
-
 Ext.define('WL.store.Ads', {
-    extend  : 'Ext.data.Store',
+
+    extend: 'Ext.data.Store',
+
+    requires: [
+        'WL.model.Ad'
+    ],
 
     config: {
         model: 'WL.model.Ad',
@@ -9,7 +13,7 @@ Ext.define('WL.store.Ads', {
 
         proxy: {
             type: 'jsonp',
-            url: '/ads',
+            url: '/ad',
 
             reader: {
                 type: 'json',

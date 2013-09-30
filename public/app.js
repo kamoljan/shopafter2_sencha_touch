@@ -13,6 +13,7 @@ Ext.Loader.setPath({
 
 Ext.require([
     'Ext.field.Text',
+    // Insert Ad
     'Ext.MessageBox',
     'Ext.data.JsonP',
     'Ext.data.Errors'
@@ -34,26 +35,27 @@ Ext.application({
 
     stores: [
         'Ads',
-        'InsertAdForms',
         'Search',
-        'Activity'
+        'Activity',
+        'InsertAdForms'
     ],
 
     views: [
         'LoggedOut',
         'Main',
         'Activity',
-        'ad.CapturePicture',
-        'ad.InsertAdForm',
         'ad.List',
-        'Dialog'
+        'Dialog',
+        // Insert Ad
+        'ad.CapturePicture',
+        'ad.InsertAdForm'
     ],
 
     controllers: [
-        'InsertAdForm',
         'Facebook',
         'AdsViewings',
-        'YouTube'
+        'YouTube',
+        'InsertAdForm'
     ],
 
     viewport: {
@@ -61,7 +63,7 @@ Ext.application({
     },
 
     // This function will be run once the application is ready to be launched.
-    launch: function() {
+    launch: function () {
 
         console.log('application launch');
 
@@ -71,6 +73,8 @@ Ext.application({
         if (window.localStorage && window.localStorage.WL) {
             var parsed = JSON.parse(window.localStorage.WL);
             this.fireEvent('localStorageData', parsed);
+
+            console.log('app.launch parsed = %j', parsed);
         }
 
         // This is a convenience script which auto-reloads the CSS every second.
@@ -84,7 +88,7 @@ Ext.application({
     /**
      * Convenience function for updating the URL location hash
      */
-    updateUrl: function(url) {
+    updateUrl: function (url) {
 
         console.log('application updateUrl');
 
@@ -93,7 +97,7 @@ Ext.application({
         }));
     },
 
-    onUpdated: function() {
+    onUpdated: function () {
 
         console.log('application onUpdated');
 
@@ -103,7 +107,7 @@ Ext.application({
                 {
                     ui: 'green',
                     text: 'Update Now',
-                    handler: function() {
+                    handler: function () {
                         window.location.reload();
                     }
                 },

@@ -4,6 +4,7 @@
 Ext.define('WL.view.ad.List', {
 
     extend: 'Ext.List',
+
     requires: [
         'Ext.form.Panel',
         'Ext.plugin.ListPaging',
@@ -18,7 +19,10 @@ Ext.define('WL.view.ad.List', {
         store: 'Ads',
 
         plugins: [
-            { xclass: 'Ext.plugin.ListPaging' } //To use this plugin its very important to include also CSS mixin : @include sencha-list-paging;
+            //To use this plugin its very important to include also CSS mixin : @include sencha-list-paging;
+            {
+                xclass: 'Ext.plugin.ListPaging'
+            }
         ],
 
         itemCls: 'expandedAd',
@@ -29,13 +33,16 @@ Ext.define('WL.view.ad.List', {
 
             { xtype: 'adSortBar', docked: 'top'},
             { xtype: 'adSearchBar', docked: 'top', hidden: true}
-//            {
-//                xtype: 'container',
-//                cls: 'promo',
-//                itemId: 'promo-container',
-//                docked: 'bottom',
-//                html: '<span class="logo"></span>Brought to you by Sencha Touch 2.1 <button>Learn More</button>'
-//            }
+            /*
+            ,
+            {
+                xtype: 'container',
+                cls: 'promo',
+                itemId: 'promo-container',
+                docked: 'bottom',
+                html: '<span class="logo"></span>Brought to you by Sencha Touch 2.1 <button>Learn More</button>'
+            }
+            */
         ],
 
         loadingText: null

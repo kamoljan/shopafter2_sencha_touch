@@ -20,7 +20,7 @@
         "cache": [
             "app.html",
 
-                // Binary cache content is not supported in Sencha CMD v.3.0.250
+            // Binary cache content is not supported in Sencha CMD v.3.0.250
 //            "resources/images/favicon.png",
 //            "resources/images/splashimg.png",
 //            "resources/images/bg-sprites.png",

@@ -7,7 +7,7 @@ Ext.define('WL.controller.Ads', {
     config: {
 
         routes: {
-            'ads/:id': 'onAdUrl'
+            'ad/:id': 'onAdUrl'
         },
 
         refs: {
@@ -72,6 +72,7 @@ Ext.define('WL.controller.Ads', {
             localStorageData: 'onLocalStorageData',
             scope: this
         });
+
 //        var learnMore = Ext.ComponentQuery.query('promo-container');
 //
 //        learnMore.element.on({
@@ -84,9 +85,9 @@ Ext.define('WL.controller.Ads', {
     onLocalStorageData: function (data) {
 
         console.log('controller.Ads onLocalStorageData');
+        console.log('controller.Ads data = %j', data);
 
         var store = Ext.getStore('Ads');
-
         this.initContainer();
         store.setData(data.ads);
         store.fireEvent('load', store, store.data);
@@ -102,8 +103,9 @@ Ext.define('WL.controller.Ads', {
 
         Ext.getStore('Ads').onBefore('datarefresh', function (store, data, operation, eOpts, e) {
 
+            var tmp = JSON.parse(operation.getResponse().responseText);
             var cache = JSON.stringify({
-                ads: operation.getResponse().ads,
+                ads: tmp.ads,
                 profileId: FB.getUserID()
             });
 

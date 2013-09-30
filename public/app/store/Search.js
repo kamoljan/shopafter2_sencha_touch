@@ -9,7 +9,7 @@ Ext.define('WL.store.Search', {
 
         proxy: {
             type: 'jsonp',
-            url: '/search',
+            url: '/ad',
 
             reader: {
                 type: 'json',

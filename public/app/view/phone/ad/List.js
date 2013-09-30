@@ -45,7 +45,7 @@ Ext.define('WL.view.phone.ad.List', {
 
         itemTpl: Ext.create('Ext.XTemplate',
             '<div class="moreArrow"></div>',
-            '<div class="img"><img src="http://src.sencha.io/58/{image}" /></div>',
+            '<div class="img"><img src="{image}" /></div>',
             '<div class="meta">',
                 '<h3>{description}</h3>',
                 '<div class="actions">',

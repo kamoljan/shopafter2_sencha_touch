@@ -37,7 +37,11 @@ Ext.define('WL.controller.tablet.Ads', {
         console.log('controller.tablet.Ads initContainer');
 
         if (!this.mainContainer) {
+
+            console.log('controller.tablet.Ads !this.mainContainer');
+
             this.mainContainer = Ext.Viewport.add({ xtype: 'tabletContainer' });
+            //this.mainContainer = Ext.Viewport.add({ xtype: 'main' });
         }
     },
 

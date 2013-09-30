@@ -498,12 +498,11 @@ input.searchField {
   height: 114px;
   //padding: 12px 14px;
   position: absolute;
-  width: 100%;
-  // ANDROID PERFORMANCE
-  // position: relative;                                         // ANDROID PERFORMANCE
+  width: 100%;  // ANDROID PERFORMANCE
+  // position: relative;  // ANDROID PERFORMANCE
 
   .moreArrow {
-    // display: none;                                       // ANDROID PERFORMANCE
+    // display: none;  // ANDROID PERFORMANCE
     @include icon-sprite(-106px, 0);
     width: 8px;
     height: 12px;
