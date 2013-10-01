@@ -32,22 +32,22 @@ Ext.define('WL.view.Main', {
                             {
                                 cls: 'ads',
                                 iconCls: 'ads',
-                                //pressed: true
+                                pressed: true
                             },
                             {
                                 xtype: 'button',
-                                cls: 'friends',
-                                iconCls: 'friends'
+                                cls: 'insertAdBtn',
+                                iconCls: 'insertAdBtn'
                             }
+//                            {
+//                                xtype: 'button',
+//                                cls: 'friends',
+//                                iconCls: 'friends'
+//                            }
                         ]
                     },
                     {
                         xtype: 'spacer'
-                    },
-                    {
-                        xtype: 'button',
-                        cls: 'insertAdBtn',
-                        iconCls: 'insertAdBtn'
                     },
                     {
                         xtype: 'button',

@@ -197,7 +197,7 @@ Ext.define('WL.controller.Ads', {
 
     onInsertAdTap: function () {
         console.log('controller.Ads onInsertAdTap');
-        this.getSearchButton().hide();
+        //this.getSearchButton().hide();
         if (!this.insertAdCard) {
             this.insertAdCard = Ext.widget('insertadform');
         }

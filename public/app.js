@@ -5,12 +5,6 @@ Ext.Loader.setPath({
 });
 //</debug>
 
-/**
- * This is the application definition file for ShopAfter.
- * Here we define the names of all our Profiles, Models, Stores,
- * Views & Controllers to include in the application.
- */
-
 Ext.require([
     'Ext.field.Text',
     // Insert Ad
@@ -59,22 +53,16 @@ Ext.application({
 
     // This function will be run once the application is ready to be launched.
     launch: function () {
-
         console.log('application launch');
-
         // Initialize Facebook with our app ID
         WL.Facebook.initialize('723097297716821');
-
         if (window.localStorage && window.localStorage.WL) {
             var parsed = JSON.parse(window.localStorage.WL);
             this.fireEvent('localStorageData', parsed);
-
             console.log('app.launch parsed = %j', parsed);
         }
-
         // This is a convenience script which auto-reloads the CSS every second.
         // Combined with `compass watch`, this is useful during theme development as the page doesn't need to be reloaded.
-
         // setInterval(function(){
         //     Ext.DomQuery.select('link')[0].href = "resources/css/movies.css?" + Math.ceil(Math.random() * 100000000)
         // }, 1000);
@@ -84,18 +72,14 @@ Ext.application({
      * Convenience function for updating the URL location hash
      */
     updateUrl: function (url) {
-
         console.log('application updateUrl');
-
         this.getHistory().add(Ext.create('Ext.app.Action', {
             url: url
         }));
     },
 
     onUpdated: function () {
-
         console.log('application onUpdated');
-
         Ext.create('WL.view.Dialog', {
             msg: "Application update was a success. Reload now?",
             buttons: [
