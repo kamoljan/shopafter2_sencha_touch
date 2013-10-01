@@ -29,8 +29,7 @@ Ext.application({
     ],
 
     models: [
-        'Ad',
-        'InsertAdForm'
+        'Ad'
     ],
 
     stores: [
@@ -45,17 +44,13 @@ Ext.application({
         'Main',
         'Activity',
         'ad.List',
-        'Dialog',
-        // Insert Ad
-        'ad.CapturePicture',
-        'ad.InsertAdForm'
+        'Dialog'
     ],
 
     controllers: [
         'Facebook',
         'AdsViewings',
-        'YouTube',
-        'InsertAdForm'
+        'YouTube'
     ],
 
     viewport: {

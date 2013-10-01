@@ -5,27 +5,25 @@ Ext.define('WL.profile.Phone', {
         name: 'Phone',
 
         controllers: [
-        	'Ads'
+            'Ads'
         ],
 
         views: [
-        	'WL.view.phone.ad.List',
-        	'WL.view.phone.ad.Detail'
+            'WL.view.phone.ad.List',
+            'WL.view.phone.ad.Detail',
+            'WL.view.ad.CapturePicture',
+            'WL.view.ad.InsertAdForm'
         ]
     },
 
-    launch: function() {
-
+    launch: function () {
         console.log('profile.Phone launch');
-
         WL.view.phone.ad.List.addXtype('adList');
         WL.view.phone.ad.Detail.addXtype('adDetail');
     },
 
-    isActive: function() {
-
+    isActive: function () {
         console.log('profile.Phone isActive');
-
         return Ext.os.is.Phone;
     }
 });

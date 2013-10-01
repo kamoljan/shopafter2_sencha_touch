@@ -5,23 +5,25 @@ Ext.define('WL.profile.Tablet', {
         name: 'Tablet',
 
         controllers: [
-        	'Ads'
+            'Ads'
         ],
 
         views: [
-        	'Container',
+            'Container',
             'WL.view.tablet.ad.List',
-        	'WL.view.tablet.ad.Detail'
+            'WL.view.tablet.ad.Detail',
+            'WL.view.ad.CapturePicture',
+            'WL.view.ad.InsertAdForm'
         ]
     },
 
-    launch: function() {
+    launch: function () {
         console.log('profile.Tablet launch');
         WL.view.tablet.ad.List.addXtype('adList');
         WL.view.tablet.ad.Detail.addXtype('adDetail');
     },
 
-    isActive: function() {
+    isActive: function () {
         console.log('profile.Tablet isActive');
         return !Ext.os.is.Phone;
     }

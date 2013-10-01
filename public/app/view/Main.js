@@ -32,7 +32,7 @@ Ext.define('WL.view.Main', {
                             {
                                 cls: 'ads',
                                 iconCls: 'ads',
-                                pressed: true
+                                //pressed: true
                             },
                             {
                                 xtype: 'button',
