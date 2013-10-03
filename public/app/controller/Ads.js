@@ -163,7 +163,9 @@ Ext.define('WL.controller.Ads', {
         if (value != '') {
             this.getAdList().setMasked({ xtype: 'loadmask' });
             searchStore.load({
-                params: { q: searchField.getValue() },
+                params: {
+                    q: searchField.getValue()
+                },
                 callback: function () {
                     this.getAdList().setStore(searchStore);
                     this.getAdList().setMasked(false);
