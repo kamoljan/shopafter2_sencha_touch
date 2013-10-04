@@ -3,36 +3,36 @@
  */
 Ext.define('WL.view.ad.SortBar', {
 
-	extend: 'Ext.Toolbar',
-	xtype: 'adSortBar',
+    extend: 'Ext.Toolbar',
+    xtype: 'adSortBar',
 
-	config: {
+    config: {
 
-		cls: 'sort',
-		id: 'sortContainer',
-		//style: 'visibility: hidden',
+        cls: 'sort',
+        id: 'sortContainer',
+//        style: 'visibility: hidden',
 
-		items: [
-			{
-				xtype: 'segmentedbutton',
-				id: 'sortBy',
-				flex: 1,
+        items: [
+            {
+                xtype: 'segmentedbutton',
+                id: 'sortBy',
+                flex: 1,
 
-				layout: {
-					pack: 'center'
-				},
+                layout: {
+                    pack: 'center'
+                },
 
-				defaults: {
-		    		xtype: 'button',
-		    		flex: 1
-				},
+                defaults: {
+                    xtype: 'button',
+                    flex: 1
+                },
 
-				items: [
-		    		{ text: 'Popular', pressed: true },
-		    		{ text: 'Rating' },
-		    		{ text: 'Release Date' }
-				]
-			}
-		]
-	}
+                items: [
+//                    { text: 'Popular', pressed: true },
+                    { text: 'Location' },
+                    { text: 'Date' }
+                ]
+            }
+        ]
+    }
 });

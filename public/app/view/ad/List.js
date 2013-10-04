@@ -64,7 +64,7 @@ Ext.define('WL.view.ad.List', {
     applyItemTpl: function () {
         console.log('view.ad.List applyItemTpl');
         var itemTpl = this.callParent(arguments);
-        //itemTpl.friendActivity = this.friendActivityFormatter;
+        itemTpl.friendActivity = this.friendActivityFormatter;
         return itemTpl;
     }
 });

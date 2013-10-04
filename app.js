@@ -378,6 +378,16 @@ app.get('/ad', function (req, res) {
     var q = new RegExp(req.query.q, 'i');  // 'i' makes it case insensitive
     var category = req.query.category || 0;
 
+    // sort
+//    var sort = [];
+//    if (req.query.sort && req.query.sort.match(/Date/i)) {
+//        sort = 1;
+//    } else if (req.query.sort && req.query.sort.match(/Location/)) {
+//        sort = 2;
+//    }
+//
+//    var sort = req.query.sort || 'Location';
+
     console.log('server page is = ' + page);
     console.log('server limit is = ' + limit);
 
@@ -463,7 +473,6 @@ app.post('/ad', fb.checkSession, function (req, res, next) {
                         console.log("(ad.post): req.body.price = " + req.body.price);
                         console.log("(ad.post): req.body.latitude = " + req.body.latitude);
                         console.log("(ad.post): req.body.longitude = " + req.body.longitude);
-
                         // Construct a new Ad using the post data
                         var ad = new Ad({
                             profileId: user.id,
@@ -472,8 +481,7 @@ app.post('/ad', fb.checkSession, function (req, res, next) {
                             category: req.body.category,
                             description: req.body.description,
                             price: req.body.price,
-                            latitude: req.body.latitude,
-                            longitude: req.body.longitude,
+                            loc: [req.body.longitude, req.body.latitude],
                             date: new Date
                         });
 
