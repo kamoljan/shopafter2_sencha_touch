@@ -23,7 +23,10 @@ Ext.define('WL.view.Main', {
                 docked: 'top',
                 xtype: 'toolbar',
 		cls: 'small withBg',
-		title: '<div class="headerTitle"></div>',
+		title:{
+			title: '<div class="headerTitle"></div>',
+			style:{'position':'absolute', 'left':'0px', 'top':'9px'}
+		},
                 items: [
 		{
                         xtype: 'spacer'
