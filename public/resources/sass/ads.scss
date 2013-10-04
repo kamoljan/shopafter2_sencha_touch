@@ -620,7 +620,7 @@ button {
   height: 31px;
   &.x-button-pressing,
   &.x-button-pressed {
-    @include icon-sprite(-124px, -33px);
+    @include icon-sprite(-124px, -40px);
   }
 }
 
@@ -789,8 +789,6 @@ button {
 }
 
 .fbActivity {
-
-  border-top: 2px solid #000;
   font-size: 65%;
   img {
     width: 28px;
@@ -977,5 +975,5 @@ right: .5em !important;}
 .x-webkit .x-anchor.x-anchor-top,.x-panel.x-floating{background-color:rgba(0, 0, 0, 0.8) !important; }
 .x-button.x-button-decline{border: 1px solid #000000 !important;}
 .x-segmentedbutton .x-button:not(.x-first){border: 1px solid #061f31;}
-#ext-element-93{width: 51px !important;}
-#adBackButton{border:none !important;}
+.x-list-normal .x-list-item.x-list-item-tpl, .x-list-normal .x-list-item .x-dock-horizontal{border:none;}
+.x-layout-card-item{background-color: #f7f7f7 !important;}

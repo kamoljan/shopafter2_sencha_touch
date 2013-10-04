@@ -22,9 +22,13 @@ Ext.define('WL.view.Main', {
             {
                 docked: 'top',
                 xtype: 'toolbar',
-                cls: 'small withBg',
-                title: '<div class="headerTitle"></div>',
+		cls: 'small withBg',
+		title: '<div class="headerTitle"></div>',
                 items: [
+		{
+                        xtype: 'spacer'
+                    },
+
                     {
                         xtype: 'segmentedbutton',
                         allowDepress: false,
@@ -46,9 +50,8 @@ Ext.define('WL.view.Main', {
 //                            }
                         ]
                     },
-                    {
-                        xtype: 'spacer'
-                    },
+
+
                     {
                         xtype: 'button',
                         cls: 'searchBtn',
