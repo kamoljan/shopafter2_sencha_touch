@@ -42,7 +42,7 @@ Ext.define('WL.controller.tablet.Ads', {
             this.adDetailCmp = Ext.widget('adDetail');
         }
         this.adDetailCmp.setRecord(record);
-        this.getToolbar().setTitle(record.get('title'));
+        this.getToolbar().setTitle(record.get('description'));
         this.getTabletContainer().setActiveItem(this.adDetailCmp);
     }
 });

@@ -48,7 +48,7 @@ Ext.define('WL.controller.phone.Ads', {
         if (!this.adDetailCmp) {
             this.adDetailCmp = Ext.widget('adDetail');
         }
-        this.getToolbar().setTitle(record.get('title'));
+        this.getToolbar().setTitle(record.get('description'));
         Ext.Viewport.animateActiveItem(this.adDetailCmp, {
             type: 'slide',
             direction: 'left'
