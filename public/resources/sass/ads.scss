@@ -4,7 +4,7 @@ $splash-image: "../images/splashimg.png";
 $font-root: "../fonts";
 // Watchlist Sass file
 
-$page-bg-color: #563698;
+$page-bg-color: #f9f9f9;
 $include-default-icons: false;
 
 //$ sudo find ./resources/themes/stylesheets/sencha-touch/default/ -name *.scss
@@ -60,12 +60,13 @@ $include-default-icons: false;
 // is already included in your app.json file).
 @import 'sencha-touch/default';
 @import 'sencha-touch/default/all';
+$base-color: #4d0077;
 
-@import 'sencha-touch/default/src/Panel';
-@import 'sencha-touch/default/src/dataview/List';
-@import 'sencha-touch/default/src/field/Spinner';
-@import 'sencha-touch/default/src/plugin/ListPaging';
-@import 'sencha-touch/default/src/form/Panel';
+//@import 'sencha-touch/default/src/Panel';
+//@import 'sencha-touch/default/src/dataview/List';
+//@import 'sencha-touch/default/src/field/Spinner';
+//@import 'sencha-touch/default/src/plugin/ListPaging';
+//@import 'sencha-touch/default/src/form/Panel';
 
 //@include sencha-panel;
 //@include sencha-list;
@@ -979,7 +980,14 @@ background-color: rgba(94, 0, 144, 0.5);border:none !important;
 .x-picker-slot{
  .x-picker-item {color:#000;}
 }
-.x-toolbar-dark{background: url("../images/bg-sprites.png") repeat-x;
+.saveAdForm, .x-toolbar-dark{background: url("../images/bg-sprites.png") repeat-x ;
 background-size: 1px 868px;
 background-position-x: 0;
 background-position-y:-231px;}
+.sortContainer{
+.x-button{background: url("../images/bg-sprites.png") repeat-x;
+background-size: 1px 558px;
+background-position-x: 0;
+background-position-y: -272px}
+
+}

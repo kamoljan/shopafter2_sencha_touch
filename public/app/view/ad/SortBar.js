@@ -10,6 +10,7 @@ Ext.define('WL.view.ad.SortBar', {
 
         cls: 'sort',
         id: 'sortContainer',
+	cls: 'sortContainer',
 //        style: 'visibility: hidden',
 
         items: [
