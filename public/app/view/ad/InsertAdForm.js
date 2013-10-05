@@ -16,7 +16,8 @@ Ext.define('WL.view.ad.InsertAdForm', {
                 },
                 items: [
                     {
-                        xtype: 'capturepicture'
+                        xtype: 'devicepicture'
+//                        xtype: 'capturepicture'
                     },
                     {
                         xtype: 'selectfield',

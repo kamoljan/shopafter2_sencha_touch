@@ -10,7 +10,8 @@ Ext.require([
     // Insert Ad
     'Ext.MessageBox',
     'Ext.data.JsonP',
-    'Ext.data.Errors'
+    'Ext.data.Errors',
+    'Ext.device.Camera'
 ]);
 
 Ext.application({
@@ -38,7 +39,8 @@ Ext.application({
         'Main',
         'Activity',
         'ad.List',
-        'Dialog'
+        'Dialog',
+        'ad.Picture'
     ],
 
     controllers: [
