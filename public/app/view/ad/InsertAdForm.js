@@ -20,7 +20,8 @@ Ext.define('WL.view.ad.InsertAdForm', {
                     },
                     {
                         xtype: 'selectfield',
-                        id: 'category',
+                        cls: 'select-cat',
+			id: 'category',
                         name: 'category',
                         required: true,
                         placeHolder: 'Choose a category',
@@ -55,18 +56,16 @@ Ext.define('WL.view.ad.InsertAdForm', {
                         placeHolder: 'Your price?',
                         required: true,
                         clearIcon: true
-                    }
-                ]
-            },
-            {
+                    },
+{
                 xtype: 'container',
                 defaults: {
                     xtype: 'button',
-                    style: 'margin: .5em',
+                    style: 'margin: 10px 5% 25px',
                     flex: 1
                 },
                 layout: {
-                    type: 'hbox'
+                   type: 'hbox'
                 },
                 items: [
                     {
@@ -80,6 +79,9 @@ Ext.define('WL.view.ad.InsertAdForm', {
                         id: 'saveAdForm',
                         ui: 'confirm'
                     }
+                ]
+            }
+
                 ]
             }
         ]

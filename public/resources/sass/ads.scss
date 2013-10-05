@@ -627,21 +627,18 @@ button {
 .adDetail {
   margin: 14px 13px;
   color: #a1a1a1;
-  height: 190px;
 
   position: relative;
   overflow: hidden;
 
   div.img {
-    border: 1px solid #fff;
     border-radius: 2px;
     margin: 0 10px 10px 0;
-    height: 187px;
+    height: auto;
     overflow: hidden;
 
     img {
       border-radius: 2px;
-      width: 125px;
     }
   }
 
@@ -669,10 +666,6 @@ button {
   .consensus {
     padding: 5px;
     font-style: italic;
-  }
-
-  .synopsis, .consensus {
-    font-size: 65%;
   }
 
   .extraInfo {
@@ -960,6 +953,7 @@ button {
     margin-left: 8px;
   }
 }
+.x-scroll-container{width:96% !important;margin: 0 2%;}
 .x-form .x-scroll-container{background:none !important;}
 .x-form.x-paint-monitored.search{margin-top:10px;}
 .x-inner.x-form-fieldset-inner .x-input-el {width: 90% !important;
@@ -979,3 +973,13 @@ width: 130px;margin: 10px 5px;}
 .x-layout-card-item{background-color: #f7f7f7 !important;}
 .img img {max-width:100%}
 .x-list .x-list-item .x-list-item-body, .x-list .x-list-item.x-list-item-tpl .x-innerhtml{padding:0px !important;background:#ffffff; border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;-moz-box-shadow:0px 0px 8px #888888;box-shadow:0px 0px 8px #888888;-webkit-box-shadow:0px 0px 8px #888888;overflow:hidden;}
+.x-picker-bar{
+background-color: rgba(94, 0, 144, 0.5);border:none !important;
+}
+.x-picker-slot{
+ .x-picker-item {color:#000;}
+}
+.x-toolbar-dark{background: url("../images/bg-sprites.png") repeat-x;
+background-size: 1px 868px;
+background-position-x: 0;
+background-position-y:-231px;}

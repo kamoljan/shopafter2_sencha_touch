@@ -31,12 +31,10 @@ Ext.define('WL.view.phone.ad.Detail', {
         ],
         tpl: Ext.create('Ext.XTemplate',
             '<div class="adDetail">',
-            '<div class="moreArrow"></div>',
+//            '<div class="moreArrow"></div>',
             '<div class="adDetailInner">',
-            '<div class="left">',
             '<div class="img"><img src="{image}" /></div>',
             '<tpl if="trailer"><button class="trailer">Play Trailer</button></tpl>',
-            '</div>',
 //            '<div class="actions">',
 //            '<div class="rating"><span>{% if (values.criticRating >= 0) { %}{criticRating}%{% } else { %}?{% } %}</span> on Rotten Tomatoes</div>',
 //            '<button class="seen{[values.seen ? " selected" : ""]}">Seen It</button>',
@@ -160,7 +158,7 @@ Ext.define('WL.view.phone.ad.Detail', {
         element.addCls('ellipsis');
     },
 
-    toggle: function() {
+  /*  toggle: function() {
 
         console.log('view.phone.ad.Detail toggle');
 
@@ -209,5 +207,5 @@ Ext.define('WL.view.phone.ad.Detail', {
             }
         }
 
-    }
+    }*/
 });

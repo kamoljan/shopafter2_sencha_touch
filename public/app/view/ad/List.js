@@ -19,7 +19,7 @@ Ext.define('WL.view.ad.List', {
             }
         ],
         itemCls: 'expandedAd',
-        itemHeight: 114, //specify customItemHeight for 2.1
+        //itemHeight: 114, specify customItemHeight for 2.1
 		// Specifying the `items` config on an Ext.List will add them at the top of the list, before the list itself.
         items: [
             {
