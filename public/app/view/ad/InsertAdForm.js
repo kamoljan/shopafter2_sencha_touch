@@ -78,6 +78,7 @@ Ext.define('WL.view.ad.InsertAdForm', {
                     {
                         text: 'Save',
                         id: 'saveAdForm',
+			cls: 'saveAdForm',
                         ui: 'confirm'
                     }
                 ]
