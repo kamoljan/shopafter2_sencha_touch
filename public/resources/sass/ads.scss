@@ -974,5 +974,8 @@ border-bottom:none !important;
 .x-webkit .x-anchor.x-anchor-top,.x-panel.x-floating{background-color:rgba(0, 0, 0, 0.8) !important; }
 .x-button.x-button-decline{border: 1px solid #000000 !important;}
 .x-segmentedbutton .x-button:not(.x-first){border: 1px solid #061f31;}
-.x-list-normal .x-list-item.x-list-item-tpl, .x-list-normal .x-list-item .x-dock-horizontal{border:none;}
+.x-list-normal .x-list-item.x-list-item-tpl, .x-list-normal .x-list-item .x-dock-horizontal{border:none; float: left;
+width: 130px;margin: 10px 5px;}
 .x-layout-card-item{background-color: #f7f7f7 !important;}
+.img img {max-width:100%}
+.x-list .x-list-item .x-list-item-body, .x-list .x-list-item.x-list-item-tpl .x-innerhtml{padding:0px !important;background:#ffffff; border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;-moz-box-shadow:0px 0px 8px #888888;box-shadow:0px 0px 8px #888888;-webkit-box-shadow:0px 0px 8px #888888;overflow:hidden;}
