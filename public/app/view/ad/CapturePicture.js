@@ -5,7 +5,7 @@ Ext.define('WL.view.ad.CapturePicture', {
     config: {
         captured: false,
         width: 140,
-        height: 100,
+	//height: 100,
         cls: 'picture-capture',
         html: [
             '<div class="icon"><i class="icon-camera"></i> Make a pic</div>',

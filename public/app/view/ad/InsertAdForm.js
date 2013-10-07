@@ -16,8 +16,8 @@ Ext.define('WL.view.ad.InsertAdForm', {
                 },
                 items: [
                     {
-                        xtype: 'devicepicture'
-//                        xtype: 'capturepicture'
+//                        xtype: 'devicepicture'
+                      xtype: 'capturepicture'
                     },
                     {
                         xtype: 'selectfield',
@@ -71,6 +71,7 @@ Ext.define('WL.view.ad.InsertAdForm', {
                 items: [
                     {
                         text: 'Reset',
+			cls: 'reset',
                         handler: function () {
                             Ext.getCmp('insertadform').reset();
                         }
@@ -79,7 +80,6 @@ Ext.define('WL.view.ad.InsertAdForm', {
                         text: 'Save',
                         id: 'saveAdForm',
 			cls: 'saveAdForm',
-                        ui: 'confirm'
                     }
                 ]
             }
