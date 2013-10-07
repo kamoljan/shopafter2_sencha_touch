@@ -956,6 +956,7 @@ button {
     margin-left: 8px;
   }
 }
+
 .x-scroll-container{width:96% !important;margin: 0 2%;}
 .x-form .x-scroll-container{background:none !important;}
 .x-form.x-paint-monitored.search{margin-top:10px;}
@@ -965,8 +966,9 @@ border: 1px solid #ccc;
 float: left;
 background: #f7f7f7;
 }
-.x-form-fieldset .x-field {
-border-bottom:none !important;
+.x-form-fieldset{ 
+.x-field {border-bottom:none !important;}
+.x-form-fieldset-inner{margin-top:30px;}
 }
 .x-select-overlay .x-list-label{color:#ffffff;}
 .x-field-input .x-clear-icon{right: .5em !important;}
@@ -989,9 +991,9 @@ background-color: rgba(94, 0, 144, 0.5);border:none !important;
 color: #fff;
 
 }
+.reset {color: #585858;}
 .x-toolbar-dark{
 @include background-sprite(0, -385px);
-color: #585858;
 }
 .x-container.x-toolbar-dark.x-toolbar.x-stretched.x-paint-monitored.x-navigation-bar.x-dock-item.x-docked-top{@include background-sprite(0, -221px);}
 .sortContainer{
@@ -1001,3 +1003,6 @@ color: #585858;
 }
 
 .x-webkit .x-selectmark-base, .x-webkit .x-field-select .x-component-outer:after, .x-field-select .x-webkit .x-component-outer:after{right: 6% !important; top:42% !important;}
+.x-form-fieldset-inner{
+	.x-clear-icon{right: 3.5em !important;top: 23px;}
+}
