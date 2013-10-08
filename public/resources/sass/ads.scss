@@ -361,10 +361,10 @@ input.searchField {
 
 .x-button.ads {
 
-  width: 38px;
+  width: 33px;
   height: 30px;
 
-  border-radius: 6px;
+  border-radius: 3px;
   margin-left: 8px;
 
   .x-button-icon {
@@ -380,13 +380,11 @@ input.searchField {
 }
 
 .x-button.insertAdBtn {
-
-  width: 38px;
+  width: 33px;
   height: 30px;
-
-  border-radius: 6px;
-  margin-left: 8px;
-
+  border-radius: 3px;
+  margin-left: 1px;
+  margin-right: 8px;
   .x-button-icon {
     width: 19px;
     height: 21px;
@@ -615,15 +613,14 @@ button {
 // Ad Detail
 
 .x-button.backBtn {
-  @include icon-sprite(-124px, 0);
-
+  @include icon-sprite(-117px, 2px);
   margin-left: 5px;
   border-radius: 3px;
   padding: 0 23px;
   height: 31px;
   &.x-button-pressing,
   &.x-button-pressed {
-    @include icon-sprite(-124px, -40px);
+  @include icon-sprite(-117px, 2px);
   }
 }
 
@@ -1004,5 +1001,5 @@ color: #fff;
 
 .x-webkit .x-selectmark-base, .x-webkit .x-field-select .x-component-outer:after, .x-field-select .x-webkit .x-component-outer:after{right: 6% !important; top:42% !important;}
 .x-form-fieldset-inner{
-	.x-clear-icon{right: 3.5em !important;top: 23px;}
+	.x-clear-icon{right:4% !important;top: 23px;}
 }

@@ -31,35 +31,23 @@ Ext.define('WL.view.Main', {
 		{
                         xtype: 'spacer'
                     },
-
-                    {
-                        xtype: 'segmentedbutton',
-                        allowDepress: false,
-                        items: [
-                            {
-                                cls: 'ads',
-                                iconCls: 'ads',
-                                pressed: true
-                            },
-                            {
-                                xtype: 'button',
-                                cls: 'insertAdBtn',
-                                iconCls: 'insertAdBtn'
-                            }
-//                            {
-//                                xtype: 'button',
-//                                cls: 'friends',
-//                                iconCls: 'friends'
-//                            }
-                        ]
+		    {
+                        cls: 'ads',
+                        iconCls: 'ads',
+                        pressed: true
                     },
-
-
-                    {
+	            {
                         xtype: 'button',
                         cls: 'searchBtn',
                         iconCls: 'search'
                     },
+                            
+		    {
+                        xtype: 'button',
+                        cls: 'insertAdBtn',
+                        iconCls: 'insertAdBtn'
+                     },
+
                     {
                         xtype: 'component',
                         cls: 'fbProfilePic',
