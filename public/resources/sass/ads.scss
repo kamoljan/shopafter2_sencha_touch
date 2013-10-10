@@ -1,4 +1,5 @@
-$bg-sprite-image: "../images/bg-sprites.png";
+//$bg-sprite-image: "../images/bg-sprites.png";
+$base-color: #4d0077;
 $icon-sprite-image: "../images/icon-sprites.png";
 $splash-image: "../images/splashimg.png";
 $font-root: "../fonts";
@@ -60,7 +61,7 @@ $include-default-icons: false;
 // is already included in your app.json file).
 @import 'sencha-touch/default';
 @import 'sencha-touch/default/all';
-$base-color: #4d0077;
+
 
 @import 'sencha-touch/default/src/Panel';
 @import 'sencha-touch/default/src/dataview/List';
@@ -80,8 +81,8 @@ $base-color: #4d0077;
 }
 
 @mixin background-sprite($x, $y) {
-  background: url($bg-sprite-image) repeat-x;
-  background-size: 1px 558px;
+ // background: url($bg-sprite-image) repeat-x;
+//  background-size: 1px 558px;
 
   @if $x != null {
     background-position-x: $x;
@@ -185,7 +186,7 @@ body.splashBg {
   border-radius: 3px;
   &.x-button-pressing,
   &.x-button-pressed {
-    background-position-y: -183px;
+
   }
 }
 
@@ -334,19 +335,15 @@ input.searchField {
     }
     &.x-button-pressing,
     &.x-button-pressed {
-      background-position-y: -32px;
+      
     }
   }
 }
 
 .x-toolbar.small {
   z-index: 3;
-
-  @include background-sprite(0, -220px);
-
-  height: 51px;
-  margin-bottom: -4px;
-
+  height: 56px;
+ 
   .x-toolbar-inner {
     margin-top: -3px;
   }
@@ -375,7 +372,7 @@ input.searchField {
   }
   &.x-button-pressing .x-button-icon,
   &.x-button-pressed .x-button-icon {
-    background-position-y: -23px;
+    
   }
 }
 
@@ -393,7 +390,7 @@ input.searchField {
   }
   &.x-button-pressing .x-button-icon,
   &.x-button-pressed .x-button-icon {
-    background-position-y: -23px;
+    
 
   }
 }
@@ -412,7 +409,7 @@ input.searchField {
   }
   &.x-button-pressing .x-button-icon,
   &.x-button-pressed .x-button-icon {
-    background-position-y: -23px;
+    
   }
 }
 
@@ -431,7 +428,7 @@ input.searchField {
   }
   &.x-button-pressing .x-button-icon,
   &.x-button-pressed .x-button-icon {
-    background-position-y: -23px;
+    
   }
 }
 
@@ -468,7 +465,7 @@ input.searchField {
   }
   &.x-button-pressing .x-button-icon,
   &.x-button-pressed .x-button-icon {
-    background-position-y: -23px;
+
   }
 }
 
@@ -867,10 +864,10 @@ button {
   }
 
   .x-button-green {
-    @include background-sprite(0, -495px);
+  
   }
   .x-button-red {
-    @include background-sprite(0, -526px);
+
   }
 
   .x-button-close {
@@ -927,7 +924,7 @@ button {
     &.x-button-pressing,
     &.x-button-pressed {
       color: #c5c5c5;
-      background-position-y: -463px;
+
     }
   }
 }
@@ -971,10 +968,10 @@ background: #f7f7f7;
 .x-field-input .x-clear-icon{right: .5em !important;}
 .x-webkit .x-anchor.x-anchor-top,.x-panel.x-floating{background-color:rgba(0, 0, 0, 0.8) !important; }
 .x-button.x-button-decline{border: 1px solid #000000 !important;}
-.x-segmentedbutton .x-button:not(.x-first){border: 1px solid #061f31;}
+
 .x-list-normal .x-list-item.x-list-item-tpl, .x-list-normal .x-list-item .x-dock-horizontal{border:none; float: left;
 width: 130px;margin: 10px 5px;}
-.x-layout-card-item{background-color: #f7f7f7 !important;}
+
 .img img {max-width:100%}
 .x-list .x-list-item .x-list-item-body, .x-list .x-list-item.x-list-item-tpl .x-innerhtml{padding:0px !important;background:#ffffff; border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;-moz-box-shadow:0px 0px 8px #888888;box-shadow:0px 0px 8px #888888;-webkit-box-shadow:0px 0px 8px #888888;overflow:hidden;}
 .x-picker-bar{
@@ -984,15 +981,15 @@ background-color: rgba(94, 0, 144, 0.5);border:none !important;
  .x-picker-item {color:#000;}
 }
 .saveAdForm{
-@include background-sprite(0, -231px);
+
 color: #fff;
 
 }
 .reset {color: #585858;}
 .x-toolbar-dark{
-@include background-sprite(0, -385px);
+
 }
-.x-container.x-toolbar-dark.x-toolbar.x-stretched.x-paint-monitored.x-navigation-bar.x-dock-item.x-docked-top{@include background-sprite(0, -221px);}
+.x-container.x-toolbar-dark.x-toolbar.x-stretched.x-paint-monitored.x-navigation-bar.x-dock-item.x-docked-top{}
 .sortContainer{
 .x-button{
 @include background-sprite(0, -431px);
