@@ -1,5 +1,4 @@
-//$bg-sprite-image: "../images/bg-sprites.png";
-$base-color: #4d0077;
+$bg-sprite-image: "../images/bg-sprites.png";
 $icon-sprite-image: "../images/icon-sprites.png";
 $splash-image: "../images/splashimg.png";
 $font-root: "../fonts";
@@ -59,8 +58,9 @@ $include-default-icons: false;
 // The following two lines import the default Sencha Touch theme. If you are building
 // a new theme, remove them and the add your own CSS on top of the base CSS (which
 // is already included in your app.json file).
+@import 'sencha-touch/base';
+@import 'sencha-touch/base/all';
 @import 'sencha-touch/default';
-@import 'sencha-touch/default/all';
 
 
 @import 'sencha-touch/default/src/Panel';
@@ -81,8 +81,8 @@ $include-default-icons: false;
 }
 
 @mixin background-sprite($x, $y) {
- // background: url($bg-sprite-image) repeat-x;
-//  background-size: 1px 558px;
+background: url($bg-sprite-image) repeat-x;
+ background-size: 1px 558px;
 
   @if $x != null {
     background-position-x: $x;
@@ -94,12 +94,12 @@ $include-default-icons: false;
 
 @mixin icon-sprite($x, $y) {
   background: url($icon-sprite-image) no-repeat;
-  background-size: 219px 76px;
+  background-size: 219px 76px !important;
   @if $x != null {
-    background-position-x: $x;
+    background-position-x: $x !important;
   }
   @if $y != null {
-    background-position-y: $y;
+    background-position-y: $y !important; 
   }
 }
 
@@ -264,8 +264,8 @@ body.splashBg {
 
 .search {
 
-  height: 50px;
-
+  height: 60px;
+.x-scroll-scroller{padding-top: 5px;}
   .x-form-label {
     display: none;
   }
@@ -278,7 +278,7 @@ body.splashBg {
     display: none;
     width: 23px;
     height: 23px;
-    top: 31px;
+    top: 14px;
     right: 3px;
     position: absolute;
   }
@@ -301,6 +301,8 @@ input.searchField {
   border-top-right-radius: 25px;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
+  padding: 24px 10px;
+  -moz-box-shadow:0px 0px 8px #888888;box-shadow:0px 0px 8px #888888;-webkit-box-shadow:0px 0px 8px #888888;
 }
 
 .x-button {
@@ -323,22 +325,79 @@ input.searchField {
   }
 }
 
-.x-toolbar {
-  position: relative;
-  
-.x-button {
-    @include background-sprite(0, 1px);
-    padding:0px !important;
-   
-    .x-button-icon {
-      display: block;
-    }
-    &.x-button-pressing,
-    &.x-button-pressed {
-      
-    }
+.x-toolbar.x-paint-monitored{
+  background: #5e1190;
+  background: -moz-linear-gradient(top, #5e1190 0%, #390658 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5e1190), color-stop(100%,#390658));
+  background: -webkit-linear-gradient(top, #5e1190 0%,#390658 100%);
+  background: -o-linear-gradient(top, #5e1190 0%,#390658 100%);
+  background: -ms-linear-gradient(top, #5e1190 0%,#390658 100%);
+  background: linear-gradient(to bottom, #5e1190 0%,#390658 100%);
+  border-bottom: 1px solid #000000;
+  .x-button{
+  border-radius: 3px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding: 4px 15px;
+  background: -moz-linear-gradient(top, #390658 0%, #58078e 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#390658), color-stop(100%,#58078e));
+  background: -webkit-linear-gradient(top, #390658 0%,#58078e 100%);
+  background: -o-linear-gradient(top, #390658 0%,#58078e 100%);
+  background: -ms-linear-gradient(top, #390658 0%,#58078e 100%);
+  background: linear-gradient(to bottom, #390658 0%,#58078e 100%);
+  border: 1px solid #220038;
+  &.x-button-pressing,
+  &.x-button-pressed {
+  background: #41016a;
+  background: -moz-linear-gradient(top, #41016a 0%, #4c007f 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#41016a), color-stop(100%,#4c007f));
+  background: -webkit-linear-gradient(top, #41016a 0%,#4c007f 100%);
+  background: -o-linear-gradient(top, #41016a 0%,#4c007f 100%);
+  background: -ms-linear-gradient(top, #41016a 0%,#4c007f 100%);
+  background: linear-gradient(to bottom, #41016a 0%,#4c007f 100%);
+  }
   }
 }
+
+.x-toolbar.small{
+  position: relative;
+  background: #5e1190;
+  background: -moz-linear-gradient(top, #5e1190 0%, #390658 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5e1190), color-stop(100%,#390658));
+  background: -webkit-linear-gradient(top, #5e1190 0%,#390658 100%);
+  background: -o-linear-gradient(top, #5e1190 0%,#390658 100%);
+  background: -ms-linear-gradient(top, #5e1190 0%,#390658 100%);
+  background: linear-gradient(to bottom, #5e1190 0%,#390658 100%);
+  border-bottom: 1px solid #000000;
+
+.x-button{
+  width: 42px;
+  height: 38px;
+  border-radius: 3px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background: #390658;
+  background: -moz-linear-gradient(top, #390658 0%, #58078e 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#390658), color-stop(100%,#58078e));
+  background: -webkit-linear-gradient(top, #390658 0%,#58078e 100%);
+  background: -o-linear-gradient(top, #390658 0%,#58078e 100%);
+  background: -ms-linear-gradient(top, #390658 0%,#58078e 100%);
+  background: linear-gradient(to bottom, #390658 0%,#58078e 100%);
+  border: 1px solid #220038;
+  &.x-button-pressing,
+  &.x-button-pressed {
+  background: #41016a;
+  background: -moz-linear-gradient(top, #41016a 0%, #4c007f 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#41016a), color-stop(100%,#4c007f));
+  background: -webkit-linear-gradient(top, #41016a 0%,#4c007f 100%);
+  background: -o-linear-gradient(top, #41016a 0%,#4c007f 100%);
+  background: -ms-linear-gradient(top, #41016a 0%,#4c007f 100%);
+  background: linear-gradient(to bottom, #41016a 0%,#4c007f 100%);
+  }
+}
+
+}
+
 
 .x-toolbar.small {
   z-index: 3;
@@ -357,14 +416,6 @@ input.searchField {
 }
 
 .x-button.ads {
-
-  width: 42px;
-  height: 38px;
-
-  border-radius: 3px;
-  margin-left: 8px;
-  margin-right: 8px;
-
   .x-button-icon {
     width: 20px;
     height: 12px;
@@ -378,11 +429,7 @@ input.searchField {
 }
 
 .x-button.insertAdBtn {
-  width: 42px;
-  height: 38px;
-  border-radius: 3px;
-  margin-left: 1px;
-  margin-right: 10px;
+ 
   .x-button-icon {
     width: 19px;
     height: 21px;
@@ -416,12 +463,6 @@ input.searchField {
 
 .x-button.searchBtn {
 
-  width: 42px;
-  height: 38px;
-
-  border-radius: 3px;
-  margin-right: 10px;
-
   .x-button-icon {
     @include icon-sprite(-39px, 0);
     width: 20px;
@@ -434,6 +475,7 @@ input.searchField {
 }
 
 .fbProfilePic {
+  margin-left: 4px;
   margin-right: 8px;
   position: relative;
   width: 42px;
@@ -610,16 +652,14 @@ button {
 
 // Ad Detail
 
-.x-button.backBtn {
-  @include icon-sprite(-117px, 2px);
+.x-button.backBtn{
+  .x-button-icon{
+  @include icon-sprite(-117px, 4px);
   margin-left: 5px;
   border-radius: 3px;
-  padding: 0 23px;
   height: 31px;
-  &.x-button-pressing,
-  &.x-button-pressed {
-  @include icon-sprite(-117px, 2px);
-  }
+  width: 35px;
+}
 }
 
 .adDetail {
@@ -895,6 +935,7 @@ button {
     width: 100%;
   }
 }
+
 .x-toolbar.sort {
 
   .x-button:first-child {
@@ -920,7 +961,7 @@ button {
     line-height: 30px;
     font-family: 'PT Sans Narrow', sans-serif;
 
-    @include background-sprite(0, -432px);
+    
 
     &.x-button-pressing,
     &.x-button-pressed {
@@ -954,7 +995,7 @@ button {
 
 .x-scroll-container{width:96% !important;margin: 0 2%;}
 .x-form .x-scroll-container{background:none !important;}
-.x-form.x-paint-monitored.search{margin-top:10px;}
+.x-form.x-paint-monitored.search{margin-top:22px;margin-bottom: 15px;}
 .x-inner.x-form-fieldset-inner .x-input-el {width: 90% !important;
 margin: 0px 5% 10px;border-radius:4px;
 border: 1px solid #ccc;
@@ -966,7 +1007,7 @@ background: #f7f7f7;
 .x-form-fieldset-inner{margin-top:30px;}
 }
 .x-select-overlay .x-list-label{color:#ffffff;}
-.x-field-input .x-clear-icon{right: .5em !important;}
+.x-field-input .x-clear-icon{right: .5em ;}
 .x-webkit .x-anchor.x-anchor-top,.x-panel.x-floating{background-color:rgba(0, 0, 0, 0.8) !important; }
 .x-button.x-button-decline{border: 1px solid #000000 !important;}
 
@@ -974,7 +1015,8 @@ background: #f7f7f7;
 width: 130px;margin: 10px 5px;}
 
 .img img {max-width:100%}
-.x-list .x-list-item .x-list-item-body, .x-list .x-list-item.x-list-item-tpl .x-innerhtml{padding:0px !important;background:#ffffff; border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;-moz-box-shadow:0px 0px 8px #888888;box-shadow:0px 0px 8px #888888;-webkit-box-shadow:0px 0px 8px #888888;overflow:hidden;}
+.x-list .x-list-item .x-list-item-body, .x-list .x-list-item.x-list-item-tpl .x-innerhtml{padding:0px !important;background:#ffffff; border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;
+-moz-box-shadow:0px 0px 8px #888888;box-shadow:0px 0px 8px #888888;-webkit-box-shadow:0px 0px 8px #888888;overflow:hidden;}
 .x-picker-bar{
 background-color: rgba(94, 0, 144, 0.5);border:none !important;
 }
@@ -990,13 +1032,35 @@ color: #fff;
 .x-toolbar-dark{
 
 }
-.x-container.x-toolbar-dark.x-toolbar.x-stretched.x-paint-monitored.x-navigation-bar.x-dock-item.x-docked-top{}
-.sortContainer{
-.x-button{
-@include background-sprite(0, -431px);
-}
-}
 
+.sortContainer{
+  background: #5C138C !important;
+.x-button{
+  background: #520a80;
+  background: -moz-linear-gradient(top, #520a80 0%, #41016a 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#520a80), color-stop(100%,#41016a));
+  background: -webkit-linear-gradient(top, #520a80 0%,#41016a 100%);
+  background: -o-linear-gradient(top, #520a80 0%,#41016a 100%);
+  background: -ms-linear-gradient(top, #520a80 0%,#41016a 100%);
+  background: linear-gradient(to bottom, #520a80 0%,#41016a 100%);
+  border: 1px solid #3a0859;
+  -webkit-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.1); 
+          box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.1);
+  &.x-button-pressing,
+  &.x-button-pressed {
+  background: #41016a;
+  background: -moz-linear-gradient(top, #41016a 0%, #520a80 99%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#41016a), color-stop(99%,#520a80));
+  background: -webkit-linear-gradient(top, #41016a 0%,#520a80 99%);
+  background: -o-linear-gradient(top, #41016a 0%,#520a80 99%);
+  background: -ms-linear-gradient(top, #41016a 0%,#520a80 99%);
+  background: linear-gradient(to bottom, #41016a 0%,#520a80 99%);
+  }
+          
+}
+}
+.x-button.x-first{margin-left: 20px; border-radius: 4px 0px 0px 4px;-webkit-border-radius:4px 0px 0px 4px;}
+.x-button.x-last{margin-right: 20px; border-radius: 0px 4px 4px 0px;-webkit-border-radius:0px 4px 4px 0px;}
 .x-webkit .x-selectmark-base, .x-webkit .x-field-select .x-component-outer:after, .x-field-select .x-webkit .x-component-outer:after{right: 6% !important; top:42% !important;}
 .x-form-fieldset-inner{
 	.x-clear-icon{right:4% !important;top: 23px;}
@@ -1006,3 +1070,12 @@ color: #fff;
     .x-button-icon{display:none;}
     }
   }
+.x-picker-mask{
+  background: #5C138C;
+height: 40px;
+opacity: 0.5;
+position: absolute;
+top: 82px;
+  
+}
+
