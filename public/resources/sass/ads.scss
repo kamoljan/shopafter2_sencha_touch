@@ -358,11 +358,12 @@ input.searchField {
 
 .x-button.ads {
 
-  width: 33px;
-  height: 30px;
+  width: 42px;
+  height: 38px;
 
   border-radius: 3px;
   margin-left: 8px;
+  margin-right: 8px;
 
   .x-button-icon {
     width: 20px;
@@ -377,11 +378,11 @@ input.searchField {
 }
 
 .x-button.insertAdBtn {
-  width: 33px;
-  height: 30px;
+  width: 42px;
+  height: 38px;
   border-radius: 3px;
   margin-left: 1px;
-  margin-right: 8px;
+  margin-right: 10px;
   .x-button-icon {
     width: 19px;
     height: 21px;
@@ -415,11 +416,11 @@ input.searchField {
 
 .x-button.searchBtn {
 
-  width: 33px;
-  height: 30px;
+  width: 42px;
+  height: 38px;
 
   border-radius: 3px;
-  margin-right: 6px;
+  margin-right: 10px;
 
   .x-button-icon {
     @include icon-sprite(-39px, 0);
@@ -435,13 +436,13 @@ input.searchField {
 .fbProfilePic {
   margin-right: 8px;
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 42px;
+  height: 38px;
   cursor: pointer;
 
   img {
-    width: 30px;
-    height: 30px;
+    width: 38px;
+    height: 36px;
     border-radius: 3px;
   }
 }
@@ -1000,3 +1001,8 @@ color: #fff;
 .x-form-fieldset-inner{
 	.x-clear-icon{right:4% !important;top: 23px;}
 }
+.x-picker {
+  .x-button{min-width: 45px;
+    .x-button-icon{display:none;}
+    }
+  }
