@@ -623,7 +623,7 @@ button {
 
 // Ad Detail
 
-.x-button.backBtn{
+.x-button.backBtn{padding: 0px !important;
   .x-button-icon{
   @include icon-sprite(-117px, 4px);
   margin-left: 5px;
@@ -631,6 +631,7 @@ button {
   height: 31px;
   width: 35px;
   display: block;
+  
 }
 }
 
@@ -1006,7 +1007,7 @@ width: 130px;margin: 10px 5px;}
 background-color: rgba(94, 0, 144, 0.5);border:none !important;
 }
 .x-picker-slot{
- .x-picker-item {color:#000;}
+ .x-picker-item {color:#000;text-transform: uppercase;}
 }
 .saveAdForm{
   background: #520a80;

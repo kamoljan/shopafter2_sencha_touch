@@ -61,7 +61,7 @@ Ext.define('WL.view.ad.InsertAdForm', {
 		    {
                         xtype: 'numberfield',
                         id: 'phone',
-                        name: 'Phone',
+                        name: 'phone',
                         placeHolder: 'Your phone number',
                         required: true,
                         clearIcon: true
