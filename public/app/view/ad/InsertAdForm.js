@@ -58,11 +58,19 @@ Ext.define('WL.view.ad.InsertAdForm', {
                         required: true,
                         clearIcon: true
                     },
+		    {
+                        xtype: 'numberfield',
+                        id: 'phone',
+                        name: 'Phone',
+                        placeHolder: 'Your phone number',
+                        required: true,
+                        clearIcon: true
+                    },
 {
                 xtype: 'container',
                 defaults: {
                     xtype: 'button',
-                    style: 'margin: 10px 5% 25px',
+                    style: 'margin: 10px 4.9% 25px',
                     flex: 1
                 },
                 layout: {
