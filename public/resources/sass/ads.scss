@@ -92,15 +92,10 @@ background: url($bg-sprite-image) repeat-x;
   }
 }
 
-@mixin icon-sprite($x, $y) {
+@mixin icon-sprite {
   background: url($icon-sprite-image) no-repeat;
   background-size: 219px 76px !important;
-  @if $x != null {
-    background-position-x: $x !important;
-  }
-  @if $y != null {
-    background-position-y: $y !important; 
-  }
+ 
 }
 
 .x-scroll-indicator {
@@ -274,7 +269,8 @@ body.splashBg {
     padding: 0 10px;  
 }
   .x-clear-icon {
-    @include icon-sprite(-171px, -46px);
+    @include icon-sprite;
+    background-position: -171px -46px;
     display: none;
     width: 23px;
     height: 23px;
@@ -379,7 +375,8 @@ input.searchField {
   }
 
   .headerTitle {
-    @include icon-sprite(0, -45px);
+    @include icon-sprite;
+    background-position: 0 -45px;
     margin: auto;
     width: 105px;
     height: 30px;
@@ -391,7 +388,8 @@ input.searchField {
     width: 20px;
     height: 12px;
 
-    @include icon-sprite(-85px, 0);
+    @include icon-sprite;
+    background-position:-85px 0;
   }
   &.x-button-pressing .x-button-icon,
   &.x-button-pressed .x-button-icon {
@@ -405,7 +403,8 @@ input.searchField {
     width: 19px;
     height: 21px;
 
-    @include icon-sprite(0px, 0);
+    @include icon-sprite;
+    background-position: 0 0;
   }
   &.x-button-pressing .x-button-icon,
   &.x-button-pressed .x-button-icon {
@@ -422,7 +421,8 @@ input.searchField {
   border-radius: 0 3px 3px 0;
 
   .x-button-icon {
-    @include icon-sprite(-59px, 0);
+    @include icon-sprite;
+    background-position: -59px 0;
     width: 26px;
     height: 18px;
   }
@@ -435,7 +435,8 @@ input.searchField {
 .x-button.searchBtn {
 
   .x-button-icon {
-    @include icon-sprite(-39px, 0);
+    @include icon-sprite;
+    background-position: -39px 0;
     width: 20px;
     height: 20px;
   }
@@ -473,7 +474,8 @@ input.searchField {
   margin-right: 8px;
 
   .x-button-icon {
-    @include icon-sprite(-172px, 0);
+    @include icon-sprite;
+    background-position: -172px 0;
     width: 16px;
     height: 19px;
   }
@@ -487,7 +489,8 @@ input.searchField {
   padding: 0 12px;
   b {
     display: block;
-    @include icon-sprite(0, 0);
+    @include icon-sprite;
+    background-position: 0 0;
     width: 19px;
     height: 21px;
   }
@@ -516,7 +519,8 @@ input.searchField {
 
   .moreArrow {
     // display: none;                                       // ANDROID PERFORMANCE
-    @include icon-sprite(-106px, 0);
+    @include icon-sprite;
+    background-position: -106px 0;
     width: 8px;
     height: 12px;
     position: absolute;
@@ -625,7 +629,8 @@ button {
 
 .x-button.backBtn{padding: 0px !important;
   .x-button-icon{
-  @include icon-sprite(-117px, 4px);
+  @include icon-sprite;
+  background-position: -117px 4px;
   margin-left: 5px;
   border-radius: 3px;
   height: 31px;
@@ -717,8 +722,8 @@ button {
 
     .moreArrow {
       position: absolute;
-      @include icon-sprite(-106px, -23px);
-
+      @include icon-sprite;
+      background-position: -106px -23px;
       width: 12px;
       height: 8px;
 
@@ -888,7 +893,8 @@ button {
     position: absolute;
     width: 25px;
     height: 26px;
-    @include icon-sprite(-193px, 0);
+    @include icon-sprite;
+    background-position: -193px 0;
     top: -17px;
     // ST2.1 tweak
     right: -15px;
@@ -952,7 +958,8 @@ button {
   font-size: 80%;
 
   .logo {
-    @include icon-sprite(-106px, -45px);
+    @include icon-sprite;
+    background-position: -106px -45px;
     display: inline-block;
     width: 17px;
     height: 24px;
@@ -987,7 +994,9 @@ button {
 .x-form-fieldset-inner{margin-top:30px;}
 }
 .x-select-overlay .x-list-label{color:#ffffff;}
-.x-field-input .x-clear-icon{@include icon-sprite(-171px, -46px);
+.x-field-input .x-clear-icon{
+  @include icon-sprite;
+  background-position: -171px -46px;
     display: none;
     width: 23px;
     height: 23px;
