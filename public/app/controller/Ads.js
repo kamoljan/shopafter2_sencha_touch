@@ -354,13 +354,18 @@ Ext.define('WL.controller.Ads', {
         var errors = model.validate();
         if (!errors.isValid()) {
             errors.each(function (errorObj) {
-                errorString += errorObj.getMessage() + '<br />';
-                var s = Ext.String.format('field[name={0}]', errorObj.getField());
+                errorString += '* ' + errorObj.getMessage() + '\n\n';
+                var f = errorObj.getField();
+                var s = Ext.String.format('field[name={0}]', f);
                 //FIXME: need validation for category_id
-                form.down(s).addCls('invalidField');
+                console.log('controller.Ads s = %s', s);
+                console.log('controller.Ads f = %s', f);
+                if (f !== 'image') {
+                    form.down(s).addCls('invalidField');
+                }
             });
-            alert('Errors in your input', errorString);
-            //return false;  //FIXME: need a validation
+            alert(errorString);
+            return false;
         }
         Ext.getCmp('insertadform').setMasked({
             xtype: 'loadmask',

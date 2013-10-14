@@ -5,7 +5,7 @@ Ext.define('WL.view.ad.CapturePicture', {
     config: {
         captured: false,
         width: 140,
-	//height: 100,
+        //height: 100,
         cls: 'picture-capture',
         html: [
             '<div class="icon"><i class="icon-camera"></i>"Pix" your item</div>',
@@ -14,25 +14,18 @@ Ext.define('WL.view.ad.CapturePicture', {
         ].join('')
     },
 
-    initialize: function() {
-
+    initialize: function () {
         console.log('view.ad.CapturePicture initialize');
-
         this.callParent(arguments);
-
         this.file = this.element.down('input[type=file]');
         this.img = this.element.down('img');
-
         this.file.on('change', this.setPicture, this); //Step 2
-
         //FIX for webkit
         window.URL = window.URL || window.webkitURL; //Step 3
     },
 
-    setPicture: function(event) {
-
+    setPicture: function (event) {
         console.log('view.ad.CapturePicture setPicture');
-
         var files = event.target.files;
         if (files.length === 1 && files[0].type.indexOf("image/") === 0) {
             this.img.setStyle('display', 'block');
@@ -43,10 +36,8 @@ Ext.define('WL.view.ad.CapturePicture', {
         }
     },
 
-    reset: function() {
-
+    reset: function () {
         console.log('view.ad.CapturePicture reset');
-
         this.img.setStyle('display', 'none');
         this.img.set({
             src: ''
@@ -54,22 +45,17 @@ Ext.define('WL.view.ad.CapturePicture', {
         this.setCaptured(false);
     },
 
-    getImageDataUrl: function() { //Step 6
-
+    getImageDataUrl: function () { //Step 6
         console.log('view.ad.CapturePicture getImageDataUrl');
-
         var img = this.img.dom,
             imgCanvas = document.createElement("canvas"),
             imgContext = imgCanvas.getContext("2d");
-
         if (this.getCaptured()) {
             // Make sure canvas is as big as the picture
             imgCanvas.width = img.width;
             imgCanvas.height = img.height;
-
             // Draw image into canvas element
             imgContext.drawImage(img, 0, 0, img.width, img.height);
-
             // Return the image as a data URL
             return imgCanvas.toDataURL("image/jpeg");
         }
