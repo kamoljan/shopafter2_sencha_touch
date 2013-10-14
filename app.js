@@ -471,6 +471,7 @@ app.post('/ad', fb.checkSession, function (req, res, next) {
                         console.log("(ad.post): req.body.category = " + req.body.category);
                         console.log("(ad.post): req.body.description = " + req.body.description);
                         console.log("(ad.post): req.body.price = " + req.body.price);
+                        console.log("(ad.post): req.body.phone = " + req.body.phone);
                         console.log("(ad.post): req.body.latitude = " + req.body.latitude);
                         console.log("(ad.post): req.body.longitude = " + req.body.longitude);
                         // Construct a new Ad using the post data
@@ -481,6 +482,7 @@ app.post('/ad', fb.checkSession, function (req, res, next) {
                             category: req.body.category,
                             description: req.body.description,
                             price: req.body.price,
+                            phone: req.body.phone,
                             loc: [req.body.longitude, req.body.latitude],
                             date: new Date
                         });

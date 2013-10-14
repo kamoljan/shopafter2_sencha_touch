@@ -50,7 +50,7 @@ Ext.define('WL.view.phone.ad.Detail', {
             '<div>',
             '<p>{price}</p>',
             '<p><span>Date:</span>{date}</p>',
-            '<p><span>Phone number:</span>100 000 000</p>',            
+            '<p><span>Phone number: </span><a href="tel:+{phone}">{phone}</a></p>',
             '</div>',
             '<div>',
             '<tpl if="director"><p>Directed By: {director}</p></tpl>',

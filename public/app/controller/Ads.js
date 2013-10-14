@@ -388,6 +388,7 @@ Ext.define('WL.controller.Ads', {
                 category: values.category,
                 description: values.description,
                 price: values.price,
+                phone: values.phone,
                 latitude: lat,
                 longitude: lon
             },
