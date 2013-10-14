@@ -41,7 +41,6 @@ Ext.define('WL.view.Main', {
                         cls: 'insertAdBtn',
                         iconCls: 'insertAdBtn'
                     },
-
                     {
                         xtype: 'component',
                         cls: 'fbProfilePic',

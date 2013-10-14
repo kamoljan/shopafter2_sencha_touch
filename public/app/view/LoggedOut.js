@@ -1,13 +1,9 @@
 Ext.define('WL.view.LoggedOut', {
 	extend: 'Ext.Container',
-
 	xtype: 'loggedOut',
-
 	config: {
-
 		layout: 'fit',
 		cls: 'loggedOut',
-
 		items: [
 			{
 				xtype: 'container',

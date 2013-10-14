@@ -1,18 +1,16 @@
 Ext.define('WL.view.tablet.ad.Detail', {
-
     extend: 'Ext.Container',
-
     config: {
-
         scrollable: 'vertical',
-
         items: [
             {
                 docked: 'top',
                 xtype: 'toolbar',
                 cls: 'small',
                 items: [
-                    {   xtype: 'spacer'   },
+                    {
+                        xtype: 'spacer'
+                    },
                     {
                         xtype: 'button',
                         cls: 'shareBtn',
@@ -27,6 +25,7 @@ Ext.define('WL.view.tablet.ad.Detail', {
             '<div class="adDetailInner">',
             '<div class="left">',
             '<div class="img"><img src="{image}" /></div>',
+            '<div class="fbProfilePic"><img src="https://graph.facebook.com/{profileId}/picture?type=square" /></div>',
             '<tpl if="trailer"><button class="trailer">Play Trailer</button></tpl>',
             '</div>',
             '<div class="actions">',
@@ -42,12 +41,11 @@ Ext.define('WL.view.tablet.ad.Detail', {
             '<div class="extraInfo">',
             '<div>',
             '<p>{price}</p>',
-            '<p>{date}</p>',
+            '<p><span>Date: </span>{date}</p>',
             '<p><span>Phone number: </span><a href="tel:+{phone}">{phone}</a></p>',
             '<div class="fbActivity">',
             '<tpl for="friendActivity">',
             '<div class="x-list-item"><div class="x-list-item-label">',
-            '<img src="https://graph.facebook.com/{profileId}/picture?type=square" />',
             '<b>{name}</b> {action} it',
             '</div></div>',
             '</tpl>',
@@ -66,17 +64,12 @@ Ext.define('WL.view.tablet.ad.Detail', {
     },
 
     initialize: function () {
-
         console.log('view.tablet.ad.Detail initialize');
-
         this.element.on({
             tap: function (e, dom) {
-
                 var el = Ext.get(e.target),
                     fireEvent;
-
                 if (el.dom.nodeName == 'B') el = el.parent();
-
                 if (e.target.nodeName.match(/button|b/i)) {
                     if (el.hasCls('seen')) {
                         fireEvent = el.hasCls('selected') ? 'unSeen' : 'seen';
@@ -97,7 +90,6 @@ Ext.define('WL.view.tablet.ad.Detail', {
                     } else if (el.hasCls('trailer')) {
                         fireEvent = 'playTrailer';
                     }
-
                     if (fireEvent) {
                         this.fireEvent(fireEvent, WL.currentAd, el);
                     }

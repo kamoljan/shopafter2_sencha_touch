@@ -1,12 +1,8 @@
 Ext.define('WL.view.phone.ad.Detail', {
-
     extend: 'Ext.Container',
     requires: ['Ext.Anim'],
-
     config: {
-
         scrollable: 'vertical',
-
         items: [
             {
                 docked: 'top',
@@ -31,9 +27,9 @@ Ext.define('WL.view.phone.ad.Detail', {
         ],
         tpl: Ext.create('Ext.XTemplate',
             '<div class="adDetail">',
-//            '<div class="moreArrow"></div>',
             '<div class="adDetailInner">',
             '<div class="img"><img src="{image}" /></div>',
+            '<div class="fbProfilePic"><img src="https://graph.facebook.com/{profileId}/picture?type=square" /></div>',
             '<tpl if="trailer"><button class="trailer">Play Trailer</button></tpl>',
 //            '<div class="actions">',
 //            '<div class="rating"><span>{% if (values.criticRating >= 0) { %}{criticRating}%{% } else { %}?{% } %}</span> on Rotten Tomatoes</div>',
@@ -49,7 +45,7 @@ Ext.define('WL.view.phone.ad.Detail', {
             '<tpl if="criticsConsensus"><div class="consensus">"{criticsConsensus}"</div></tpl>',
             '<div>',
             '<p>{price}</p>',
-            '<p><span>Date:</span>{date}</p>',
+            '<p><span>Date: </span>{date}</p>',
             '<p><span>Phone number: </span><a href="tel:+{phone}">{phone}</a></p>',
             '</div>',
             '<div>',
@@ -60,7 +56,6 @@ Ext.define('WL.view.phone.ad.Detail', {
             '<div class="fbActivity">',
             '<tpl for="friendActivity">',
             '<div class="x-list-item"><div class="x-list-item-label">',
-            '<img src="https://graph.facebook.com/{profileId}/picture?type=square" />',
             '<b>{name}</b> {action} it',
             '</div></div>',
             '</tpl>',
@@ -79,21 +74,15 @@ Ext.define('WL.view.phone.ad.Detail', {
     },
 
     initialize: function() {
-
         console.log('view.phone.ad.Detail initialize');
-
         this.element.on({
             tap: function(e, dom) {
-
                 var el = Ext.get(e.target),
                     fireEvent;
-
                 if (el.dom.nodeName == 'B') el = el.parent();
-
                 if (!e.target.nodeName.match(/button|b/i)) {
                     this.toggle();
                 } else {
-
                     if (el.hasCls('seen')) {
                         fireEvent = el.hasCls('selected') ? 'unSeen' : 'seen';
                         el.toggleCls('selected');
@@ -109,7 +98,6 @@ Ext.define('WL.view.phone.ad.Detail', {
                     } else if (el.hasCls('trailer')) {
                         fireEvent = 'playTrailer';
                     }
-
                     if (fireEvent) {
                         this.fireEvent(fireEvent, WL.currentAd, el);
                     }
@@ -121,18 +109,14 @@ Ext.define('WL.view.phone.ad.Detail', {
 
         this.element.on({
             tap: function(e, dom) {
-
                 var el = Ext.get(e.target),
                     fireEvent;
-
                 if (el.dom.nodeName == 'B') el = el.parent();
-
                 if (el.hasCls('postToWall')) {
                     fireEvent = 'postToWall';
                 } else if (el.hasCls('sendToFriend')) {
                     fireEvent = 'sendToFriend';
                 }
-
                 if (fireEvent) {
                     this.fireEvent(fireEvent, WL.currentAd, el);
                 }
@@ -140,24 +124,20 @@ Ext.define('WL.view.phone.ad.Detail', {
             delegate: '.fbActions',
             scope: this
         });
-
         this.on('updatedata', this.calculateHeights);
         Ext.Viewport.on('orientationchange', this.calculateHeights, this);
     },
 
     calculateHeights: function() {
-
         console.log('view.phone.ad.Detail calculateHeights');
-
         var element = this.element.down('.adDetail'),
             innerElement = this.element.down('.adDetailInner');
-
         element.removeCls('ellipsis');
         element.setHeight('');
         this.outerHeight = element.getHeight();
         this.innerHeight = innerElement.getHeight();
         element.addCls('ellipsis');
-    },
+    }
 
   /*  toggle: function() {
 

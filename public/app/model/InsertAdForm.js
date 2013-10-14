@@ -3,6 +3,9 @@ Ext.define('WL.model.InsertAdForm', {
     config: {
         fields: [
             {
+                name: 'profileId'
+            },
+            {
                 name: 'image'
             },
             {
@@ -29,6 +32,9 @@ Ext.define('WL.model.InsertAdForm', {
             {
                 name: 'longitude',
                 type: 'float'
+            },
+            {
+                name: 'date'
             }
         ],
         validations: [

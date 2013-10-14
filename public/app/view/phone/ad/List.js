@@ -6,11 +6,11 @@ Ext.define('WL.view.phone.ad.List', {
 
         listeners: {
             order: 'before',
-            select: function() {
+            select: function () {
                 return false;
             },
 
-            itemtap: function(dataview, index, target, record, evt) {
+            itemtap: function (dataview, index, target, record, evt) {
 
                 var el = Ext.get(evt.target),
                     fireEvent;
@@ -44,22 +44,8 @@ Ext.define('WL.view.phone.ad.List', {
         disableSelection: true,
 
         itemTpl: Ext.create('Ext.XTemplate',
-            '<div class="moreArrow"></div>',
             '<div class="img"><img src="{image}" /></div>',
-            '<div class="meta">',
-		'<p>{price}</p>',
- //               '<div class="actions">',
- //                   '<div class="rating"><span>{% if (values.criticRating >= 0) { %}{criticRating}%{% } else { %}?{% } %}</span></div>',
- //                   '<button class="seen{[values.seen ? " selected" : ""]}">Seen It</button>',
- //                  '{% if (values.seen) { %}',
- //                       '<button class="thumb up{[values.like ? " selected" : ""]}"><b></b></button>',
- //                       '<button class="thumb down{[values.dislike ? " selected" : ""]}"><b></b></button>',
- //                   '{% } else { %}',
- //                       '<button class="want{[values.wantToSee ? " selected" : ""]}">Want to See It</button>',
- //                   '{% } %}',
- //              '</div>',
- //               '<div class="friends">{[this.friendActivity(values.friendActivity)]}</div>',
-            '</div>'
+            '$ {price}'
         )
     }
 });

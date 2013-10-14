@@ -9,6 +9,7 @@ Ext.define('WL.model.Ad', {
             'category',
             'description',
             'price',
+            'phone',
             'latitude',
             'longitude',
             'date',

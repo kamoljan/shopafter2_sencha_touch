@@ -10,9 +10,7 @@
  * - `exception`    Fired when there is a Facebook excpetion (such as a timeout)
  */
 Ext.define('WL.Facebook', {
-
     mixins: ['Ext.mixin.Observable'],
-
     singleton: true,
 
     /**
@@ -34,13 +32,9 @@ Ext.define('WL.Facebook', {
      * @param {String} appId  Facebook application ID
      */
     initialize: function(appId) {
-
         console.log('Facebook initialize');
-
         this.appId = appId;
-
         window.fbAsyncInit = Ext.bind(this.onFacebookInit, this);
-
         (function(d){
             var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
             js = d.createElement('script'); js.id = id; js.async = true;
@@ -53,23 +47,18 @@ Ext.define('WL.Facebook', {
      * This fucntion is run when the Facebook JS SDK has been successfully laoded onto the page.
      */
     onFacebookInit: function() {
-
         console.log('Facebook onFacebookInit');
-
         if (!this.appId) {
             Ext.Logger.error('No Facebook Application ID set.');
             return;
         }
-
         FB.init({
             appId: this.appId,
             cookie: true,
             frictionlessRequests: true
         });
-
         var me = this;
         me.hasCheckedStatus = false;
-
         FB.Event.subscribe('auth.logout', function() {
             // This event can be fired as soon as the page loads which may cause undesired behaviour, so we wait
             // until after we've specifically checked the login status.
@@ -80,12 +69,9 @@ Ext.define('WL.Facebook', {
 
         // Get the user login status from Facebook.
         FB.getLoginStatus(function(response) {
-
             me.fireEvent('loginStatus');
-
             clearTimeout(me.fbLoginTimeout);
             me.hasCheckedStatus = true;
-
             if (response.status == 'connected') {
                 me.fireEvent('connected');
             } else {
@@ -109,9 +95,7 @@ Ext.define('WL.Facebook', {
      * Returns the app location. If we're inside an iFrame, return the top level path
      */
     currentLocation: function() {
-
         console.log('Facebook currentLocation');
-
         if (window.top.location.host) {
             return window.top.location.protocol + "//" + window.top.location.host + window.top.location.pathname
         } else {
@@ -123,15 +107,12 @@ Ext.define('WL.Facebook', {
      * The Facebook authentication URL.
      */
     redirectUrl: function() {
-
         console.log('Facebook redirectUrl');
-
         var redirectUrl = Ext.Object.toQueryString({
             redirect_uri: this.currentLocation(),
             client_id: this.appId,
             scope: 'publish_actions,share_item'
         });
-
         if (!Ext.os.is.Android && !Ext.os.is.iOS && /Windows|Linux|MacOS/.test(Ext.os.name)) {
             return "https://www.facebook.com/dialog/oauth?" + redirectUrl;
         } else {
@@ -140,22 +121,15 @@ Ext.define('WL.Facebook', {
     },
 
     error: function(err) {
-
         console.log('Facebook error');
-
         var errMsg = "Unknown Facebook error";
-
         if (typeof err == 'object') {
-
             if (err.type && err.message && err.code) {
-
                 if (err.type == 'OAuthException' && err.code == 100) {
-
                     errMsg = [
                         "<p>Activate your Facebook Timeline to share actions with friends.</p>",
                         "<p>Click 'Get Timeline' on the bottom of the Facebook page, then come back here.</p>"
                     ].join('');
-
                     Ext.create('WL.view.Dialog', {
                         msg: errMsg,
                         buttons: [
@@ -175,16 +149,12 @@ Ext.define('WL.Facebook', {
                             }
                         ]
                     }).show();
-
                     return;
-
                 } else if (err.type == 'OAuthException' && err.code == 200) {
-
                     errMsg = [
                         "<p>We need permission to share your Watchlist activity with friends.</p>",
                         "<p>Go to Facebook and grant permission?</p>"
                     ].join('');
-
                     Ext.create('WL.view.Dialog', {
                         msg: errMsg,
                         buttons: [
@@ -204,15 +174,11 @@ Ext.define('WL.Facebook', {
                             }
                         ]
                     }).show();
-
                     return;
                 }
-
                 errMsg = err.message;
             }
         }
-
         Ext.create('WL.view.Dialog', { msg: errMsg }).show();
     }
-
 });
