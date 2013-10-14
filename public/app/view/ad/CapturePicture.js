@@ -8,7 +8,7 @@ Ext.define('WL.view.ad.CapturePicture', {
 	//height: 100,
         cls: 'picture-capture',
         html: [
-            '<div class="icon"><i class="icon-camera"></i> Make a pic</div>',
+            '<div class="icon"><i class="icon-camera"></i>"Pix" your item</div>',
             '<img class="image-tns" />',
             '<input type="file" capture="camera" accept="image/*" />' //Step 1
         ].join('')

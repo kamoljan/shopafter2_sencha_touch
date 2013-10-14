@@ -26,6 +26,12 @@ Ext.define('WL.view.Main', {
                         xtype: 'spacer'
                     },
                     {
+                        xtype: 'button',
+                        handler: function () {
+                            window.location = 'mailto:kamol701@gmail.com';
+                        }
+                    },
+                    {
                         cls: 'ads',
                         iconCls: 'ads',
                         pressed: true

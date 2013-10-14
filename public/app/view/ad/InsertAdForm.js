@@ -1,28 +1,25 @@
 Ext.define('WL.view.ad.InsertAdForm', {
     extend: 'Ext.form.Panel',
-
     xtype: 'insertadform',
     id: 'insertadform',
-
     config: {
         items: [
             {
                 xtype: 'fieldset',
                 id: 'fieldset1',
-                // title: 'Post your ad!',
+                //title: 'Sell it now!',
                 //instructions: 'Please enter the information above.',
                 defaults: {
                     labelWidth: '25%'
                 },
                 items: [
                     {
-//                        xtype: 'devicepicture'
-                      xtype: 'capturepicture'
+                        xtype: 'capturepicture'
                     },
                     {
                         xtype: 'selectfield',
                         cls: 'select-cat',
-			id: 'category',
+                        id: 'category',
                         name: 'category',
                         required: true,
                         placeHolder: 'Choose a category',
@@ -46,7 +43,7 @@ Ext.define('WL.view.ad.InsertAdForm', {
                         xtype: 'textareafield',
                         id: 'description',
                         name: 'description',
-                        placeHolder: 'What are you selling?',
+                        placeHolder: 'Item descriptions (140)',
                         required: true,
                         clearIcon: true
                     },
@@ -54,43 +51,43 @@ Ext.define('WL.view.ad.InsertAdForm', {
                         xtype: 'numberfield',
                         id: 'price',
                         name: 'price',
-                        placeHolder: 'Your price?',
+                        placeHolder: 'Price',
                         required: true,
                         clearIcon: true
                     },
-		    {
+                    {
                         xtype: 'numberfield',
                         id: 'phone',
                         name: 'phone',
-                        placeHolder: 'Your phone number',
+                        placeHolder: 'Phone',
                         required: true,
                         clearIcon: true
                     },
-{
-                xtype: 'container',
-                defaults: {
-                    xtype: 'button',
-                    style: 'margin: 10px 4.9% 25px',
-                    flex: 1
-                },
-                layout: {
-                   type: 'hbox'
-                },
-                items: [
                     {
-                        text: 'Reset',
-			cls: 'reset',
-                        handler: function () {
-                            Ext.getCmp('insertadform').reset();
-                        }
-                    },
-                    {
-                        text: 'Save',
-                        id: 'saveAdForm',
-			cls: 'saveAdForm',
+                        xtype: 'container',
+                        defaults: {
+                            xtype: 'button',
+                            style: 'margin: 10px 4.9% 25px',
+                            flex: 1
+                        },
+                        layout: {
+                            type: 'hbox'
+                        },
+                        items: [
+                            {
+                                text: 'Reset',
+                                cls: 'reset',
+                                handler: function () {
+                                    Ext.getCmp('insertadform').reset();
+                                }
+                            },
+                            {
+                                text: 'Sell',
+                                id: 'saveAdForm',
+                                cls: 'saveAdForm'
+                            }
+                        ]
                     }
-                ]
-            }
 
                 ]
             }
