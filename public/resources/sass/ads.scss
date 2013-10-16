@@ -1,5 +1,6 @@
 $bg-sprite-image: "../images/bg-sprites.png";
 $icon-sprite-image: "../images/icon-sprites.png";
+$icon-sprite-detail:"../images/spriteD.png";
 $splash-image: "../images/splashimg.png";
 $font-root: "../fonts";
 // Watchlist Sass file
@@ -96,7 +97,11 @@ $include-default-icons: false;
   background-size: 219px 76px !important;
 
 }
+@mixin spriteD{
+  background: url($icon-sprite-detail) no-repeat;
+  background-size: 36px 177px !important;
 
+}
 .x-scroll-indicator {
   background: #ccc;
 }
@@ -390,14 +395,23 @@ input.searchField {
     height: 30px;
   }
 }
-
-.x-button.ads {
+.x-button.help {
   .x-button-icon {
-    width: 20px;
-    height: 12px;
+    width: 22px;
+    height: 21px;
 
     @include icon-sprite;
-    background-position: -85px 0;
+    background-position: -122px -29px;
+  }
+
+}
+.x-button.ads {
+  .x-button-icon {
+    width: 19px;
+    height: 19px;
+
+    @include icon-sprite;
+    background-position: -85px 1px;
   }
   &.x-button-pressing .x-button-icon,
   &.x-button-pressed .x-button-icon {
@@ -463,7 +477,7 @@ input.searchField {
 
   img {
     width: 38px;
-    height: 36px;
+    height: 38px;
     border-radius: 3px;
   }
 }
@@ -649,12 +663,14 @@ button {
 }
 
 .adDetail {
-  margin: 14px 13px;
+  margin: 14px 0px;
   color: #a1a1a1;
-
+  background: #fff;
+  padding: 15px;
   position: relative;
   overflow: hidden;
-
+  border-radius: 6px;
+  border: 1px solid #ccc;
   div.img {
     border-radius: 2px;
     margin: 0 10px 10px 0;
@@ -1173,3 +1189,36 @@ button {
   top: 82px;
 
 }
+.adDetail .fbProfilePic{float: left;}
+.adDetailPrice{
+  @include spriteD;
+  background-position:5px 5px;
+  font-size: 24px;
+  color: #090909;
+  padding-left: 50px;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.adDetailData{font-size: 13px;}
+.userName{color: #090909;}
+.adDetailPhone{background: #fbfbfb;
+
+a{
+  @include spriteD;
+  background-position:5px -46px;
+  display: block;
+  padding: 5px 5px 5px 50px;
+  text-decoration: none;
+  color: #969696;
+}
+}
+.adDetailDesc{
+  padding-left: 50px;
+  @include spriteD;
+  background-position: 5px -100px;
+  margin-top: 20px;
+  padding: 5px 5px 5px 50px
+}
+

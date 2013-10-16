@@ -28,6 +28,7 @@ Ext.define('WL.view.Main', {
                     {
                         xtype: 'button',
                         iconCls: 'help',
+			cls: 'help',
                         handler: function () {
                             window.location = 'mailto:kamol701@gmail.com';
                         }
