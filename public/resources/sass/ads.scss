@@ -1,5 +1,5 @@
 $bg-sprite-image: "../images/bg-sprites.png";
-$icon-sprite-image: "../images/icon-sprites.png";
+$icon-sprite-image: "../images/icon-sprites.png ";
 $icon-sprite-detail:"../images/spriteD.png";
 $splash-image: "../images/splashimg.png";
 $font-root: "../fonts";
@@ -376,8 +376,9 @@ input.searchField {
       @include background-image(linear-gradient(#41016a, #520a80));
     }
   }
-
+  
 }
+
 
 .x-toolbar.small {
   z-index: 3;
@@ -406,17 +407,17 @@ input.searchField {
 
 }
 .x-button.ads {
+  background:none !important;
+  border: none !important;
+  width: 105px !important;
   .x-button-icon {
-    width: 19px;
-    height: 19px;
-
     @include icon-sprite;
-    background-position: -85px 1px;
+    background-position: 0 -45px;
+    margin: auto;
+    width: 105px;
+    height: 30px;
   }
-  &.x-button-pressing .x-button-icon,
-  &.x-button-pressed .x-button-icon {
-
-  }
+ 
 }
 
 .x-button.insertAdBtn {
@@ -428,10 +429,8 @@ input.searchField {
     @include icon-sprite;
     background-position: 0 0;
   }
-  &.x-button-pressing .x-button-icon,
-  &.x-button-pressed .x-button-icon {
-
-  }
+  
+  
 }
 
 .x-button.friends {
@@ -447,10 +446,7 @@ input.searchField {
     width: 26px;
     height: 18px;
   }
-  &.x-button-pressing .x-button-icon,
-  &.x-button-pressed .x-button-icon {
-
-  }
+ 
 }
 
 .x-button.searchBtn {
@@ -461,10 +457,7 @@ input.searchField {
     width: 20px;
     height: 20px;
   }
-  &.x-button-pressing .x-button-icon,
-  &.x-button-pressed .x-button-icon {
-
-  }
+ 
 }
 
 .fbProfilePic {
