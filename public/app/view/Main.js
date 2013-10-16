@@ -25,13 +25,13 @@ Ext.define('WL.view.Main', {
                     {
                         xtype: 'spacer'
                     },
-//                    {
-//                        xtype: 'button',
-//                        iconCls: 'help',
-//                        handler: function () {
-//                            window.location = 'mailto:kamol701@gmail.com';
-//                        }
-//                    },
+                    {
+                        xtype: 'button',
+                        iconCls: 'help',
+                        handler: function () {
+                            window.location = 'mailto:kamol701@gmail.com';
+                        }
+                    },
                     {
                         cls: 'ads',
                         iconCls: 'ads',

@@ -29,7 +29,7 @@ Ext.define('WL.view.tablet.ad.Detail', {
                         '<p>{description}</p>',
                         '<p>Price: $ {price}</p>',
                         '<p>Date: {date}</p>',
-                        '<p>Phone: <a href="tel:+{phone}">{phone}</a></p>',
+                        '<p>Phone number: <a href="tel:+{phone}">{phone}</a></p>',
                     '</div>',
                 '</div>',
             '</div>',
