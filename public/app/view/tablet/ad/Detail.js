@@ -23,15 +23,13 @@ Ext.define('WL.view.tablet.ad.Detail', {
         tpl: Ext.create('Ext.XTemplate',
             '<div class="adDetail tablet">',
                 '<div class="adDetailInner">',
-                    
-                        '<div class="img"><img src="{image}" /></div>',
-                        '<div class="fbProfilePic"><img src="https://graph.facebook.com/{profileId}/picture?type=square" /></div>',
-                        '<span class="userName">Van Do</span>',
-                        '<p class="adDetailData">Posted at: {date}</p>',
-                        '<p class="adDetailPrice">$ {price}</p>',
-                        '<p class="adDetailPhone"><a href="tel:+{phone}">{phone}</a></p>',
-                        '<p class="adDetailDesc">{description}</p>',
-                    
+                    '<div class="img"><img src="{image}" /></div>',
+                    '<div class="fbProfilePic"><img src="https://graph.facebook.com/{profileId}/picture?type=square" /></div>',
+                    '<span class="userName">&nbsp;</span>',
+                    '<p class="adDetailData">Posted at: {date}</p>',
+                    '<p class="adDetailPrice">$ {price}</p>',
+                    '<p class="adDetailPhone"><a href="tel:+{phone}">{phone}</a></p>',
+                    '<p class="adDetailDesc">{description}</p>',
                 '</div>',
             '</div>',
             {

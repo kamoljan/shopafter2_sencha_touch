@@ -63,6 +63,14 @@ Ext.define('WL.model.InsertAdForm', {
                 field: 'phone',
                 message: "Enter your phone number"
             }
-        ]
+        ],
+        proxy: {
+            type: 'ajax',
+            url: '/ad',
+            reader: {
+                type: 'json',
+                rootProperty: 'ads'
+            }
+        }
     }
 });

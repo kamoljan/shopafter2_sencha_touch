@@ -36,7 +36,7 @@ Ext.define('WL.view.ad.InsertAdForm', {
                             {text: 'Pets', value: 9},
                             {text: 'Cars', value: 10},
                             {text: 'Houses', value: 11},
-                            {text: 'Sports', value: 12},
+                            {text: 'Sports', value: 12}
                         ]
                     },
                     {
