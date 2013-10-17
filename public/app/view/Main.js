@@ -18,8 +18,8 @@ Ext.define('WL.view.Main', {
                 xtype: 'toolbar',
                 cls: 'small withBg',
                 title: {
-                   // title: '<div class="headerTitle"></div>',
-                 //   style: {'position': 'absolute', 'left': '0px', 'top': '9px'}
+                    // title: '<div class="headerTitle"></div>',
+                    //   style: {'position': 'absolute', 'left': '0px', 'top': '9px'}
                 },
                 items: [
                     {
@@ -27,18 +27,18 @@ Ext.define('WL.view.Main', {
                         iconCls: 'ads',
                         pressed: true
                     },
-		    {
+                    {
                         xtype: 'spacer'
                     },
                     {
                         xtype: 'button',
                         iconCls: 'help',
-			cls: 'help',
+                        cls: 'help',
                         handler: function () {
                             window.location = 'mailto:kamol701@gmail.com';
                         }
                     },
-                    
+
                     {
                         xtype: 'button',
                         cls: 'insertAdBtn',

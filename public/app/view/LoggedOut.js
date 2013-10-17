@@ -1,31 +1,33 @@
 Ext.define('WL.view.LoggedOut', {
-	extend: 'Ext.Container',
-	xtype: 'loggedOut',
-	config: {
-		layout: 'fit',
-		cls: 'loggedOut',
-		items: [
-			{
-				xtype: 'container',
-				layout: {
-					type: 'vbox',
-					align: 'center'
-				},
-				cls: 'loginScreen',
-				items: [
-		            {
-		                xtype: 'button',
-		                text: 'Login with Facebook',
-		                id: 'fbLogin',
-		                cls: 'fbLogin'
-		            // },
-		            // {
-		            // 	xtype: 'component',
-		            // 	id: 'facePile',
-		            // 	html: '<div class="fb-facepile" data-app-id="358904677456171" data-max-rows="1" data-width="220" data-colorscheme="dark"></div>'
-					}
-				]
-			}
-		]
-	}
+    extend: 'Ext.Container',
+    xtype: 'loggedOut',
+    config: {
+        layout: 'fit',
+        cls: 'loggedOut',
+        items: [
+            {
+                xtype: 'container',
+                layout: {
+                    type: 'vbox',
+                    align: 'center'
+                },
+                cls: 'loginScreen',
+                items: [
+                    {
+                        html: "Log in and become part of the best online market place in Southeast Asia!!!"
+                            + "<br />" + "Don't worry, we won't share anything without your okay. Promise!"
+                    },
+                    {
+                        xtype: 'spacer'
+                    },
+                    {
+                        xtype: 'button',
+                        text: 'Login with Facebook',
+                        id: 'fbLogin',
+                        cls: 'fbLogin'
+                    }
+                ]
+            }
+        ]
+    }
 });
