@@ -150,7 +150,7 @@ body.splashBg {
   // ANDROID PERFORMANCE
   background-size: contain;
   // ANDROID PERFORMANCE
-
+background-size: 320px;
   position: absolute;
   top: 0;
   right: 0;
@@ -159,7 +159,7 @@ body.splashBg {
 }
 
 .tabletSplash {
-  background: url($splash-image) no-repeat center 25%;
+  background: url($splash-image) no-repeat center 25%;background-size: 320px;
   // ANDROID PERFORMANCE
   background-size: contain;
   // ANDROID PERFORMANCE
@@ -170,14 +170,14 @@ body.splashBg {
 }
 
 .loginScreen {
-  top: 70% !important;
+  top: 45% !important;
   // fix for 2.1
   background: transparent;
 }
 
 .fbLogin {
-  @include background-sprite(0, -147px);
-
+    @include background-image(linear-gradient(#611c8f, #8327c0));
+  border: 1px solid #3A075B;
   margin-bottom: 15px;
   width: 230px;
   line-height: 35px;
@@ -185,8 +185,13 @@ body.splashBg {
   border-radius: 3px;
   &.x-button-pressing,
   &.x-button-pressed {
-
+@include background-image(linear-gradient(#4E1672, #6810A3));
   }
+}
+.loginText {
+text-align: center;
+padding: 0px 20px;
+margin-top: -20px;
 }
 
 .float-panel {
@@ -1027,7 +1032,8 @@ button {
 }
 
 .x-select-overlay .x-list-label {
-  color: #ffffff;
+  color: #5E1190;
+    padding: 10px;
 }
 
 .x-field-input .x-clear-icon {

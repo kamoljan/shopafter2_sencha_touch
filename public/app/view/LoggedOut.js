@@ -14,6 +14,7 @@ Ext.define('WL.view.LoggedOut', {
                 cls: 'loginScreen',
                 items: [
                     {
+                        cls: 'loginText',
                         html: "Log in and become part of the best online market place in Southeast Asia!!!"
                             + "<br />"
                             + "Don't worry, we won't share anything without your okay. Promise!"
