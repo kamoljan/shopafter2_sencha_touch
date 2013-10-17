@@ -5,7 +5,6 @@ Ext.define('WL.view.ad.SortBar', {
     extend: 'Ext.Toolbar',
     xtype: 'adSortBar',
     config: {
-        cls: 'sort',
         id: 'sortContainer',
         cls: 'sortContainer',
         items: [

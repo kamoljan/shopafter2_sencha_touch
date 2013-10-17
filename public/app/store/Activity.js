@@ -4,7 +4,7 @@ Ext.define('WL.store.Activity', {
         fields: [
             'profileId', 'movieId', 'title', 'name', 'date', 'action'
         ],
-        pageSize: 20,
+        pageSize: 10,
         proxy: {
             type: 'jsonp',
             url: '/activity',

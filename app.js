@@ -138,7 +138,6 @@ app.get('/movies', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function
 
 app.get('/movie', fb.checkSession, fb.getFriendIds, fb.getUserDetails, function (req, res, next) {
     var url = "http://api.rottentomatoes.com/api/public/v1.0/movies/" + req.query.rottenId + ".json?apikey=" + config.rottenTomatoesApiKey;
-
     rest.get(url, {
         parser: rest.parsers.json
     }).on('complete',function (data) {
@@ -373,20 +372,17 @@ app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewi
 app.get('/ad', function (req, res) {
     // pagination
     var page = req.query.page || 1;
-    var limit = req.query.limit || 20;
+    var limit = req.query.limit || 10;
     // filter
     var q = new RegExp(req.query.q, 'i');  // 'i' makes it case insensitive
     var category = req.query.category || 0;
 
-    // sort
-//    var sort = [];
+    var query = {};
 //    if (req.query.sort && req.query.sort.match(/Date/i)) {
-//        sort = 1;
+//        query['sort'] = 'date';
 //    } else if (req.query.sort && req.query.sort.match(/Location/)) {
-//        sort = 2;
+//        query['sort'] = 'price';
 //    }
-//
-//    var sort = req.query.sort || 'Location';
 
     console.log('server page is = ' + page);
     console.log('server limit is = ' + limit);
@@ -394,7 +390,7 @@ app.get('/ad', function (req, res) {
     console.log('server q is = ' + q);
     console.log('server category is = ' + category);
 
-    var query = {};
+
     if (q) {
         query['description'] = q;
     }
@@ -403,7 +399,7 @@ app.get('/ad', function (req, res) {
     }
     console.log('server query is = %j', query);
 
-    Ad.paginate(query, page, limit, function(error, pageCount, paginatedResults) {
+    Ad.paginate(query, page, limit, function (error, pageCount, paginatedResults) {
         if (error) {
             console.error(error);
         } else {

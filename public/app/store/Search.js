@@ -1,10 +1,10 @@
 Ext.define('WL.store.Search', {
     extend  : 'Ext.data.Store',
     requires: [
-        'WL.model.Ad'
+        'WL.model.InsertAdForm'
     ],
     config: {
-        model: 'WL.model.Ad',
+        model: 'WL.model.InsertAdForm',
         pageSize: 10,
         proxy: {
             type: 'ajax',

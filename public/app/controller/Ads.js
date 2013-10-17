@@ -107,7 +107,6 @@ Ext.define('WL.controller.Ads', {
          */
     },
 
-
     init: function () {
         console.log('controller.Ads init');
         WL.app.on({
@@ -147,7 +146,7 @@ Ext.define('WL.controller.Ads', {
         if (ad) {
             this.showAd(ad);
         } else {
-            WL.model.Ad.load(adId, {
+            WL.model.InsertAdForm.load(adId, {
                 success: function (ad) {
                     this.showAd(ad);
                 },
@@ -158,7 +157,7 @@ Ext.define('WL.controller.Ads', {
 
     onSearch: function (searchField) {
         console.log('controller.Ads onSearch');
-        var searchStore = Ext.getStore('Search'),
+        var searchStore = Ext.getStore('Ads'),
             value = searchField.getValue();
         if (value != '') {
             this.getAdList().setMasked({ xtype: 'loadmask' });
@@ -206,6 +205,8 @@ Ext.define('WL.controller.Ads', {
         this.getMain().setActiveItem(this.insertAdCard);
     },
 
+
+    // FIXME: it doesn't refresh list after getting data from store
     onSortToggle: function (segBtn, btn) {
         console.log('controller.Ads onSortToggle');
         this.getAdList().setStore(Ext.getStore('Ads'));
