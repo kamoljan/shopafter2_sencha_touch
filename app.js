@@ -47,6 +47,7 @@ var credentials = {
 //});
 // App server setup
 var app = express();
+app.use(express.compress());
 var httpServer = http.createServer(app).listen(9999);
 var httpsServer = https.createServer(credentials, app).listen(443);
 httpServer.on('error', function() {
