@@ -1,6 +1,6 @@
 {
     "name": "WL",
-    "indexHtmlPath": "app.html",
+    "indexHtmlPath": "index.html",
     "js": [
         {
             "path": "touch/sencha-touch-all.js"
@@ -18,7 +18,7 @@
     ],
     "appCache": {
         "cache": [
-            "app.html",
+            "index.html",
 
             // Binary cache content is not supported in Sencha CMD v.3.0.250
 //            "resources/images/favicon.png",

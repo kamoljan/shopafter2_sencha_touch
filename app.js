@@ -1,3 +1,7 @@
+var http = require('http'),
+    https = require('https'),
+    fs = require('fs');
+
 var _ = require('underscore'),
     express = require('express'),
     connect = require('connect'),
@@ -30,27 +34,46 @@ AWS.config.update({
     sslEnabled: config.aws.sslEnabled
 });
 
+var privateKey  = fs.readFileSync('ssl/server-key.pem', 'utf8');
+var certificate = fs.readFileSync('ssl/server-cert.pem', 'utf8');
+var credentials = {
+    key: privateKey,
+    cert: certificate
+};
+
+//var port = process.env.PORT || 9999;
+//app.listen(port, function () {
+//    console.log("Listening on " + port);
+//});
 // App server setup
 var app = express();
+var httpServer = http.createServer(app).listen(9999);
+var httpsServer = https.createServer(credentials, app).listen(443);
+httpServer.on('error', function() {
+    console.log("Error in Listening on port 9999" + message);
+});
+httpsServer.on('error', function(message) {
+    console.log("Error in Listening on port 443" + message);
+});
 
 app.configure('development', function () {
     //app.use(express.logger());
     app.use(connect.static('./public'));
-    app.set('appIndex', './public/app.html')
+    app.set('appIndex', './public/index.html')
 });
 
 app.configure('production', function () {
     // Redirect from www
     app.use(function (req, res, next) {
         if (req.headers['host'] == 'shopafter.com') {
-            res.redirect('http://m.showpafter.com' + req.url)
+            res.redirect('https://showpafter.com' + req.url)
         } else {
             next();
         }
     });
 
     app.use(connect.static('./public/build/WL/production'));  //align to your path
-    app.set('appIndex', './public/build/WL/production/app.html');  //align to your path
+    app.set('appIndex', './public/build/WL/production/index.html');  //align to your path
 });
 
 app.configure(function () {
@@ -77,12 +100,6 @@ app.configure(function () {
     app.set('view engine', 'ejs');
 });
 
-var port = process.env.PORT || 9999;
-
-app.listen(port, function () {
-    console.log("Listening on " + port);
-});
-
 /**
  * Handle requests to the root URL.
  */
@@ -96,13 +113,13 @@ app.get('/', function (req, res) {
         res.render('web_meta.html.ejs', {
             layout: 'layout.html.ejs',
             title: 'Watch List',
-            appUrl: '/app.html?deviceType=Phone',
+            appUrl: '/index.html?deviceType=Phone',
             showDemo: Boolean(ua.match(/(AppleWebKit)/))
         });
     }
 });
 
-app.all('/app.html', function (req, res) {
+app.all('/index.html', function (req, res) {
     res.sendfile(app.set('appIndex'));
 });
 
@@ -117,7 +134,7 @@ app.post('/', function (req, res) {
         res.render('web_meta.html.ejs', {
             layout: 'layout.html.ejs',
             title: 'Watch List',
-            appUrl: '/app.html?deviceType=Phone',
+            appUrl: '/index.html?deviceType=Phone',
             showDemo: false
         });
     }
