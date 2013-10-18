@@ -8,8 +8,11 @@ Ext.define('WL.store.InsertAdForms', {
         storeId: 'Ads',
         proxy: {
             type: 'ajax',
-            url: 'ad'
+            url: 'ad',
+            reader: {
+                type: 'json',
+                rootProperty: 'ads'
+            }
         }
-
     }
 });

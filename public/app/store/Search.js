@@ -1,5 +1,5 @@
 Ext.define('WL.store.Search', {
-    extend  : 'Ext.data.Store',
+    extend: 'Ext.data.Store',
     requires: [
         'WL.model.InsertAdForm'
     ],
