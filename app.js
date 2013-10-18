@@ -173,7 +173,7 @@ app.post('/movie/:id/share', fb.checkSession, fb.getFriendIds, fb.getUserDetails
     var cache = movieCache[Number(req.params.id)];
     if (cache) {
         var post = {
-            link: 'http://m.shopafter.com:9999/movie/' + req.params.id
+            link: 'https://shopafter.com/movie/' + req.params.id
         };
         if (req.body.message) {
             post.message = req.body.message;
@@ -284,7 +284,7 @@ app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewi
             fbActions.push({
                 method: 'POST',
                 relative_url: req.session.fb.user_id + '/' + config.fbNamespace + ':want_to_watch',
-                body: 'movie=http://m.shopafter.com:9999/movie/' + req.body.movieId
+                body: 'movie=https://shopafter.com/movie/' + req.body.movieId
             });
             fbResponses.push({ key: 'wantToSeeId', value: 'id' });
         } else if (req.viewing.wantToSeeId) {
@@ -298,7 +298,7 @@ app.post('/viewing', fb.checkSession, fb.getUserDetails, util.fetchOrCreateViewi
             fbActions.push({
                 method: 'POST',
                 relative_url: req.session.fb.user_id + '/' + config.fbNamespace + ':watch',
-                body: 'movie=http://m.shopafter.com:9999/movie/' + req.body.movieId
+                body: 'movie=https://shopafter.com/movie/' + req.body.movieId
             });
             fbResponses.push({ key: 'seenId', value: 'id' });
         } else if (req.viewing.seenId) {

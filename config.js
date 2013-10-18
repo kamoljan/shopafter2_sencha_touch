@@ -9,7 +9,7 @@ exports.config = {
     mongoDb: 'mongodb://admin:12345678@localhost:27017/shopafter',
     // Session encyption key
     sessionSecret: 'kenta234?@#$ewfdhgsadjfhbasd!@#naomibasyihd',
-    appUrl: 'http://m.shopafter.com:9999',
+    appUrl: 'https://shopafter.com',
     fbNamespace: 'shopafter',
 
     rottenTomatoesApiKey: '12341243531425642564356',

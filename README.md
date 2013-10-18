@@ -3,7 +3,7 @@
 
 ## Deployment details
 
-URL: http://m.shopafter.com:9999
+URL: https://shopafter.com
 
 ### Prerequisites
   * Install Sencha CMD to build your application.
@@ -44,7 +44,7 @@ URL: http://m.shopafter.com:9999
 
      node app.js
 
-  * Visit your app by going to `http://localhost:9999`. You can also setup your `/etc/hosts` to point to m.shopafter.com
+  * Visit your app by going to `https://localhost`. You can also setup your `/etc/hosts` to point to shopafter.com
 
 
 ## Related, but already done tasks in the source code
